@@ -1,0 +1,79 @@
+/* Vendored verbatim from the Pointe Analytics design system (tokens/colors.css).
+   Do not edit — re-copy from the design project to update. */
+/* Pointe Analytics — color tokens. Light is default; dark via [data-theme="dark"]. */
+:root {
+  /* Brand — Pointe Ember (orange) */
+  --brand-50:  oklch(0.97 0.02 60);
+  --brand-100: oklch(0.94 0.05 60);
+  --brand-200: oklch(0.89 0.08 55);
+  --brand-300: oklch(0.82 0.12 55);
+  --brand-400: oklch(0.74 0.16 50);
+  --brand-500: oklch(0.67 0.19 45);
+  --brand-600: oklch(0.60 0.18 42);
+  --brand-700: oklch(0.52 0.16 40);
+  --brand-800: oklch(0.44 0.12 40);
+  --brand-900: oklch(0.35 0.09 40);
+  --brand-950: oklch(0.27 0.06 40);
+
+  /* Neutrals — warm, hue-matched to brand, chroma <= 0.010 */
+  --neutral-0:   oklch(0.995 0.002 60);
+  --neutral-50:  oklch(0.977 0.003 60);
+  --neutral-100: oklch(0.955 0.004 60);
+  --neutral-200: oklch(0.92 0.005 60);
+  --neutral-300: oklch(0.86 0.005 60);
+  --neutral-400: oklch(0.72 0.006 60);
+  --neutral-500: oklch(0.60 0.008 60);
+  --neutral-600: oklch(0.50 0.008 60);
+  --neutral-700: oklch(0.42 0.008 60);
+  --neutral-800: oklch(0.32 0.008 60);
+  --neutral-900: oklch(0.24 0.010 60);
+  --neutral-950: oklch(0.185 0.010 60);
+  --neutral-1000: oklch(0.145 0.010 60);
+
+  /* Semantic hues */
+  --success: oklch(0.60 0.13 155);
+  --warning: oklch(0.70 0.14 75);
+  --danger:  oklch(0.58 0.19 25);
+  --info:    oklch(0.58 0.15 240);
+
+  /* Surfaces & chrome (light) */
+  --surface-canvas: var(--neutral-50);
+  --surface-card: var(--neutral-0);
+  --surface-raised: var(--neutral-0);
+  --surface-sunken: var(--neutral-100);
+  --surface-inverse: var(--neutral-950);
+  --border-hairline: oklch(0.90 0.005 60);
+  --border-strong: oklch(0.82 0.006 60);
+  --text-primary: var(--neutral-950);
+  --text-secondary: var(--neutral-600);
+  --text-muted: var(--neutral-400);
+  --text-inverse: var(--neutral-0);
+  --accent: var(--brand-600);
+  --accent-hover: var(--brand-700);
+  --accent-active: var(--brand-800);
+  --accent-subtle: var(--brand-50);
+  --accent-subtle-border: var(--brand-200);
+  --focus-ring: oklch(0.74 0.16 50 / 0.5);
+  --scrim: oklch(0.185 0.01 60 / 0.45);
+}
+
+[data-theme="dark"] {
+  --surface-canvas: oklch(0.16 0.010 50);
+  --surface-card: oklch(0.205 0.010 50);
+  --surface-raised: oklch(0.245 0.012 50);
+  --surface-sunken: oklch(0.135 0.010 50);
+  --surface-inverse: var(--neutral-0);
+  --border-hairline: oklch(0.29 0.010 50);
+  --border-strong: oklch(0.37 0.010 50);
+  --text-primary: oklch(0.95 0.004 60);
+  --text-secondary: oklch(0.72 0.006 60);
+  --text-muted: oklch(0.55 0.008 60);
+  --text-inverse: var(--neutral-950);
+  --accent: var(--brand-400);
+  --accent-hover: var(--brand-300);
+  --accent-active: var(--brand-500);
+  --accent-subtle: oklch(0.28 0.05 45);
+  --accent-subtle-border: oklch(0.40 0.08 45);
+  --focus-ring: oklch(0.74 0.16 50 / 0.55);
+  --scrim: oklch(0.10 0.008 50 / 0.6);
+}

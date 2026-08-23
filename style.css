@@ -1,148 +1,308 @@
 /* ---------------------------------------------------------------
-   Donahue portfolio — no build step.
+   Donahue portfolio — implementation of Portfolio.dc.html from the
+   Pointe Analytics design system.
 
-   Colour comes from the Seeklore design system: tokens/seeklore-colors.css
-   is vendored verbatim and loaded first. This file only maps those tokens
-   onto the handful of roles the site needs, so re-copying the token file
-   is the whole update path.
+   The source is a Design Canvas file: its styles are inline, its
+   dynamic bits are {{ }} bindings resolved by a 70KB React runtime.
+   Here the styles are lifted into classes, `style-hover` becomes real
+   :hover rules, and the bindings are resolved at author time — so the
+   page ships as static HTML with one small theme script.
    --------------------------------------------------------------- */
 
-:root {
-  /* --- site roles, mapped onto Seeklore tokens --- */
-  --bg:        var(--surface-page);
-  --surface:   var(--surface-raised);
-  --text:      var(--text-primary);
-  --text-dim:  var(--text-secondary);
-  --border:    var(--border-subtle);
-  --border-hi: var(--border-medium);
-  --accent:    var(--place-base);     /* sea-teal — links, hover, focus */
-  --accent-hi: var(--place-hover);
-  --caveat:    var(--char-base);      /* oxblood — caveat tags */
+@import "tokens/pointe-fonts.css";
+@import "tokens/pointe-colors.css";
+@import "tokens/pointe-typography.css";
 
-  --radius:    12px;
-  --measure:   68ch;                  /* comfortable reading width */
+/* ---------------------------------------------------------------
+   Accessibility overrides on the vendored tokens.
+
+   Measured against this page's own surfaces, two of the design
+   system's roles land below WCAG AA for normal-size text. The token
+   files above are kept byte-identical to the design project so they
+   stay re-copyable; the corrections live here instead.
+
+     light --text-muted  neutral-400  2.3:1  -> oklch(0.56 …)  4.6:1
+     light --accent      brand-600    4.0:1  -> brand-700      5.5:1
+     dark  --text-muted  0.55         3.7:1  -> oklch(0.60 …)  4.5:1
+
+   Same hues throughout — only lightness moves.
+   --------------------------------------------------------------- */
+
+/* Scoped with :not([data-theme="dark"]) — a bare :root would tie the
+   vendored [data-theme="dark"] rule on specificity and, being later in
+   the cascade, would win there too and darken the accent on a dark page. */
+:root:not([data-theme="dark"]) {
+  --text-muted: oklch(0.54 0.008 60);
+  --accent: var(--brand-700);
+  --accent-hover: var(--brand-800);
+}
+
+:root[data-theme="dark"] {
+  --text-muted: oklch(0.60 0.008 60);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
+html, body { margin: 0; padding: 0; }
+
 body {
-  margin: 0;
-  padding: 0 24px 96px;
-  background: var(--bg);
-  color: var(--text);
-  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-md);
+  transition: background 180ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-::selection { background: var(--hl-amber-bg); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
 
-:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+.shell { max-width: 1020px; margin: 0 auto; padding: 0 32px; }
+
+/* ---------- sticky header ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 48px;
+  background: var(--surface-canvas);
+  border-bottom: 1px solid var(--border-hairline);
 }
 
-.wrap { max-width: 900px; margin: 0 auto; }
+.topbar .shell {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-/* ---------- header ---------- */
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+}
 
-header { padding: 88px 0 56px; }
+.brand .mark { color: var(--accent); font-size: var(--text-xs); }
 
-h1 {
+/* ---------- hero ---------- */
+
+.hero {
+  padding: 80px 0 56px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 24px;
+  align-items: center;
+}
+
+.avatar {
+  grid-row: 1 / 4;
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--border-hairline);
+  background: var(--surface-sunken);
+}
+
+/* stand-in until assets/headshot.png exists; same box, so layout is identical */
+.avatar--fallback {
+  display: grid;
+  place-items: center;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.hero h1 {
   margin: 0 0 12px;
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
 }
 
-.tagline {
-  margin: 0;
-  max-width: var(--measure);
-  font-size: 1.075rem;
-  color: var(--text-dim);
-}
-
-/* ---------- project list ---------- */
-
-h2 {
+.hero .tagline {
   margin: 0 0 20px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  /* --text-tertiary is the natural token here but lands at 3.5:1 on the
-     dark page background — too low for text this size. */
+  max-width: 60ch;
+  font-size: 15px;
+  line-height: var(--leading-normal);
   color: var(--text-secondary);
 }
 
+.hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+/* ---------- section heading ---------- */
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.section-head .count {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- project grid ---------- */
+
 .projects {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
 }
 
 .project {
   display: flex;
   flex-direction: column;
-  padding: 22px 24px 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  text-decoration: none;
+  overflow: hidden;
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 10px;
   color: inherit;
-  transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 180ms cubic-bezier(0.2, 0, 0, 1),
+              border-color 180ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .project:hover,
 .project:focus-visible {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px -12px var(--place-base);
+  box-shadow: var(--shadow-raised);
+  border-color: var(--border-strong);
+  color: inherit;
+}
+
+.project .preview {
+  aspect-ratio: 16 / 10;
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--border-hairline);
+  display: grid;
+  place-items: center;
+}
+
+.project .preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.project .body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 20px 20px;
+}
+
+.project .row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .project h3 {
-  margin: 0 0 8px;
-  font-size: 1.075rem;
-  letter-spacing: -0.01em;
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+.project .arrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  flex-shrink: 0;
 }
 
 .project p {
-  margin: 0 0 16px;
-  font-size: 0.925rem;
-  color: var(--text-dim);
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
 }
 
-.tags {
+/* ---------- fixed footer + theme toggle ---------- */
+
+.tail { height: 128px; }
+
+.footbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 40px;
+  background: var(--surface-canvas);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.footbar .shell {
+  height: 40px;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.theme-toggle {
+  height: 26px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
   gap: 6px;
-  margin-top: auto;
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  transition: background 120ms cubic-bezier(0.2, 0, 0, 1),
+              border-color 120ms cubic-bezier(0.2, 0, 0, 1);
 }
 
-.tag {
-  padding: 3px 9px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--text-dim);
-  border: 1px solid var(--border-hi);
-  border-radius: 999px;
+.theme-toggle:hover {
+  background: var(--surface-sunken);
+  border-color: var(--border-strong);
 }
 
-/* a caveat the reader should notice before clicking through */
-.tag--note {
-  color: var(--char-text);
-  background: var(--char-light);
-  border-color: transparent;
+/* The canvas file references --shadow-card / --shadow-raised but the design
+   system's token files don't define them; these match its elevation language. */
+:root {
+  --shadow-card: 0 1px 2px oklch(0.185 0.01 60 / 0.06);
+  --shadow-raised: 0 4px 16px oklch(0.185 0.01 60 / 0.10);
+}
+[data-theme="dark"] {
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.30);
+  --shadow-raised: 0 4px 16px oklch(0 0 0 / 0.45);
 }
 
-/* ---------- footer ---------- */
-
-footer {
-  margin-top: 72px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border);
-  font-size: 0.875rem;
-  color: var(--text-dim);
+@media (max-width: 640px) {
+  .shell { padding: 0 20px; }
+  .hero { padding: 48px 0 40px; grid-template-columns: 1fr; row-gap: 16px; }
+  .avatar { grid-row: auto; }
 }
-
-footer a { color: var(--accent); }
-footer a:hover { color: var(--accent-hi); }

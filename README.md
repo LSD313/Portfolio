@@ -7,13 +7,42 @@ just HTML and CSS that a browser can open directly.
 
 ```
 index.html                     home page + project list
-style.css                      layout and component styles
+style.css                      layout, components, a11y overrides
 tokens/
-  seeklore-colors.css          colour tokens, vendored from Seeklore
+  pointe-colors.css            colour tokens, vendored from Pointe Analytics
+  pointe-typography.css        type scale, vendored
+  pointe-fonts.css             @font-face for the self-hosted webfonts
+assets/
+  fonts/                       Instrument Sans + IBM Plex Mono (woff2)
+  headshot.png                 hero avatar (optional — falls back to initials)
 projects/
   vehicle-performance-dashboard/
     index.html                 self-contained project (data embedded)
 ```
+
+Every project is a folder under `projects/` containing its own `index.html`.
+Linking to the folder (`projects/name/`) serves that file automatically.
+
+## Design
+
+The home page implements `Portfolio.dc.html` from the **Pointe Analytics**
+design system (a Claude Design canvas project). The canvas file keeps its
+styles inline and its dynamic parts as `{{ }}` bindings resolved by a 70KB
+React runtime; here those are lifted into CSS classes, `style-hover` becomes
+real `:hover` rules, and the bindings are resolved at author time — so the page
+is static HTML plus one small theme script.
+
+`tokens/pointe-colors.css` and `tokens/pointe-typography.css` are copied
+verbatim from that project — don't edit them; re-copy to update. Where the
+system's own values fell below WCAG AA on this page, the corrections live in a
+clearly-marked override block at the top of `style.css` rather than in the
+vendored files.
+
+The design's webfonts are self-hosted in `assets/fonts/` instead of loading
+from Google, so the site makes no external requests at all.
+
+Theme defaults to dark, per the design, with a manual toggle in the footer that
+persists to `localStorage`.
 
 Every project is a folder under `projects/` containing its own `index.html`.
 Linking to the folder (`projects/name/`) serves that file automatically.

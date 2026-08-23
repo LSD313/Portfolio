@@ -4,69 +4,121 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luke Donahue</title>
-<meta name="description" content="Projects and prototypes by Luke Donahue.">
-<meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="tokens/seeklore-colors.css">
+<meta name="description" content="The projects of Pointe Ventures.">
+<meta name="color-scheme" content="dark light">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='50' font-size='52'>&#9650;</text></svg>">
 <script>
-  /* The Seeklore tokens switch on [data-theme], so follow the OS preference.
-     Runs before paint to avoid a flash. Without JS the page stays light,
-     which is the :root default in the token file. */
+  /* The design ships a manual theme toggle defaulting to dark. Applied before
+     paint so there's no flash; the choice persists across visits. */
   (function () {
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    var apply = function () {
-      document.documentElement.setAttribute('data-theme', mq.matches ? 'dark' : 'light');
-    };
-    apply();
-    mq.addEventListener('change', apply);
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved || 'dark');
   })();
 </script>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='48' font-size='48'>◆</text></svg>">
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <h1>Luke Donahue</h1>
-    <p class="tagline">
-      I design and build data tools — dashboards, prototypes, and the occasional
-      whole application. A few of them are collected here.
-    </p>
+  <header class="topbar">
+    <div class="shell">
+      <div class="brand">
+        <span class="mark">&#9650;</span>
+        <span>Pointe Ventures</span>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h2>Projects</h2>
+  <div class="shell">
 
-    <div class="projects">
+    <section class="hero">
+      <!-- Drop the headshot in at assets/headshot.png and it replaces the
+           initials automatically — no markup change needed. -->
+      <img class="avatar" src="assets/headshot.png" alt="Luke Donahue"
+           onerror="this.outerHTML='&lt;div class=&quot;avatar avatar--fallback&quot; aria-label=&quot;Luke Donahue&quot;&gt;LD&lt;/div&gt;'">
+      <h1>Luke Donahue</h1>
+      <p class="tagline">The projects of Pointe Ventures</p>
+      <div class="meta">
+        <a href="mailto:Luke@Pointe.vc">Luke@Pointe.vc</a>
+        <a href="https://LinkedIn.com/in/lukesdonahue">LinkedIn.com/in/lukesdonahue</a>
+        <span>Grosse Pointe, MI</span>
+      </div>
+    </section>
 
-      <!-- Each project is a folder under /projects. To add one: drop the folder
-           in, then copy this block and edit the href, title and description. -->
-      <a class="project" href="projects/vehicle-performance-dashboard/">
-        <h3>Vehicle Performance Dashboard</h3>
-        <p>
-          A single-page analytics dashboard for automotive market data: configurable
-          charts and comparison tables across six levels of vehicle hierarchy, five
-          years of history, and thirty-odd metrics — all driven by one embedded dataset,
-          with no server behind it.
-        </p>
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">Data visualization</span>
-          <span class="tag">Single file</span>
-          <span class="tag tag--note">Synthetic data</span>
-        </div>
-      </a>
+    <main>
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span class="count">01</span>
+      </div>
 
+      <div class="projects">
+
+        <a class="project" href="projects/vehicle-performance-dashboard/">
+          <div class="preview">
+            <!-- Add projects/vehicle-performance-dashboard/preview.png (16:10)
+                 and swap this comment for:
+                 <img src="projects/vehicle-performance-dashboard/preview.png" alt=""> -->
+          </div>
+          <div class="body">
+            <div class="row">
+              <h3>Vehicle Performance Dashboard</h3>
+              <span class="arrow">&#8599;</span>
+            </div>
+            <p>A single-page analytics dashboard for automotive market data: configurable
+            charts and comparison tables across six levels of vehicle hierarchy, five years
+            of history, and thirty-odd metrics — all driven by one embedded dataset, with no
+            server behind it.</p>
+          </div>
+        </a>
+
+        <!-- To add a project: copy this block out of the comment, then edit the
+             href, title and description. Remember to bump the count above.
+        <a class="project" href="#">
+          <div class="preview">
+            <img src="projects/NAME/preview.png" alt="">
+          </div>
+          <div class="body">
+            <div class="row">
+              <h3>Project title</h3>
+              <span class="arrow">&#8599;</span>
+            </div>
+            <p>One or two sentences on what this is, what it does, and what it runs on.</p>
+          </div>
+        </a>
+        -->
+
+      </div>
+    </main>
+
+    <div class="tail"></div>
+
+  </div>
+
+  <footer class="footbar">
+    <div class="shell">
+      <button class="theme-toggle" type="button" id="theme-toggle">
+        <span aria-hidden="true">&#9680;</span>
+        <span id="theme-label">light</span>
+      </button>
     </div>
-  </main>
-
-  <footer>
-    <p>
-      Built by hand — static HTML and CSS, no framework, no build step.
-      <a href="mailto:luke@donahue.us">luke@donahue.us</a>
-    </p>
   </footer>
 
-</div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var label = document.getElementById('theme-label');
+    var sync = function () {
+      label.textContent = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    };
+    sync();
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      sync();
+    });
+  })();
+</script>
 </body>
 </html>
