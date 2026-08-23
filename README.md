@@ -7,7 +7,9 @@ just HTML and CSS that a browser can open directly.
 
 ```
 index.html                     home page + project list
-style.css                      the only stylesheet
+style.css                      layout and component styles
+tokens/
+  seeklore-colors.css          colour tokens, vendored from Seeklore
 projects/
   vehicle-performance-dashboard/
     index.html                 self-contained project (data embedded)
@@ -15,6 +17,19 @@ projects/
 
 Every project is a folder under `projects/` containing its own `index.html`.
 Linking to the folder (`projects/name/`) serves that file automatically.
+
+## Colour
+
+Colour comes from the Seeklore design system. `tokens/seeklore-colors.css` is a
+verbatim copy of that system's `tokens/colors.css` — don't edit it; re-copy from
+the source to pick up changes. `style.css` maps those tokens onto the few roles
+the site needs (`--bg`, `--surface`, `--accent`, …), so the mapping is the only
+thing to revisit when the palette moves.
+
+The token file switches on `[data-theme="dark"]` and has no `prefers-color-scheme`
+rules, so a small inline script in `index.html` sets that attribute from the OS
+preference. With JavaScript off the page stays light, which is the `:root` default.
+
 
 ## Running it locally
 

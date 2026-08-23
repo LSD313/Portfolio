@@ -1,28 +1,26 @@
 /* ---------------------------------------------------------------
-   Donahue portfolio — one stylesheet, no build step.
-   Design tokens live here at the top; everything below uses them.
+   Donahue portfolio — no build step.
+
+   Colour comes from the Seeklore design system: tokens/seeklore-colors.css
+   is vendored verbatim and loaded first. This file only maps those tokens
+   onto the handful of roles the site needs, so re-copying the token file
+   is the whole update path.
    --------------------------------------------------------------- */
 
 :root {
-  --bg:        #fbfaf8;
-  --surface:   #ffffff;
-  --text:      #1b1a18;
-  --text-dim:  #6a6660;
-  --border:    #e5e1da;
-  --accent:    #16786c;
-  --radius:    12px;
-  --measure:   68ch;              /* comfortable reading width */
-}
+  /* --- site roles, mapped onto Seeklore tokens --- */
+  --bg:        var(--surface-page);
+  --surface:   var(--surface-raised);
+  --text:      var(--text-primary);
+  --text-dim:  var(--text-secondary);
+  --border:    var(--border-subtle);
+  --border-hi: var(--border-medium);
+  --accent:    var(--place-base);     /* sea-teal — links, hover, focus */
+  --accent-hi: var(--place-hover);
+  --caveat:    var(--char-base);      /* oxblood — caveat tags */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:       #131416;
-    --surface:  #1a1c1f;
-    --text:     #f2f0ed;
-    --text-dim: #a0a09e;
-    --border:   #2c2f33;
-    --accent:   #4fd1bd;
-  }
+  --radius:    12px;
+  --measure:   68ch;                  /* comfortable reading width */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -34,6 +32,13 @@ body {
   color: var(--text);
   font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--hl-amber-bg); }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 .wrap { max-width: 900px; margin: 0 auto; }
@@ -64,7 +69,9 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  /* --text-tertiary is the natural token here but lands at 3.5:1 on the
+     dark page background — too low for text this size. */
+  color: var(--text-secondary);
 }
 
 .projects {
@@ -82,13 +89,14 @@ h2 {
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
-  transition: border-color .15s ease, transform .15s ease;
+  transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 
 .project:hover,
 .project:focus-visible {
   border-color: var(--accent);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px -12px var(--place-base);
 }
 
 .project h3 {
@@ -115,13 +123,15 @@ h2 {
   font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-dim);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-hi);
   border-radius: 999px;
 }
 
+/* a caveat the reader should notice before clicking through */
 .tag--note {
-  color: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--char-text);
+  background: var(--char-light);
+  border-color: transparent;
 }
 
 /* ---------- footer ---------- */
@@ -135,3 +145,4 @@ footer {
 }
 
 footer a { color: var(--accent); }
+footer a:hover { color: var(--accent-hi); }

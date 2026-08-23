@@ -5,7 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luke Donahue</title>
 <meta name="description" content="Projects and prototypes by Luke Donahue.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="tokens/seeklore-colors.css">
 <link rel="stylesheet" href="style.css">
+<script>
+  /* The Seeklore tokens switch on [data-theme], so follow the OS preference.
+     Runs before paint to avoid a flash. Without JS the page stays light,
+     which is the :root default in the token file. */
+  (function () {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var apply = function () {
+      document.documentElement.setAttribute('data-theme', mq.matches ? 'dark' : 'light');
+    };
+    apply();
+    mq.addEventListener('change', apply);
+  })();
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='48' font-size='48'>◆</text></svg>">
 </head>
 <body>
