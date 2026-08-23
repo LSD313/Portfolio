@@ -49,7 +49,7 @@ Nothing in the site depends on which you pick.
 `vehicle-performance-dashboard` began as a work artifact and was rebuilt for
 public display:
 
-- All branding replaced with a fictional company ("Northlight").
+- All branding replaced with a placeholder brand ("Pointe Ventures").
 - The embedded dataset is **entirely synthetic** — generated to match the
   original schema, hierarchy and time range, but every figure is invented.
   No real market data is present.
