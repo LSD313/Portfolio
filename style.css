@@ -1,0 +1,137 @@
+/* ---------------------------------------------------------------
+   Donahue portfolio — one stylesheet, no build step.
+   Design tokens live here at the top; everything below uses them.
+   --------------------------------------------------------------- */
+
+:root {
+  --bg:        #fbfaf8;
+  --surface:   #ffffff;
+  --text:      #1b1a18;
+  --text-dim:  #6a6660;
+  --border:    #e5e1da;
+  --accent:    #16786c;
+  --radius:    12px;
+  --measure:   68ch;              /* comfortable reading width */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #131416;
+    --surface:  #1a1c1f;
+    --text:     #f2f0ed;
+    --text-dim: #a0a09e;
+    --border:   #2c2f33;
+    --accent:   #4fd1bd;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 24px 96px;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 900px; margin: 0 auto; }
+
+/* ---------- header ---------- */
+
+header { padding: 88px 0 56px; }
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: 1.075rem;
+  color: var(--text-dim);
+}
+
+/* ---------- project list ---------- */
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.projects {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.project:hover,
+.project:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project h3 {
+  margin: 0 0 8px;
+  font-size: 1.075rem;
+  letter-spacing: -0.01em;
+}
+
+.project p {
+  margin: 0 0 16px;
+  font-size: 0.925rem;
+  color: var(--text-dim);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tag {
+  padding: 3px 9px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.tag--note {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 72px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+footer a { color: var(--accent); }
