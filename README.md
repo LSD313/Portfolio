@@ -18,6 +18,8 @@ assets/
 projects/
   vehicle-performance-dashboard/
     index.html                 self-contained project (data embedded)
+  seeklore/
+    index.html                 self-contained project (bundled assets)
 ```
 
 Every project is a folder under `projects/` containing its own `index.html`.
