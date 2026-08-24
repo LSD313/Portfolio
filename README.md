@@ -21,8 +21,10 @@ projects/
   seeklore/
     index.html                 self-contained project (bundled assets)
   seeklore-ereader/
-    index.html                 self-contained project (app, design system,
-                               five books and fonts all bundled)
+    index.html                 exported app (design system + fonts bundled)
+    books/                     book data — the export does NOT contain it
+tools/
+  patch-export.py              re-applies the fixes below to a fresh export
 ```
 
 Every project is a folder under `projects/` containing its own `index.html`.
@@ -46,6 +48,11 @@ vendored files.
 The design's webfonts are self-hosted in `assets/fonts/` instead of loading
 from Google, so the page makes no external requests at all — which is true of
 every page on the site.
+
+Project previews in `assets/` should be **16:10 or wider**. The card crops with
+`object-fit: cover`, so a taller image loses its top and bottom — and a crop
+line falling through the middle of something reads as the thumbnail bleeding
+into the card text.
 
 Theme defaults to dark, per the design, with a manual toggle in the footer that
 persists to `localStorage`.
@@ -82,33 +89,57 @@ Nothing in the site depends on which you pick.
 
 `seeklore-ereader` is a standalone export of `Seeklore.dc.html` from the
 **Seeklore** design system — a different project from the `seeklore` card game
-that happens to share the name. Everything is inlined: the Design Canvas
-runtime, React, the design system, the fonts, and the full text of all five
-books. It unpacks itself into blob URLs on load and makes no network requests
-of any kind.
+that happens to share the name.
 
-Two edits were made to the exported file:
+**The export does not contain the books.** The app builds
+`fetch('books/' + id + '/book.json')` at runtime, and the bundler only inlines
+references it can resolve statically, so the book data has to sit on disk in
+`books/`. Same for `books/sea-witch/cover.jpg`, which is applied as a CSS
+`background-image`. Everything else — the runtime, React, the design system,
+the fonts — is inlined.
 
-- **Title.** The export ships as `<title>Bundled Page</title>`, and the
-  bundler replaces the whole document at boot, so setting the title on the
-  outer shell alone does not survive. A `<title>` was injected into the
-  `__bundler/template` payload as well, which is what the browser tab and any
-  bookmark end up reading.
+`tools/patch-export.py` re-applies every fix below to a fresh export and is
+idempotent, so re-running it is safe:
 
-- **Chapter alignment (bug fix).** `parseContent` started a new chapter on
-  every `## ` line and relied on their order matching `chapters[]`. That holds
-  only for a book whose headings are all numbered. The Sea Witch also carries
-  part dividers — `## Part One — The Court of Gold` — and each one pushed a
-  phantom empty chapter that shifted every chapter after it. In the export as
-  received, Sea Witch chapter 2 ("The Ledger") rendered blank and chapter 3
-  ("The Survey") showed The Ledger's prose, with the drift compounding at each
-  divider. The numbers in `## N` are already 1-based indices into `chapters[]`,
-  so the parser now keys off them and ignores unnumbered headings. Books whose
-  headings are sequentially numbered parse exactly as before.
+```bash
+python3 tools/patch-export.py projects/seeklore-ereader/index.html "Seeklore eReader"
+```
 
-  This bug is in the design project too, so a fresh export will bring it back.
-  Fixing `parseContent` in `Seeklore.dc.html` upstream would make future
-  exports correct without patching.
+- **Title.** The export ships as `<title>Bundled Page</title>`, and the bundler
+  replaces the whole document at boot, so a title set on the outer shell alone
+  does not survive. One is injected into the `__bundler/template` payload too.
+
+- **Chapter alignment.** `parseContent` started a new chapter on every `## `
+  line and relied on their order matching `chapters[]`. That holds only when
+  every heading is numbered. The Sea Witch also carries part dividers —
+  `## Part One — The Court of Gold` — and each one pushed a phantom empty
+  chapter that shifted the rest: chapter 2 ("The Ledger") rendered blank and
+  chapter 3 ("The Survey") showed The Ledger's prose. The numbers in `## N`
+  are already 1-based indices into `chapters[]`, so the parser keys off them
+  and ignores unnumbered headings.
+
+- **Blank reader on cold load.** The reading pane is gated behind `pw > 0`, and
+  `pw` only becomes non-zero once `measure()` runs. The viewport ref gets one
+  `requestAnimationFrame` attempt, and `measure()` returns early if the element
+  has no width yet. The only *retrying* measure hangs off the content ref,
+  which lives inside the `pw > 0` branch and so never mounts. One missed frame
+  left the reader permanently blank — book loaded, prose parsed, nothing drawn.
+  Two delayed retries are added to the ungated viewport ref.
+
+- **Back link.** Project pages are full-screen apps with no route home, so a
+  fixed "← Portfolio" control is appended and kept alive across the bundler's
+  document swap. It sits top-centre — the one region free of app chrome on all
+  three project pages. All three pages get this one.
+
+- **BOOKS pruning.** Any book in the manifest with no data in `books/` is
+  commented out, so it drops off the shelf instead of failing with
+  "book.json HTTP 404" when opened. Currently that hides Treasure Island and
+  The Count of Monte Cristo, whose `content.txt` files exceed the 256KB ceiling
+  on the Claude Design MCP's file read and could only be retrieved truncated.
+  Drop those two files into `books/<id>/` and re-run the script to restore them.
+
+The title and chapter-alignment bugs are in the design project, so fixing them
+in `Seeklore.dc.html` upstream would shrink this list.
 
 ## Note on the dashboard project
 
