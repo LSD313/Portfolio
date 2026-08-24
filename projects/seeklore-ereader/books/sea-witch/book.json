@@ -1,0 +1,1283 @@
+{
+  "id": "sea-witch",
+  "title": "The Sea Witch",
+  "tagline": "Book Two of Seeklore",
+  "coverAuthor": "Seeklore",
+  "coverBg": "#2E2836",
+  "totalChapters": 34,
+  "progressSpan": 1,
+  "contentFile": "content.txt",
+  "mapTitle": "The Two Waters",
+  "description": "Before the storm, before the songs, Atlantica’s finest copyist is a notary’s daughter with a level hand. Then four words move on a sealed page, and the law she loves stops being a shelter — and something old in the deep asks her what should stand behind a word. The witch’s own account, from the third terrace to the last entry.",
+  "chapters": [
+    {
+      "eyebrow": "Prologue",
+      "title": "The Drowning"
+    },
+    {
+      "eyebrow": "Part One · Chapter One",
+      "title": "The Ledger"
+    },
+    {
+      "eyebrow": "Part One · Chapter Two",
+      "title": "The Survey"
+    },
+    {
+      "eyebrow": "Part One · Chapter Three",
+      "title": "The Surplus"
+    },
+    {
+      "eyebrow": "Part One · Chapter Four",
+      "title": "The Festival"
+    },
+    {
+      "eyebrow": "Part One · Chapter Five",
+      "title": "The King's Table"
+    },
+    {
+      "eyebrow": "Part One · Chapter Six",
+      "title": "The Altered Clause"
+    },
+    {
+      "eyebrow": "Part One · Chapter Seven",
+      "title": "The Summons"
+    },
+    {
+      "eyebrow": "Part One · Chapter Eight",
+      "title": "The Quiet Illness"
+    },
+    {
+      "eyebrow": "Part One · Chapter Nine",
+      "title": "The Edge"
+    },
+    {
+      "eyebrow": "Part Two · Chapter Ten",
+      "title": "The Dark"
+    },
+    {
+      "eyebrow": "Part Two · Chapter Eleven",
+      "title": "The First Deal"
+    },
+    {
+      "eyebrow": "Part Two · Chapter Twelve",
+      "title": "News From Above"
+    },
+    {
+      "eyebrow": "Part Two · Chapter Thirteen",
+      "title": "Nothing But My Word"
+    },
+    {
+      "eyebrow": "Part Two · Chapter Fourteen",
+      "title": "The Sea Mother"
+    },
+    {
+      "eyebrow": "Part Three · Chapter Fifteen",
+      "title": "The First Contract"
+    },
+    {
+      "eyebrow": "Part Three · Chapter Sixteen",
+      "title": "The Seventh Daughter"
+    }
+  ],
+  "entities": {
+    "ursula": {
+      "type": "char",
+      "sigil": "U",
+      "title": "Ursula",
+      "subtitle": "Copyist · The third terrace",
+      "aliases": [
+        "Ursula",
+        {
+          "t": "Sea Witch",
+          "from": 15
+        }
+      ],
+      "fields": [
+        [
+          "The copyist",
+          "At her father’s desk since she was six — pressed kelp, cuttle-black ink, her mother’s urchin-spine pen. The copying is not for the knowing; it is for the hands.",
+          2
+        ],
+        [
+          "The two stones",
+          "Weighs every deal the way her father taught: a fair deal has two sides you can weigh, and each side gives up something it can live without.",
+          2
+        ],
+        [
+          "The record",
+          "Nine sleeps into the dark she begins to write on the cavern glass — the summons, the petitions, the moved article, whole. No bodies. No trial. No record. This is the record.",
+          11
+        ],
+        [
+          "The first deal",
+          "The Old Stutterer keeps the time; neither party keeps it. The first thing she ever built to stand with no one holding it — and the sleep the laughing came back, she stopped counting her exile in days.",
+          12
+        ],
+        [
+          "The remaking",
+          "Ka’analoa puts the spring of the ink in her blood. What is written in it holds — not by fear, not by force. The keeping lives in the flesh of the promiser.",
+          15
+        ],
+        [
+          "“Is it inked?”",
+          "Her word outruns the crown’s: the witch’s post, the fringe fleet, a hundred bargains held level. In Atlantica the phrase now means “is it real.”",
+          22
+        ],
+        [
+          "The toll",
+          "Each sealing takes a little warmth. She runs the audit at Vess’s grave and the audit is clean: it was never the grief failing to arrive. It is the griever, leaving, a hundredth part at a time.",
+          22
+        ],
+        [
+          "The name in the Ledger",
+          "On the first clean page, in the plain hand, unbound and unenforceable, a debt in no realm’s currency: Alister Marren. The name burns a shade brighter than the law around it.",
+          24
+        ],
+        [
+          "The prow",
+          "She could have stopped it. The fork was in her arms and it answered her even then. She looked at the girl pointing, weighed both pans — and did not move.",
+          31
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Odell · father"
+        ],
+        [
+          "char",
+          "Ione · mother"
+        ],
+        [
+          "char",
+          "Sebastian · taught at her mother’s table"
+        ]
+      ],
+      "locked": "Where the summons leads",
+      "stages": [
+        {
+          "at": 11,
+          "resubtitle": "The one who writes",
+          "locked": "What the dark will ask"
+        },
+        {
+          "at": 15,
+          "resubtitle": "The Sea Witch",
+          "locked": "What the ink costs"
+        },
+        {
+          "at": 22,
+          "locked": "What the toll is taking"
+        },
+        {
+          "at": 31,
+          "resubtitle": "The scale that did not move",
+          "locked": ""
+        }
+      ]
+    },
+    "odell": {
+      "type": "char",
+      "sigil": "O",
+      "title": "Odell",
+      "subtitle": "Notary · Teacher of law",
+      "aliases": [
+        "Odell"
+      ],
+      "fields": [
+        [
+          "The third stone",
+          "Sets a white stone between the two parties every morning: the notary, the witness, the seal. It gives nothing and gets nothing. It keeps the other two from moving.",
+          2
+        ],
+        [
+          "His one law",
+          "“A seal is a promise that the deal will still say tomorrow what it said today. If the seal moves, it isn’t a deal anymore. It’s a taking.”",
+          2
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Ione · his wife"
+        ],
+        [
+          "char",
+          "Ursula · daughter"
+        ]
+      ],
+      "locked": "What his seal will not move past",
+      "stages": [
+        {
+          "at": 10,
+          "resubtitle": "Scholar of the third terrace · Erased",
+          "locked": ""
+        }
+      ]
+    },
+    "ione": {
+      "type": "char",
+      "sigil": "I",
+      "title": "Ione",
+      "subtitle": "Teacher of commerce",
+      "aliases": [
+        "Ione"
+      ],
+      "fields": [
+        [
+          "The forty-one articles",
+          "Every article of the Mercantile Code is in her hand. Ursula thought the Code had always existed, like the reef, until she was ten.",
+          2
+        ],
+        [
+          "What she found",
+          "Heading by heading, on a sealed page: four moved words in the seventh article of the settlement between the Crown of the Sea and the Crown of the Isles.",
+          7
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Odell · her husband"
+        ],
+        [
+          "char",
+          "Ursula · daughter"
+        ]
+      ],
+      "locked": "What she found on a sealed page",
+      "stages": [
+        {
+          "at": 10,
+          "resubtitle": "Scholar of the third terrace · Erased",
+          "locked": ""
+        }
+      ]
+    },
+    "triton": {
+      "type": "char",
+      "sigil": "T",
+      "title": "Triton",
+      "subtitle": "The boy on the cliff",
+      "aliases": [
+        "Triton"
+      ],
+      "fields": [
+        [
+          "The boy on the cliff",
+          "Seventeen, broad from hauling nets, a fishmonger’s son — running down a burning hillside with a trident that weighs nothing and wants to be used.",
+          1
+        ],
+        [
+          "The founding",
+          "He plants the trident in the temple pool and the sea takes the city — and everyone who comes up out of the water comes up changed, and washed, and singing.",
+          2
+        ],
+        [
+          "The golden king",
+          "Two centuries of festivals, tribute, and founding songs: we left the greed of men behind us. The crown’s seal on every settlement in the water.",
+          6
+        ],
+        [
+          "The Warm War",
+          "Not in the songs of Atlantica: the shelf peoples’ grounds starved by the reef’s warmth, the old courtesies refused, the king on the shelf himself with the fork — and the writ running to the edge afterward.",
+          14
+        ],
+        [
+          "The last bargain",
+          "At the lair, the king trades away the instrument that cannot ask — and the years arrive in trains and settlements, silver, then frost.",
+          29
+        ],
+        [
+          "The hall",
+          "“The greed was our greed. The wrath was my calling. And the one who saved them was the one they had needed saving from. Close the books.”",
+          32
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Sebastian · keeper of his accounts",
+          6
+        ],
+        [
+          "char",
+          "Attina · eldest daughter",
+          6
+        ]
+      ],
+      "locked": "What the founding songs leave out",
+      "stages": [
+        {
+          "at": 2,
+          "resubtitle": "King of Atlantica"
+        },
+        {
+          "at": 32,
+          "resubtitle": "The fishmonger’s son",
+          "locked": ""
+        }
+      ]
+    },
+    "sebastian": {
+      "type": "char",
+      "sigil": "S",
+      "title": "Sebastian",
+      "subtitle": "Court composer · Keeper of the books",
+      "aliases": [
+        "Sebastian"
+      ],
+      "fields": [
+        [
+          "At the family table",
+          "The oldest voice in the ocean, a friend at the scholars’ lamp on the third terrace — he taught Ursula, without meaning to, the craft of hearing the thing under the thing.",
+          2
+        ],
+        [
+          "True as far as it goes",
+          "Every song he ever wrote the crown was true — as far as it went. No one could make a true thing stop one span short of the whole truth as beautifully.",
+          5
+        ],
+        [
+          "The stair",
+          "On the worst errand of his life, a folded paper goes up a palace stair — and a court sings the questions tasteless.",
+          9
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Triton · his king"
+        ],
+        [
+          "char",
+          "Ursula · the pupil he made"
+        ]
+      ],
+      "locked": "What he stayed in the room for",
+      "stages": [
+        {
+          "at": 34,
+          "resubtitle": "The last witness",
+          "locked": ""
+        }
+      ]
+    },
+    "alister": {
+      "type": "char",
+      "sigil": "M",
+      "title": "Alister",
+      "subtitle": "Clerk of the crown survey",
+      "aliases": [
+        "Alister",
+        {
+          "t": "Marren",
+          "from": 22
+        }
+      ],
+      "fields": [
+        [
+          "The survey",
+          "A quick young man of the capital with the second room in sight — and a seat, when he can get one, at the scholars’ lamp.",
+          3
+        ],
+        [
+          "The smoothing",
+          "He sees the same wrong she sees on the outer reef — and steps around it, easy and open-handed, making the water flat, to keep them both safe. The same instrument, better tuned, for fifty years.",
+          3
+        ],
+        [
+          "The returns",
+          "He comes back down the water year on year — commissioner reviewing reassessments he once countersigned, eleven days on nine-day errands, the capital’s whole freight left at her lamp.",
+          22
+        ],
+        [
+          "The name",
+          "Down from the festival in court clothes, too bright, three days’ hard travel to her lamp first: “They gave me a name up there.” And he does not say what he had to say to get it.",
+          22
+        ],
+        [
+          "Truth, curated",
+          "The testimony collated against twenty years of lamplight: no forgery, no clause moved. Every statement true, and true at her lamp first. He selected. He did not move the ink; he moved the light.",
+          24
+        ],
+        [
+          "The dais-foot",
+          "Steward of the ruins in a plain coat, asking no office and no chain — serving forever, faultlessly, in the only room he ever wanted, furnished entirely with what he sold to get there.",
+          34
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Ursula · the lamp he returns to"
+        ]
+      ],
+      "locked": "What the name cost",
+      "stages": [
+        {
+          "at": 23,
+          "resubtitle": "Crown commissioner"
+        },
+        {
+          "at": 34,
+          "resubtitle": "Steward of the ruins",
+          "locked": ""
+        }
+      ]
+    },
+    "ariel": {
+      "type": "char",
+      "sigil": "A",
+      "title": "Ariel",
+      "subtitle": "The seventh daughter",
+      "aliases": [
+        {
+          "t": "Ariel",
+          "from": 17
+        }
+      ],
+      "fields": [
+        [
+          "The seventh daughter",
+          "The youngest of the seven — red-haired, seeing everything, asking the question nobody at court would ask: did telling them the truth ever once make them choose differently?",
+          17
+        ],
+        [
+          "The voice",
+          "The witch holds her through the taking of her voice with four arms, impersonal as a midwife. The terms are read in full. She signs.",
+          25
+        ],
+        [
+          "The pointing arm",
+          "At the rail in the storm, voice restored, pointing the prow at the thing in the water — and she is right, and the witch knows she is right.",
+          31
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Triton · father"
+        ],
+        [
+          "char",
+          "Attina · eldest sister"
+        ]
+      ],
+      "locked": "What she will pay",
+      "stages": [
+        {
+          "at": 31,
+          "resubtitle": "Her own voice",
+          "locked": ""
+        }
+      ]
+    },
+    "attina": {
+      "type": "char",
+      "sigil": "✦",
+      "title": "Attina",
+      "subtitle": "Eldest daughter of the crown",
+      "aliases": [
+        "Attina"
+      ],
+      "fields": [
+        [
+          "The eldest",
+          "A ledger against her chest, face held level by main strength — the daughter who counts what the crown would rather sing.",
+          6
+        ],
+        [
+          "The council",
+          "Seven level seats under a broken roof, laws bent to a show of hands, the deep’s contracts honored as written — because the council does not intend to govern less honestly than a witch.",
+          34
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Triton · father"
+        ],
+        [
+          "char",
+          "Ariel · youngest sister",
+          17
+        ]
+      ],
+      "locked": "What she will carry",
+      "stages": [
+        {
+          "at": 34,
+          "resubtitle": "The council of seven",
+          "locked": ""
+        }
+      ]
+    },
+    "vess": {
+      "type": "char",
+      "sigil": "V",
+      "title": "Vess",
+      "subtitle": "Apothecary of the deep",
+      "aliases": [
+        "Vess"
+      ],
+      "fields": [
+        [
+          "The eyeless kind",
+          "Blind, older than the Matriarch by her own account and disbelieved by everyone — arrived one season to trade tinctures for a hearing and never entirely left. Teaches mercilessly, by asking.",
+          13
+        ],
+        [
+          "The ink that carries its own lamp",
+          "Lamp-jelly light, fixed with smoker-silver, sealed in shell: writing that glows from inside, readable by lightless eyes. “Your city wrote for the sighted in the sunlight. You will be writing for everyone else.”",
+          13
+        ],
+        [
+          "Closed level",
+          "“Enter that I was owed nothing and owed nothing. There are not six creatures in this ocean who will close level. I was one.”",
+          22
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Ursula · her student"
+        ]
+      ],
+      "locked": "What her jars hold",
+      "stages": [
+        {
+          "at": 22,
+          "resubtitle": "Owed nothing · Owed nothing",
+          "locked": ""
+        }
+      ]
+    },
+    "flotsam": {
+      "type": "char",
+      "sigil": "F",
+      "title": "Flotsam",
+      "subtitle": "The crooked eel",
+      "aliases": [
+        "Flotsam"
+      ],
+      "fields": [
+        [
+          "The crooked one",
+          "Came during the writing, the way the tide arrives. Takes the high station in the warm fault — and one sleep she wakes moved out of the cold, the crooked eel lying along her spine like a drawn line.",
+          11
+        ],
+        [
+          "The invalid mark",
+          "Considers the treaty’s fresh marks with the gravity of a chief clerk, presses his face into the glass beside them — twice, then a third time, establishing a right of way — and the laughing comes back.",
+          12
+        ],
+        [
+          "The witch’s post",
+          "He and his kind carry contract-rolls down every current of the regions, surrendering them to no hand but the named hand. Headmen trust the eels before any crown courier.",
+          22
+        ],
+        [
+          "The keeper",
+          "The wall glows; the stones sit level, a hand apart, where weighing is still to be done. He keeps the station, and the record, and waits, as long as waiting takes.",
+          33
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Jetsam · the straight one"
+        ],
+        [
+          "char",
+          "Ursula · the mistress"
+        ]
+      ],
+      "locked": "What he keeps",
+      "stages": [
+        {
+          "at": 33,
+          "resubtitle": "Keeper of the record",
+          "locked": ""
+        }
+      ]
+    },
+    "jetsam": {
+      "type": "char",
+      "sigil": "J",
+      "title": "Jetsam",
+      "subtitle": "The straight eel",
+      "aliases": [
+        "Jetsam"
+      ],
+      "fields": [
+        [
+          "The straight one",
+          "Takes the low station at the cavern mouth, facing out, in the manner of a thing that intends to be asked a question first.",
+          11
+        ],
+        [
+          "The post",
+          "Runs the skins up the walls and back — the emptied satchel always comes home.",
+          22
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Flotsam · the crooked one"
+        ]
+      ],
+      "locked": "What he watches for"
+    },
+    "seamother": {
+      "type": "char",
+      "sigil": "K",
+      "title": "Ka’analoa",
+      "subtitle": "The Sea Mother",
+      "glimpse": true,
+      "aliases": [
+        "Sea Mother",
+        "Ka’analoa",
+        "Ka'analoa"
+      ],
+      "fields": [
+        [
+          "Down here",
+          "Something vast and patient and utterly without light considered her, the whole length of her — and kept her. The deep never names it. They say down here the way the city said the crown.",
+          11
+        ],
+        [
+          "The trade",
+          "An eye like a risen moon, old gold, lidded like a gate. She deals in lives, not objects: what she makes, she makes of living flesh, and it is not taken back.",
+          15
+        ],
+        [
+          "The collection",
+          "An arm bigger than the lair takes two things — the long spent thing with three cold points, and the last warm jar — and leaves the two small stones exactly as they lay.",
+          33
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Ursula · little scale"
+        ]
+      ],
+      "locked": "What she waits for",
+      "stages": [
+        {
+          "at": 33,
+          "resubtitle": "In the water before it was anyone’s",
+          "locked": ""
+        }
+      ]
+    },
+    "matriarch": {
+      "type": "char",
+      "sigil": "◌",
+      "title": "The Matriarch",
+      "subtitle": "Elder of the small cousins",
+      "aliases": [
+        "Matriarch"
+      ],
+      "fields": [
+        [
+          "The brooding-caves",
+          "Elder of the deep’s octopus-kind, keeper of the caves where the deep stands observance at the keeping — fins folded, utterly still. Not fear. Observance.",
+          14
+        ],
+        [
+          "The Warm War",
+          "The roads emptied — a warmth with no sun in it, up from the stone of the reef. The peoples of the shelf asked the king to take his warmth back, and were told to seek grounds they could hold. He came to the shelf himself, with the fork.",
+          14
+        ],
+        [
+          "Down",
+          "The trench where her mother’s people massed is shaped like a shell opened by a knife; nothing has grown in it in a hundred and forty years. The peoples went where the writ did not run. They were the first.",
+          14
+        ]
+      ],
+      "rels": [],
+      "locked": "What the caves keep",
+      "stages": [
+        {
+          "at": 14,
+          "resubtitle": "The first of the fallen",
+          "locked": ""
+        }
+      ]
+    },
+    "atlantica": {
+      "type": "place",
+      "sigil": "◆",
+      "title": "Atlantica",
+      "subtitle": "The reef city",
+      "region": "the-reef",
+      "aliases": [
+        "Atlantica"
+      ],
+      "fields": [
+        [
+          "The terraces",
+          "The garden of the world: terraces climbing the reef, counting-houses, festival lamps on kelp-cord, and the golden hall above it all.",
+          2
+        ],
+        [
+          "Stripped",
+          "The witch’s storm takes the hall to the pale bone of the old coral, and the light that comes through the torn roof is ordinary light.",
+          32
+        ]
+      ],
+      "rels": [],
+      "locked": "What the gold was"
+    },
+    "atlantis": {
+      "type": "place",
+      "sigil": "≋",
+      "title": "Atlantis",
+      "subtitle": "The city on the coast",
+      "region": "the-reef",
+      "aliases": [
+        "Atlantis"
+      ],
+      "fields": [
+        [
+          "Before the water",
+          "Whitewashed tiers above a three-armed harbor, golden cupolas, the New World Center rising where the North altar stood — and the mountain marching down through the jungle.",
+          1
+        ],
+        [
+          "The rest of the entry",
+          "There was no them. The greedy city was our city; the gold in the walls these two hundred years is the same gold the ship brought in.",
+          32
+        ]
+      ],
+      "rels": [],
+      "locked": "What the clean water washed away",
+      "stages": [
+        {
+          "at": 32,
+          "resubtitle": "The city below the founding",
+          "locked": ""
+        }
+      ]
+    },
+    "verge": {
+      "type": "place",
+      "sigil": "▽",
+      "title": "The Verge",
+      "subtitle": "Edge of the charts",
+      "region": "the-verge",
+      "aliases": [
+        "Verge"
+      ],
+      "fields": [
+        [
+          "The margin",
+          "The outermost water the crown bothers to survey — first stop of the circuit, last stop of the crown’s patience.",
+          3
+        ],
+        [
+          "Clause nine",
+          "The Verge feeding grounds, from the Needle to the Drop, held in common by the peoples of the Verge in perpetuity, tribute notwithstanding. Six of her mother’s words — under review, this season, by the crown.",
+          3
+        ]
+      ],
+      "rels": [],
+      "locked": "What the survey found there"
+    },
+    "abyss": {
+      "type": "place",
+      "sigil": "☾",
+      "title": "The Abyss",
+      "subtitle": "The country between the lights",
+      "region": "the-abyss",
+      "aliases": [
+        "Abyss"
+      ],
+      "fields": [
+        [
+          "The smokers",
+          "A town of black stone chimneys taller than the bell tower, warm water in the dead cold — and everything that lives down here gathered to it like the city to the festival.",
+          11
+        ],
+        [
+          "Arrival is not an event",
+          "Everything in the Abyss arrived once. The only question the dark has ever asked anybody is whether they could live in it.",
+          11
+        ],
+        [
+          "The song",
+          "Down here, down here — the dark keeps what the light lets fall. You do not learn it; you are included in it, verse by verse, as the deep decides which of its sorrows are yours to carry.",
+          13
+        ]
+      ],
+      "rels": [],
+      "locked": "What holds the warm water"
+    },
+    "isles": {
+      "type": "place",
+      "sigil": "△",
+      "title": "The Isles",
+      "subtitle": "The crown above the water",
+      "region": "the-isles",
+      "aliases": [
+        "Isles"
+      ],
+      "fields": [
+        [
+          "The other crown",
+          "Counterparty of the oldest settlement in the water — the treaty whose seventh article held the peace, word for word for word.",
+          7
+        ],
+        [
+          "The ship",
+          "A tall ship of the new build, raked bow, a boy lashed to his own helm by the waist — the only party in the whole fifty-year instrument acting in perfect good faith.",
+          31
+        ]
+      ],
+      "rels": [],
+      "locked": "What the seventh article says"
+    },
+    "ledger": {
+      "type": "place",
+      "sigil": "▤",
+      "title": "The Ledger",
+      "subtitle": "The plain hand",
+      "aliases": [
+        "Ledger"
+      ],
+      "fields": [
+        [
+          "The record",
+          "Indexed, level, exact — boundaries and dowries, the forty-one names of the cold current, and the entries nobody ordered: language keeps the accounts men won’t.",
+          18
+        ],
+        [
+          "The unfinished entry",
+          "The hundredth entry stops mid-word — the only unfinished line in the hundred — at a double knock on a rack-house door.",
+          22
+        ],
+        [
+          "The two lines",
+          "At every stop, two lines: the ones with something to trade, and the longer line of the ones with nothing. The ink judges, not she — it rises gray and runs clear on an unbalanced page. Only the level takes.",
+          18
+        ]
+      ],
+      "rels": [],
+      "locked": "The entry that stops mid-word"
+    },
+    "lair": {
+      "type": "place",
+      "sigil": "⌂",
+      "title": "The Lair",
+      "subtitle": "A fault in the old lava",
+      "region": "the-abyss",
+      "aliases": [
+        "lair"
+      ],
+      "fields": [
+        [
+          "The cavern",
+          "Walls at her back and one mouth she can watch, in the margin where warm meets cold. It was nobody’s, and then it was hers.",
+          11
+        ],
+        [
+          "The wall",
+          "Sheeted in soft black glass that takes a mark the way wax takes a seal — forty years of level lines, glowing, and at their head the sentence the whole deep comes to see.",
+          11
+        ],
+        [
+          "The registry",
+          "Below the record, the second section: two sentences here, three there, a knuckle-print, a spiral of fin-tips — nothing on it can compel anyone, and everything on it holds, because balance holds or nothing does.",
+          12
+        ],
+        [
+          "The collection",
+          "The jars ranked, the work-stone clean, two small worn stones a hand apart — and the wall still glowing. Whatever the wall held, it is still holding it.",
+          33
+        ]
+      ],
+      "rels": [],
+      "locked": "What is written there"
+    },
+    "corran": {
+      "type": "char",
+      "sigil": "C",
+      "title": "House Corran",
+      "subtitle": "Second terrace · Reaching",
+      "aliases": [
+        "Corran"
+      ],
+      "fields": [
+        [
+          "A house reaching",
+          "A shipping family reaching for the first terrace — a boy with a coral-tipped goad driving Verge folk off common ground under color of a lease that cannot exist.",
+          3
+        ],
+        [
+          "The bad paper",
+          "Clause nine says the Verge grounds are held in common in perpetuity. The boy does not care what clause nine says — and he knew it was under review before the scriptorium did.",
+          3
+        ]
+      ],
+      "rels": [],
+      "locked": "How far the house will reach"
+    },
+    "vell": {
+      "type": "char",
+      "sigil": "□",
+      "title": "Master Vell",
+      "subtitle": "Survey master",
+      "aliases": [
+        "Vell"
+      ],
+      "fields": [
+        [
+          "The count",
+          "Counts heads at the Needle in the morning and the shelf-stair at dusk and not once between. Reads clause nine aloud — then says the outer charters are under review, and maps the deep shelves.",
+          3
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "petra": {
+      "type": "char",
+      "sigil": "P",
+      "title": "Petra",
+      "subtitle": "Survey student",
+      "aliases": [
+        "Petra"
+      ],
+      "fields": [
+        [
+          "The twelfth head",
+          "Owes Alister a favor and can throw her voice — so Vell counts twelve at dusk. Fifty years on, “the Petra story” is still what he tells children at strange tables.",
+          3
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "brooder": {
+      "type": "char",
+      "sigil": "■",
+      "title": "The Brooders",
+      "subtitle": "Plated diggers of the smoker-fields",
+      "aliases": [
+        "Brooder",
+        "Brooders"
+      ],
+      "fields": [
+        [
+          "One sentence per sleep",
+          "Broad as a door, patient as a door, a dozen young tucked under the skirts. The party that talks least is standing on its weak plank — or its strong one.",
+          12
+        ],
+        [
+          "The first mark",
+          "An armored knuckle pressed into the soft glass below two level sentences — the first signature on the deep’s first drafted deal.",
+          12
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "shoal": {
+      "type": "char",
+      "sigil": "∷",
+      "title": "The Shoal",
+      "subtitle": "A hundred small lamps · One party",
+      "aliases": [
+        "Shoal"
+      ],
+      "fields": [
+        [
+          "Schooled to argue",
+          "A hundred lamp-fish schooled into one shape, which is how the Shoal does everything — it can only speak at dusk-turn, when it drums dense.",
+          12
+        ],
+        [
+          "The spiral signature",
+          "It descends all together, makes itself a tightening spiral, and presses the shape into the glass — a hundred fin-tips, one unbroken curl, a signature made of everyone.",
+          12
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "hurst": {
+      "type": "char",
+      "sigil": "H",
+      "title": "Hurst",
+      "subtitle": "Digger of the Verge blood",
+      "aliases": [
+        "Hurst"
+      ],
+      "fields": [
+        [
+          "The small one",
+          "At the back of a crowded hearing, plates scarred from being moved on and moved on: the child from the South beds who looked back the whole way down — the beds lost after all, clause nine notwithstanding.",
+          12
+        ],
+        [
+          "The household",
+          "Named for the sound his plates make settling, and he let the name stand. The heavy end of every task; the creditor of her old life, standing watch in her new one.",
+          13
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Ursula · the one who stepped in front of the goad"
+        ]
+      ],
+      "locked": "What the beds cost his family"
+    },
+    "calla": {
+      "type": "char",
+      "sigil": "ℓ",
+      "title": "Calla",
+      "subtitle": "Elder of the kelp country",
+      "aliases": [
+        "Calla"
+      ],
+      "fields": [
+        [
+          "“You’ve been studying.”",
+          "Comes out at dusk with a lamp she does not need, peers up at the shape the deep has sent, and gives the regions a category that is not monster. Her sentences travel ahead of the witch forever after.",
+          16
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "brack": {
+      "type": "char",
+      "sigil": "B",
+      "title": "Headman Brack",
+      "subtitle": "Kelp country",
+      "aliases": [
+        "Brack"
+      ],
+      "fields": [
+        [
+          "The headman",
+          "Meets the quota and skims the meeting of it — the Withys’ shell fills the crown’s baskets first and his own second, and the only scale in the village hangs in his own shed.",
+          16
+        ],
+        [
+          "Sixteen days",
+          "His hand will not lift the net; his feet will not pass the Withys’ door; an itch grows under the marking hand. Not anger — just the deal, still there. On the sixteenth day, he pays.",
+          16
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "The Withys · counterparty"
+        ]
+      ],
+      "locked": ""
+    },
+    "withys": {
+      "type": "char",
+      "sigil": "W",
+      "title": "The Withys",
+      "subtitle": "South Shadow beds · Nine generations",
+      "aliases": [
+        "Withys",
+        "Withy"
+      ],
+      "fields": [
+        [
+          "Nine generations",
+          "A claim so old it has no paper — the same claim she heard argued on the Verge at eighteen. They do the starving for the whole arrangement, until the first contract of the ink.",
+          16
+        ],
+        [
+          "The grandmother",
+          "Presses her whole worn palm flat to the glowing page as if warming it — and at the racks, with the spans paid at her door, weeps on the witch’s hands in her mother’s cadence.",
+          16
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Headman Brack · counterparty"
+        ]
+      ],
+      "locked": ""
+    },
+    "marl": {
+      "type": "char",
+      "sigil": "☉",
+      "title": "Marl",
+      "subtitle": "Carrier-merchant · Three ships",
+      "aliases": [
+        "Marl"
+      ],
+      "fields": [
+        [
+          "The proposition",
+          "Rings on three fingers, arriving just after a bad season with money in both hands — posting his own fleet as collateral, grandly, unasked.",
+          18
+        ],
+        [
+          "The perils clause, finished",
+          "Loss by the sea excuses what the sea takes. But cargo excused as lost that is thereafter sold is not lost; it is converted — and the carrier owes threefold, and the collateral stands surety.",
+          18
+        ],
+        [
+          "The hand over the pan",
+          "The story that traveled: coin of the converted stores dropping through his fingers, three times, above the clerk’s pan. The stores got through. The forfeit fleet runs the fringe free, forever.",
+          18
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "sel": {
+      "type": "char",
+      "sigil": "§",
+      "title": "The Widow Sel",
+      "subtitle": "Shell country · The far door",
+      "aliases": [
+        "Sel"
+      ],
+      "fields": [
+        [
+          "The second line",
+          "“I did my own weighing before I came, so as not to waste your hearing. My whole side of the scale is thank-you. So say your no kindly, mistress, and I’ll be off your water.”",
+          18
+        ],
+        [
+          "No entry",
+          "The ink runs clear — only the level takes. After the hearing: three spans of dried stores, autumn and midwinter, from the witch’s own stock, on one condition. Tell no one, or it stops. She kept it to her grave.",
+          18
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "needle": {
+      "type": "place",
+      "sigil": "♠",
+      "title": "The Needle",
+      "subtitle": "Survey landmark",
+      "region": "the-reef",
+      "aliases": [
+        "Needle"
+      ],
+      "fields": [
+        [
+          "The count",
+          "Where Master Vell counts heads, morning and dusk — and where two students slip over the lip of the Drop between counts, into the best hour of the field year.",
+          3
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    },
+    "drop": {
+      "type": "place",
+      "sigil": "▾",
+      "title": "The Drop",
+      "subtitle": "Where the shelf ends",
+      "aliases": [
+        "Drop"
+      ],
+      "fields": [
+        [
+          "The lip",
+          "The reef face where the coral goes thin and hard and the deep goes down blue and then black on your left hand.",
+          3
+        ],
+        [
+          "Over the edge",
+          "The one road out of the light that no charter reviews and no writ runs down.",
+          10
+        ]
+      ],
+      "rels": [],
+      "locked": ""
+    }
+  },
+  "regions": [
+    {
+      "id": "the-isles",
+      "label": "The Isles",
+      "poly": "254,9 373,15 366,64 300,75 246,52",
+      "lx": 308,
+      "ly": 41
+    },
+    {
+      "id": "the-reef",
+      "label": "Atlantica",
+      "poly": "116,23 231,15 254,58 231,104 146,110 108,70",
+      "lx": 177,
+      "ly": 61
+    },
+    {
+      "id": "the-verge",
+      "label": "The Verge",
+      "poly": "12,75 100,87 123,133 77,168 15,151",
+      "lx": 62,
+      "ly": 122
+    },
+    {
+      "id": "the-regions",
+      "label": "Kelp Country & Shell Roads",
+      "poly": "131,128 270,116 347,145 300,180 162,186 123,157",
+      "lx": 223,
+      "ly": 151
+    },
+    {
+      "id": "the-abyss",
+      "label": "The Abyss",
+      "poly": "31,197 212,191 354,209 339,276 135,281 39,261",
+      "lx": 193,
+      "ly": 238
+    }
+  ],
+  "dots": [
+    {
+      "id": "atlantica",
+      "x": 181,
+      "y": 52,
+      "region": "the-reef"
+    },
+    {
+      "id": "atlantis",
+      "x": 200,
+      "y": 87,
+      "region": "the-reef"
+    },
+    {
+      "id": "verge",
+      "x": 62,
+      "y": 128,
+      "region": "the-verge"
+    },
+    {
+      "id": "isles",
+      "x": 316,
+      "y": 35,
+      "region": "the-isles"
+    },
+    {
+      "id": "lair",
+      "x": 146,
+      "y": 238,
+      "region": "the-abyss"
+    },
+    {
+      "id": "abyss",
+      "x": 254,
+      "y": 249,
+      "region": "the-abyss"
+    }
+  ]
+}

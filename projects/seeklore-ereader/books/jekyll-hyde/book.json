@@ -1,0 +1,593 @@
+{
+  "id": "jekyll-hyde",
+  "title": "Dr Jekyll and Mr Hyde",
+  "tagline": "Robert Louis Stevenson · 1886",
+  "coverAuthor": "R. L. Stevenson",
+  "coverBg": "#3A3630",
+  "totalChapters": 10,
+  "progressSpan": 0.6,
+  "contentFile": "content.txt",
+  "mapTitle": "Utterson’s London",
+  "chapters": [
+    {
+      "eyebrow": "Chapter One",
+      "title": "Story of the Door"
+    },
+    {
+      "eyebrow": "Chapter Two",
+      "title": "Search for Mr. Hyde"
+    },
+    {
+      "eyebrow": "Chapter Three",
+      "title": "Dr. Jekyll Was Quite at Ease"
+    },
+    {
+      "eyebrow": "Chapter Four",
+      "title": "The Carew Murder Case"
+    },
+    {
+      "eyebrow": "Chapter Five",
+      "title": "Incident of the Letter"
+    },
+    {
+      "eyebrow": "Chapter Six",
+      "title": "Incident of Dr. Lanyon"
+    }
+  ],
+  "stage": {
+    "entity": "hyde",
+    "logMeta": "Hyde’s dossier updated — seen face to face at last"
+  },
+  "entities": {
+    "utterson": {
+      "type": "char",
+      "sigil": "U",
+      "title": "Mr. Utterson",
+      "subtitle": "Lawyer",
+      "fields": [
+        [
+          "Countenance",
+          "Rugged, never lighted by a smile; cold, scanty and embarrassed in discourse; lean, long, dusty, dreary and yet somehow lovable."
+        ],
+        [
+          "Practice",
+          "Austere with himself — gin when alone, to mortify a taste for vintages. Frequently the last reputable acquaintance and the last good influence in the lives of downgoing men."
+        ],
+        [
+          "Creed",
+          "“I incline to Cain’s heresy: I let my brother go to the devil in his own way.”"
+        ],
+        [
+          "The safe",
+          "Locks Hyde’s note away once Guest lays the two hands side by side — and keeps the secret with it.",
+          5
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Richard Enfield · kinsman"
+        ]
+      ],
+      "locked": "What the will means",
+      "aliases": [
+        "Mr. Utterson",
+        "Utterson"
+      ]
+    },
+    "enfield": {
+      "type": "char",
+      "sigil": "E",
+      "title": "Richard Enfield",
+      "subtitle": "Man about town",
+      "fields": [
+        [
+          "Standing",
+          "Utterson’s distant kinsman and Sunday-walk companion — a nut to crack for many, what the two see in each other."
+        ],
+        [
+          "His rule",
+          "“You start a question, and it’s like starting a stone… the more it looks like Queer Street, the less I ask.”"
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Mr. Utterson · kinsman"
+        ]
+      ],
+      "locked": "What else he has noticed",
+      "aliases": [
+        "Richard Enfield",
+        "Enfield"
+      ]
+    },
+    "hyde": {
+      "type": "char",
+      "sigil": "H",
+      "title": "Edward Hyde",
+      "subtitle": "Unknown · The man with the key",
+      "fields": [
+        [
+          "The trampling",
+          "Ran calmly over a child’s body at a black winter crossing and left her screaming. “It wasn’t like a man; it was like some damned Juggernaut.”"
+        ],
+        [
+          "The cheque",
+          "Settled the scandal at a hundred pounds — ten in gold and a cheque on Coutts’s, signed with a name very well known and often printed. The cheque was genuine."
+        ],
+        [
+          "Impression",
+          "Something displeasing, something downright detestable; a strong feeling of deformity, though no one can specify the point."
+        ],
+        [
+          "The Carew murder",
+          "Clubbed an aged, beautiful gentleman to the earth under the maid’s window, with ape-like fury — and was tracked to Soho, an hour gone.",
+          4
+        ],
+        [
+          "The letter",
+          "“Your benefactor need labour under no alarm for my safety” — signed Edward Hyde, in a hand identical to the doctor’s, only sloped the other way.",
+          5
+        ]
+      ],
+      "rels": [],
+      "locked": "Whose name signs his cheques",
+      "stage": {
+        "fields": [
+          [
+            "Face to face",
+            "Pale and dwarfish; a displeasing smile; a murderous mixture of timidity and boldness; a husky, whispering and somewhat broken voice. “If ever I read Satan’s signature upon a face, it is on that of your new friend.”"
+          ],
+          [
+            "His standing",
+            "Carries his own key to the door, and Dr. Jekyll’s servants have all orders to obey him. He mostly comes and goes by the laboratory."
+          ]
+        ],
+        "rels": [
+          [
+            "char",
+            "Dr. Jekyll · heir under the will"
+          ]
+        ],
+        "locked": "What he is to Dr. Jekyll"
+      },
+      "aliases": [
+        "Edward Hyde",
+        "Mr. Hyde",
+        "Hyde"
+      ],
+      "stages": [
+        {
+          "at": 4,
+          "resubtitle": "Murderer · Hunted",
+          "locked": "Where he has gone"
+        }
+      ]
+    },
+    "jekyll": {
+      "type": "char",
+      "sigil": "J",
+      "title": "Dr. Henry Jekyll",
+      "subtitle": "M.D., D.C.L. · The square",
+      "glimpse": true,
+      "fields": [
+        [
+          "At ease",
+          "A large, well-made, smooth-faced man of fifty, with every mark of capacity and kindness — host of pleasant dinners to old cronies, all judges of good wine."
+        ],
+        [
+          "The one condition",
+          "“The moment I choose, I can be rid of Mr. Hyde. I give you my hand upon that.” And he begs Utterson to let the matter sleep."
+        ],
+        [
+          "The letter",
+          "Swears he is done with Hyde in this world — but Poole knows of no messenger, and Utterson’s blood runs cold: “Henry Jekyll forge for a murderer!”",
+          5
+        ],
+        [
+          "Seclusion",
+          "Two bright months of dinners and charity, then the door shuts even to Utterson. “I have brought on myself a punishment and a danger that I cannot name.”",
+          6
+        ]
+      ],
+      "locked": "Why his will names Edward Hyde",
+      "rels": [
+        [
+          "char",
+          "Mr. Utterson · lawyer & friend"
+        ],
+        [
+          "char",
+          "Poole · butler"
+        ]
+      ],
+      "aliases": [
+        "Henry Jekyll",
+        "Dr. Jekyll",
+        "Jekyll"
+      ]
+    },
+    "lanyon": {
+      "type": "char",
+      "sigil": "L",
+      "title": "Dr. Lanyon",
+      "subtitle": "Physician · Cavendish Square",
+      "fields": [
+        [
+          "Manner",
+          "A hearty, healthy, dapper, red-faced gentleman with a shock of hair prematurely white and a boisterous and decided manner; a geniality somewhat theatrical, but resting on genuine feeling."
+        ],
+        [
+          "The estrangement",
+          "“It is more than ten years since Henry Jekyll became too fanciful for me… Such unscientific balderdash would have estranged Damon and Pythias.” Of Hyde he has never heard."
+        ],
+        [
+          "The shock",
+          "“I have had a shock, and I shall never recover.” Dead within a fortnight — leaving a sealed packet not to be opened till the death or disappearance of Henry Jekyll.",
+          6
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Mr. Utterson · oldest friend"
+        ]
+      ],
+      "locked": "The right and wrong of this",
+      "aliases": [
+        "Dr. Lanyon",
+        "Lanyon"
+      ],
+      "stages": [
+        {
+          "at": 6,
+          "resubtitle": "Physician · Doomed",
+          "locked": "What the sealed packet holds"
+        }
+      ]
+    },
+    "poole": {
+      "type": "char",
+      "sigil": "P",
+      "title": "Poole",
+      "subtitle": "Butler · Jekyll’s household",
+      "fields": [
+        [
+          "Post",
+          "A well-dressed, elderly servant at the door of the one house in the square still occupied entire."
+        ],
+        [
+          "Orders",
+          "“Mr. Hyde has a key… We have all orders to obey him.” Hyde never dines here; he comes and goes by the laboratory."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Dr. Jekyll · master"
+        ]
+      ],
+      "locked": "What the servants see",
+      "aliases": [
+        "Poole"
+      ]
+    },
+    "bystreet": {
+      "type": "place",
+      "sigil": "◎",
+      "title": "The By-street",
+      "subtitle": "Street · A busy quarter",
+      "fields": [
+        [
+          "Character",
+          "Small and what is called quiet, but driving a thriving trade on the weekdays; freshly painted shutters, well-polished brasses — it shone out in contrast to its dingy neighbourhood, like a fire in a forest."
+        ]
+      ],
+      "rels": [
+        [
+          "place",
+          "The Door"
+        ]
+      ],
+      "region": "by-street",
+      "aliases": [
+        "the by-street"
+      ]
+    },
+    "door": {
+      "type": "place",
+      "sigil": "▣",
+      "title": "The Door",
+      "subtitle": "A sinister block of building",
+      "fields": [
+        [
+          "The block",
+          "Two storeys high; no window, nothing but a door on the lower storey and a blind forehead of discoloured wall on the upper — the marks of prolonged and sordid negligence."
+        ],
+        [
+          "Neglect",
+          "Equipped with neither bell nor knocker, blistered and distained. Nobody goes in or out but, once in a great while, the gentleman of Enfield’s adventure."
+        ]
+      ],
+      "rels": [
+        [
+          "place",
+          "The By-street"
+        ]
+      ],
+      "locked": "What lies behind it",
+      "region": "by-street"
+    },
+    "gaunt": {
+      "type": "place",
+      "sigil": "⌂",
+      "title": "Gaunt Street",
+      "subtitle": "Utterson’s house",
+      "fields": [
+        [
+          "Description",
+          "The lawyer’s bachelor house, close by a church whose bells ring conveniently near. Sunday evenings end here with a volume of dry divinity until the clock strikes twelve."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Mr. Utterson"
+        ]
+      ],
+      "region": "gaunt-street",
+      "aliases": [
+        "Gaunt Street"
+      ]
+    },
+    "cavendish": {
+      "type": "place",
+      "sigil": "◈",
+      "title": "Cavendish Square",
+      "subtitle": "The citadel of medicine",
+      "fields": [
+        [
+          "Description",
+          "Where the great Dr. Lanyon has his house and receives his crowding patients."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Dr. Lanyon"
+        ]
+      ],
+      "region": "cavendish",
+      "aliases": [
+        "Cavendish Square"
+      ]
+    },
+    "soho": {
+      "type": "place",
+      "sigil": "✶",
+      "title": "Soho",
+      "subtitle": "District",
+      "glimpse": true,
+      "fields": [
+        [
+          "The quarter",
+          "Muddy ways, slatternly passengers, a gin palace, a low French eating house — under the fog, like a district of some city in a nightmare."
+        ],
+        [
+          "Hyde’s rooms",
+          "Furnished with luxury and good taste — found ransacked in haste, pockets inside out, and a pile of grey ashes on the hearth."
+        ]
+      ],
+      "locked": "Where he has gone",
+      "region": "soho",
+      "aliases": [
+        "Soho"
+      ]
+    },
+    "square": {
+      "type": "place",
+      "sigil": "◇",
+      "title": "The Square of Ancient Houses",
+      "subtitle": "Square · Second from the corner",
+      "fields": [
+        [
+          "Description",
+          "Ancient, handsome houses, now mostly decayed and let in flats and chambers — map-engravers, architects, shady lawyers. One house, second from the corner, is still occupied entire, with a great air of wealth and comfort."
+        ],
+        [
+          "The hall",
+          "Paved with flags, warmed like a country house by a bright open fire — Utterson calls it the pleasantest room in London."
+        ]
+      ],
+      "rels": [
+        [
+          "place",
+          "The By-street · round the corner"
+        ],
+        [
+          "char",
+          "Poole"
+        ]
+      ],
+      "region": "jekyll-square",
+      "aliases": [
+        "the square"
+      ]
+    },
+    "carew": {
+      "type": "char",
+      "sigil": "C",
+      "title": "Sir Danvers Carew",
+      "subtitle": "M.P.",
+      "fields": [
+        [
+          "The lane",
+          "An aged beautiful gentleman with white hair, accosting with a very pretty manner of politeness — struck down under the maid’s window."
+        ],
+        [
+          "Found on him",
+          "A purse, a gold watch, and a sealed and stamped envelope addressed to Mr. Utterson — no cards or papers besides."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Mr. Utterson · client"
+        ]
+      ],
+      "locked": "What he meant to post",
+      "aliases": [
+        "Sir Danvers Carew",
+        "Sir Danvers",
+        "Danvers Carew"
+      ]
+    },
+    "guest": {
+      "type": "char",
+      "sigil": "G",
+      "title": "Mr. Guest",
+      "subtitle": "Head clerk",
+      "fields": [
+        [
+          "Counsel",
+          "There is no man from whom Utterson keeps fewer secrets — a great student and critic of handwriting."
+        ],
+        [
+          "The comparison",
+          "Lays the murderer’s note beside the doctor’s dinner invitation: “the two hands are in many points identical: only differently sloped.”"
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Mr. Utterson · master"
+        ]
+      ],
+      "locked": "What he makes of it",
+      "aliases": [
+        "Mr. Guest",
+        "Guest"
+      ]
+    },
+    "lane": {
+      "type": "place",
+      "sigil": "▽",
+      "title": "The Lane by the River",
+      "subtitle": "Scene of the crime",
+      "fields": [
+        [
+          "That night",
+          "Brilliantly lit by the full moon and watched from the maid’s window — where the old gentleman bowed, and Mr. Hyde broke out of all bounds."
+        ]
+      ],
+      "rels": [],
+      "region": "the-river"
+    }
+  },
+  "regions": [
+    {
+      "id": "by-street",
+      "label": "The By-street",
+      "poly": "150,120 250,110 265,160 205,180 145,165",
+      "lx": 202,
+      "ly": 145
+    },
+    {
+      "id": "jekyll-square",
+      "label": "The Square",
+      "poly": "250,110 330,95 350,145 265,160",
+      "lx": 302,
+      "ly": 122
+    },
+    {
+      "id": "gaunt-street",
+      "label": "Gaunt Street",
+      "poly": "145,165 205,180 195,235 120,240 110,190",
+      "lx": 158,
+      "ly": 202
+    },
+    {
+      "id": "cavendish",
+      "label": "Cavendish Sq.",
+      "poly": "40,80 150,65 165,110 150,120 60,135",
+      "lx": 102,
+      "ly": 96
+    },
+    {
+      "id": "soho",
+      "label": "Soho",
+      "poly": "205,180 265,160 350,145 370,200 290,240 195,235",
+      "lx": 285,
+      "ly": 196
+    },
+    {
+      "id": "the-river",
+      "label": "By the River",
+      "poly": "20,250 120,240 195,235 290,240 380,235 385,290 15,290",
+      "lx": 200,
+      "ly": 268
+    },
+    {
+      "id": "regents",
+      "label": "???",
+      "poly": "170,15 340,10 330,95 250,110 165,60",
+      "lx": 255,
+      "ly": 52
+    }
+  ],
+  "dots": [
+    {
+      "id": "door",
+      "x": 232,
+      "y": 132,
+      "region": "by-street"
+    },
+    {
+      "id": "bystreet",
+      "x": 185,
+      "y": 158,
+      "region": "by-street"
+    },
+    {
+      "id": "square",
+      "x": 302,
+      "y": 132,
+      "region": "jekyll-square"
+    },
+    {
+      "id": "gaunt",
+      "x": 158,
+      "y": 212,
+      "region": "gaunt-street"
+    },
+    {
+      "id": "cavendish",
+      "x": 102,
+      "y": 106,
+      "region": "cavendish"
+    },
+    {
+      "id": "lane",
+      "x": 200,
+      "y": 262,
+      "region": "the-river"
+    }
+  ],
+  "notes": {
+    "jekyll": {
+      "color": "rose",
+      "anchor": "Ch 2 · “Mr. Seek”",
+      "noteType": "Highlight note",
+      "excerpt": "“If he be Mr. Hyde,” he had thought, “I shall be Mr. Seek.”",
+      "body": "The dry lawyer makes exactly one joke, and it turns him into a detective."
+    },
+    "hyde": {
+      "color": "char",
+      "anchor": "Edward Hyde",
+      "noteType": "Entity note",
+      "body": "Everyone describes him by the feeling he leaves, never by a feature. Enfield, the doctor, the women — all wanted him dead on sight."
+    }
+  },
+  "description": "Mr. Utterson the lawyer follows a door, a will, and a name — Edward Hyde — into the private weather of his oldest friend. London, fog, and a question of character."
+}

@@ -1,0 +1,363 @@
+{
+  "id": "redding",
+  "title": "Redding",
+  "tagline": "Book One of the Atios Cycle",
+  "coverAuthor": "The Atios Cycle",
+  "coverBg": "var(--char-base)",
+  "totalChapters": 9,
+  "progressSpan": 0.12,
+  "mapTitle": "The Reach around Redding",
+  "stage": {
+    "entity": "james",
+    "atChapter": 2,
+    "logMeta": "James’s dossier updated — and a relationship revealed"
+  },
+  "chapters": [
+    {
+      "eyebrow": "Chapter One",
+      "title": "Redding",
+      "paras": [
+        "[james|James] stepped out of the office, adjusting to the bright light. The wind had picked up and small grains of sand brushed against his cheek.",
+        "@I should get back home, he thought. Wind could get dangerous.",
+        "He took the elevator down and started to walk back to his apartment, towards the center of town. He had “lucked out,” as it was. New people to an out town would normally get a house on the outer ring as they built more rows of housing for new sets of riggers.",
+        "He lucked out in that the person who used to inhabit his space had died a few weeks back on [therig|the rig]. He was barely in the ground when James graduated and they assigned him the space. All of the apartments were of the same build, but he had a much shorter walk to the center of town than those on the outside.",
+        "Walking through the outer rings, he kept his eyes alert. He was a small kid on one of the more established rigs on [atios|Atios]. [redding|Redding] had a population of about 10,000 people. The outer rings were generally inhabited by the newest workers — those who had not yet been married because of their age or status. These types of people often got themselves into trouble.",
+        "James stopped to look at a wall a few rows in. Fresh graffiti covered several layers of other pseudo-art underneath it. In front of him was an image of a large man on his knees. He wore a capitol work uniform, the top half of his shirt unbuttoned and pulled back towards his shoulders.",
+        "On his chest, burned into the flesh, was a brand of the Central Authority symbol. The man was smiling with pride, flashing bright white teeth on a blue-eyed, clean-shaven face. People were commonly branded as they demonstrated their value to the Ation people. The brand was a symbol of honor; of accomplishment that can never be removed from a person.",
+        "He looked at the larger-than-life picture and shivered despite the hot sun above. He reached and touched the back of his right hand. The top 10% of each graduating class received such a brand. {amber|The skin was still sore, a month later, where the hot iron had pressed in and gave him his mark of honor.} He closed his eyes and could almost smell the air of the stage, where he and 300 others had received their marks.",
+        "He was so proud of himself that day. He and his friends had gone out that night to celebrate. There was only one other in his group with a wrapped hand that night. His name was [eli|Eli], short for Elijah. They had spent many hours studying for their exams, and James considered him his closest friend from [central|Central Academy].",
+        "They celebrated that night — one last hoorah before heading out to the real world of Atios.",
+        "James turned away from the mural and started home. Looking around, he saw neat rows of houses with debris littered here and there. Trash was collected weekly for recycling, but not everything made it into the bins. Central Health wasn’t as keen on keeping up with the outer rings as the inner ones.",
+        "About fifteen minutes later he reached [citycenter|the city center]. The atmosphere was noticeably different. The packed-sand road turned to pavement and the buildings were painted every few years. All of the windows were intact, and James caught his reflection as he walked into [generalstore|the General Store].",
+        "He was about five and a half feet tall and skinny, with deep brown eyes and a light beard starting to grow. A girl he once liked said she liked his dark hair and his strong jaw. The Central jumpsuit he wore for work was baggy on him still. He wanted to be taller, but he hadn’t had his growth spurt yet.",
+        "He walked towards the back to pick up supplies. The store sold household wares, tools, clothes, a limited selection of foods, basic medicines — it really was, as the name implied, general.",
+        "He brought his things to the counter and the man behind it looked down at him. “New to town?” asked the cashier, a bearded man in his fifties with a large gut.",
+        "“Yes sir, just finished my training up at the rig,” James said, standing as tall as he could. “Just these for me today.”",
+        "“Thought you might be. I swear, you newbies look younger and younger every year. I’m [steve|Steve, Steve G],” he pronounced the G as “gee.” “They call me that ’cuz I own this here general store — used to call me the General. Now it’s just G.”",
+        "“That’ll be a half liter.” “Here you go, Steve. I’m James,” he said, and handed over his newly issued Watercard from Central Bank.",
+        "Stepping back outside, James looked around at the other stores. The streets were full of dust-covered people. A group of boys, maybe five or six years old, chased each other around, playing some variation of tag involving throwing rocks.",
+        "There was a noticeable absence of girls from the group — and from the city, in fact. {sky|All children born in Central, from the breeding stock, and all females on Atios were sent to Central Academy when they were born.} James’ parents were unknown to him. All he knew was that they were citizens of Central.",
+        "A large truck lumbered by, honking at people to move. James watched the boys stop throwing rocks at each other and start throwing them at the truck. A woman appeared, grabbed one boy by the hands, and led him off the street as he fought her.",
+        "He passed [cityhall|city hall], a massive stone building with impressive arches supported by thick granite columns. It was the nicest building in town and required an entire staff to maintain. Most of the women in town worked here — as secretaries, maids, officials, inspectors, or in one of the Central Works departments.",
+        "Large banners hung from the arches. The Central Symbol was blown up large on a white background. At the end of every day the banners were replaced, as the dust stained them red after just a few hours. James thought they must have timed it to the shift changes, always putting on a good face for the workers.",
+        "His house was a few minutes’ walk outside of town, just four rings from the center. He liked it that way — his neighbors were quieter, older, and more accepting, and he wasn’t surrounded by people like [calvin|Calvin Briggs]."
+      ]
+    },
+    {
+      "eyebrow": "Chapter Two",
+      "title": "The Storm",
+      "paras": [
+        "Central Authority was keen on keeping time to the length of Earth days, weeks, and years. He had learned in school that this was because humans had a natural rhythm that mattered — without it, people could go insane. He was fourteen in Earth years, and considered an adult. Until he started working on [therig|the rig], he didn’t feel like it.",
+        "He assumed he had been selected as a motorman based on how well he scored in physics and math at Central — his strongest subjects. The first days on his own were a rude awakening to life in [redding|Redding] and work on the rig. He never complained; he knew he had to climb the rungs if he wanted to move up. He just never imagined the bottom rungs would be so difficult to hold on to."
+      ]
+    }
+  ],
+  "entities": {
+    "james": {
+      "type": "char",
+      "sigil": "J",
+      "title": "James",
+      "subtitle": "Motorman · Protagonist",
+      "fields": [
+        [
+          "Background",
+          "A newly graduated motorman, small and skinny for his age — about five and a half feet, deep brown eyes, a light beard coming in. Placed in the top ten percent of his class at Central Academy."
+        ],
+        [
+          "Mark of honor",
+          "Branded on the back of the right hand with the Central Authority symbol a month ago. The skin is still sore."
+        ],
+        [
+          "Origin",
+          "Parents unknown — known only to be citizens of Central. Raised and tested within the Academy system."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Eli · closest friend"
+        ],
+        [
+          "char",
+          "Steve G · shopkeeper"
+        ]
+      ],
+      "locked": "True allegiance",
+      "stage": {
+        "fields": [
+          [
+            "Under Central law",
+            "Fourteen in Earth-years, and already counted an adult. Selected as a motorman on the strength of his physics and math scores — and learning the lowest rungs of the Central ladder are the hardest to hold."
+          ]
+        ],
+        "rels": [
+          [
+            "char",
+            "Calvin Briggs · avoids"
+          ]
+        ]
+      }
+    },
+    "eli": {
+      "type": "char",
+      "sigil": "E",
+      "title": "Eli",
+      "subtitle": "Friend · Central Academy",
+      "fields": [
+        [
+          "Background",
+          "James’s closest friend from Central Academy. The only other in their group with a wrapped, freshly branded hand on graduation night."
+        ],
+        [
+          "Status",
+          "Branded among the top of his class alongside James."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "James · closest friend"
+        ]
+      ],
+      "locked": "Where he was assigned"
+    },
+    "steve": {
+      "type": "char",
+      "sigil": "S",
+      "title": "Steve G",
+      "subtitle": "Shopkeeper · “The General”",
+      "fields": [
+        [
+          "Background",
+          "A bearded man in his fifties with a large gut who owns the General Store in the city center. Once called “the General” for his shop; now just G."
+        ],
+        [
+          "Trade",
+          "Sells household wares, tools, clothes, basic foods and medicines — general, as the name implies."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "James · new customer"
+        ]
+      ],
+      "locked": "What he has seen"
+    },
+    "calvin": {
+      "type": "char",
+      "sigil": "C",
+      "title": "Calvin Briggs",
+      "subtitle": "Unknown · Glimpsed",
+      "glimpse": true,
+      "fields": [],
+      "locked": "Who he is"
+    },
+    "redding": {
+      "type": "place",
+      "sigil": "⚓",
+      "title": "Redding",
+      "subtitle": "Settlement · Current location",
+      "fields": [
+        [
+          "Description",
+          "An established rig town of about 10,000 on Atios, built in concentric rings of identical housing. The newest, unmarried workers live on the dusty outer rings; established families nearer the paved center."
+        ],
+        [
+          "Order",
+          "Outer rings of packed sand and litter; inner rings paved and repainted, kept up by Central Health."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "James"
+        ],
+        [
+          "place",
+          "The City Center"
+        ]
+      ],
+      "region": "outer-rings"
+    },
+    "citycenter": {
+      "type": "place",
+      "sigil": "◎",
+      "title": "The City Center",
+      "subtitle": "District · Redding",
+      "fields": [
+        [
+          "Description",
+          "The paved heart of Redding, where the packed-sand road turns to pavement and buildings are repainted every few years. The windows are intact; James catches his reflection here."
+        ]
+      ],
+      "rels": [
+        [
+          "place",
+          "The General Store"
+        ],
+        [
+          "place",
+          "City Hall"
+        ]
+      ],
+      "region": "city-center"
+    },
+    "generalstore": {
+      "type": "place",
+      "sigil": "▣",
+      "title": "The General Store",
+      "subtitle": "Shop · City center",
+      "fields": [
+        [
+          "Description",
+          "Steve G’s shop. The door exists mainly to keep out the sand — inside there is no real change in temperature. It carries a little of everything."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "Steve G"
+        ]
+      ],
+      "region": "city-center"
+    },
+    "cityhall": {
+      "type": "place",
+      "sigil": "▲",
+      "title": "City Hall",
+      "subtitle": "Government · City center",
+      "fields": [
+        [
+          "Description",
+          "A massive stone building of impressive arches and thick granite columns — the nicest in town. Central banners, dust-stained red within hours, are changed every shift."
+        ]
+      ],
+      "rels": [],
+      "region": "city-center"
+    },
+    "therig": {
+      "type": "place",
+      "sigil": "⛏",
+      "title": "The Rig",
+      "subtitle": "Workplace · Industrial",
+      "fields": [
+        [
+          "Description",
+          "One of the more established rigs on Atios, where James trained and now works as a motorman among teams of roughneck riggers."
+        ]
+      ],
+      "rels": [
+        [
+          "char",
+          "James"
+        ]
+      ],
+      "region": "the-rig"
+    },
+    "atios": {
+      "type": "place",
+      "sigil": "◯",
+      "title": "Atios",
+      "subtitle": "World",
+      "fields": [
+        [
+          "Description",
+          "The hot, sand-blown world on which Redding and the rigs stand. Central keeps its days, weeks and years to the rhythm of old Earth."
+        ]
+      ],
+      "rels": [],
+      "region": null
+    },
+    "central": {
+      "type": "place",
+      "sigil": "✶",
+      "title": "Central",
+      "subtitle": "Unknown · Glimpsed",
+      "glimpse": true,
+      "fields": [],
+      "locked": "What it is",
+      "region": "central"
+    }
+  },
+  "regions": [
+    {
+      "id": "city-center",
+      "label": "City Center",
+      "poly": "175,130 235,130 245,170 200,185 165,165",
+      "lx": 202,
+      "ly": 156
+    },
+    {
+      "id": "outer-rings",
+      "label": "Outer Rings",
+      "poly": "120,95 280,95 300,205 195,235 95,205 100,150",
+      "lx": 150,
+      "ly": 118
+    },
+    {
+      "id": "the-rig",
+      "label": "The Rig",
+      "poly": "255,75 330,60 360,110 320,150 265,135",
+      "lx": 305,
+      "ly": 108
+    },
+    {
+      "id": "central",
+      "label": "Central",
+      "poly": "20,30 130,15 165,60 140,115 60,130 20,90",
+      "lx": 85,
+      "ly": 78
+    },
+    {
+      "id": "the-wastes",
+      "label": "???",
+      "poly": "20,170 100,205 195,235 200,290 40,285 15,230",
+      "lx": 105,
+      "ly": 250
+    },
+    {
+      "id": "the-reach",
+      "label": "???",
+      "poly": "300,150 385,130 390,215 320,255 280,205",
+      "lx": 340,
+      "ly": 200
+    }
+  ],
+  "dots": [
+    {
+      "id": "redding",
+      "x": 200,
+      "y": 168,
+      "region": "outer-rings"
+    },
+    {
+      "id": "citycenter",
+      "x": 204,
+      "y": 150,
+      "region": "city-center"
+    },
+    {
+      "id": "therig",
+      "x": 305,
+      "y": 108,
+      "region": "the-rig"
+    }
+  ],
+  "notes": {
+    "james": {
+      "color": "amber",
+      "anchor": "Ch 1 · “mark of honor”",
+      "noteType": "Highlight note",
+      "excerpt": "The skin was still sore, a month later, where the hot iron had pressed in and gave him his mark of honor.",
+      "body": "Branding as reward, not punishment. The whole society runs on earning marks you can never remove."
+    },
+    "eli": {
+      "color": "char",
+      "anchor": "Eli",
+      "noteType": "Entity note",
+      "body": "James’s one real friend so far. Both branded the same night — watch where Eli ends up."
+    }
+  },
+  "description": "Storm season in a company town. James comes back to Redding with a job to do at the rig — and finds the city has been keeping books of its own. Chapter one of the Atios Cycle."
+}
