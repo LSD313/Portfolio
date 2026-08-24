@@ -71,8 +71,10 @@
 
         <a class="project" href="projects/seeklore/">
           <div class="preview">
-            <!-- Add assets/seeklore.jpg (16:10) and swap this comment for:
-                 <img src="assets/seeklore.jpg" alt="" loading="lazy" decoding="async"> -->
+            <!-- Drops in automatically once assets/seeklore.jpg exists; until then
+                 onerror removes it and the empty slot shows, rather than a broken icon. -->
+            <img src="assets/seeklore.jpg" alt="" loading="lazy" decoding="async"
+                 onerror="this.remove()">
           </div>
           <div class="body">
             <div class="row">
