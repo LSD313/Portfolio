@@ -201,14 +201,30 @@ a:hover { color: var(--accent-hover); }
 }
 
 .project .preview {
+  position: relative;
   aspect-ratio: 16 / 10;
   background: var(--surface-sunken);
   border-bottom: 1px solid var(--border-hairline);
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
-.project .preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Taken out of flow on purpose. `place-items: center` leaves the grid row
+   auto-sized, so an in-flow image resolves `height: 100%` against a row that
+   is itself sized by the image — the browser breaks the loop with the
+   intrinsic height and the slot outgrows its aspect-ratio. Harmless for a
+   screenshot wider than 16/10, but a portrait-ish one pushes the whole card
+   taller than its neighbours. Absolute positioning decouples the two, so
+   aspect-ratio always wins and object-fit does the cropping. */
+.project .preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .project .body {
   display: flex;
