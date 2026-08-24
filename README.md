@@ -20,6 +20,9 @@ projects/
     index.html                 self-contained project (data embedded)
   seeklore/
     index.html                 self-contained project (bundled assets)
+  seeklore-ereader/
+    index.html                 self-contained project (app, design system,
+                               five books and fonts all bundled)
 ```
 
 Every project is a folder under `projects/` containing its own `index.html`.
@@ -41,26 +44,11 @@ clearly-marked override block at the top of `style.css` rather than in the
 vendored files.
 
 The design's webfonts are self-hosted in `assets/fonts/` instead of loading
-from Google, so the site makes no external requests at all.
+from Google, so the page makes no external requests at all — which is true of
+every page on the site.
 
 Theme defaults to dark, per the design, with a manual toggle in the footer that
 persists to `localStorage`.
-
-Every project is a folder under `projects/` containing its own `index.html`.
-Linking to the folder (`projects/name/`) serves that file automatically.
-
-## Colour
-
-Colour comes from the Seeklore design system. `tokens/seeklore-colors.css` is a
-verbatim copy of that system's `tokens/colors.css` — don't edit it; re-copy from
-the source to pick up changes. `style.css` maps those tokens onto the few roles
-the site needs (`--bg`, `--surface`, `--accent`, …), so the mapping is the only
-thing to revisit when the palette moves.
-
-The token file switches on `[data-theme="dark"]` and has no `prefers-color-scheme`
-rules, so a small inline script in `index.html` sets that attribute from the OS
-preference. With JavaScript off the page stays light, which is the `:root` default.
-
 
 ## Running it locally
 
@@ -89,6 +77,38 @@ The site is plain files, so hosting is swappable:
 - **GitHub Pages** — push and enable Pages. Zero admin, same files.
 
 Nothing in the site depends on which you pick.
+
+## Note on the Seeklore eReader
+
+`seeklore-ereader` is a standalone export of `Seeklore.dc.html` from the
+**Seeklore** design system — a different project from the `seeklore` card game
+that happens to share the name. Everything is inlined: the Design Canvas
+runtime, React, the design system, the fonts, and the full text of all five
+books. It unpacks itself into blob URLs on load and makes no network requests
+of any kind.
+
+Two edits were made to the exported file:
+
+- **Title.** The export ships as `<title>Bundled Page</title>`, and the
+  bundler replaces the whole document at boot, so setting the title on the
+  outer shell alone does not survive. A `<title>` was injected into the
+  `__bundler/template` payload as well, which is what the browser tab and any
+  bookmark end up reading.
+
+- **Chapter alignment (bug fix).** `parseContent` started a new chapter on
+  every `## ` line and relied on their order matching `chapters[]`. That holds
+  only for a book whose headings are all numbered. The Sea Witch also carries
+  part dividers — `## Part One — The Court of Gold` — and each one pushed a
+  phantom empty chapter that shifted every chapter after it. In the export as
+  received, Sea Witch chapter 2 ("The Ledger") rendered blank and chapter 3
+  ("The Survey") showed The Ledger's prose, with the drift compounding at each
+  divider. The numbers in `## N` are already 1-based indices into `chapters[]`,
+  so the parser now keys off them and ignores unnumbered headings. Books whose
+  headings are sequentially numbered parse exactly as before.
+
+  This bug is in the design project too, so a fresh export will bring it back.
+  Fixing `parseContent` in `Seeklore.dc.html` upstream would make future
+  exports correct without patching.
 
 ## Note on the dashboard project
 
