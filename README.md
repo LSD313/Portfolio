@@ -12,8 +12,14 @@ tokens/
   pointe-colors.css            colour tokens, vendored from Pointe Analytics
   pointe-typography.css        type scale, vendored
   pointe-fonts.css             @font-face for the self-hosted webfonts
+  nef-colors.css               colour tokens, vendored from New Enterprise Forum
+  nef-typography.css           type scale, vendored
+  nef-spacing.css              spacing, radii, layout, vendored
+  nef-effects.css              shadows, borders, motion, vendored
+  nef-fonts.css                @font-face for the self-hosted webfonts
 assets/
-  fonts/                       Instrument Sans + IBM Plex Mono (woff2)
+  fonts/                       Instrument Sans, Mulish, Source Sans 3,
+                               IBM Plex Mono (woff2)
   headshot.png                 hero avatar (optional — falls back to initials)
 projects/
   vehicle-performance-dashboard/
@@ -23,9 +29,15 @@ projects/
   seeklore-ereader/
     index.html                 exported app (design system + fonts bundled)
     books/                     book data — the export does NOT contain it
+  meeting-scheduler/
+    index.html                 hand-written app (uses tokens/ and assets/fonts/)
 tools/
   patch-export.py              re-applies the fixes below to a fresh export
 ```
+
+Most projects are standalone files. `meeting-scheduler` is the exception: it is
+hand-written rather than exported, so it links `tokens/` and `assets/fonts/`
+the way the home page does instead of inlining copies of them.
 
 Every project is a folder under `projects/` containing its own `index.html`.
 Linking to the folder (`projects/name/`) serves that file automatically.
@@ -48,6 +60,14 @@ vendored files.
 The design's webfonts are self-hosted in `assets/fonts/` instead of loading
 from Google, so the page makes no external requests at all — which is true of
 every page on the site.
+
+The **New Enterprise Forum** system behind `meeting-scheduler` is vendored the
+same way, as `tokens/nef-*.css`. Its `base.css` and `core.css` are deliberately
+not copied: that page uses none of their `.nef-*` classes, and the dashboard set
+the precedent of not shipping design-system code nothing calls. Its
+`tokens/fonts.css` is the one file not copied verbatim — it `@import`s three
+families from Google, so `nef-fonts.css` declares the same families, weights and
+subsets against local woff2 instead.
 
 Project previews in `assets/` should be **16:10 or wider**. The card crops with
 `object-fit: cover`, so a taller image loses its top and bottom — and a crop
@@ -126,10 +146,12 @@ python3 tools/patch-export.py projects/seeklore-ereader/index.html "Seeklore eRe
   left the reader permanently blank — book loaded, prose parsed, nothing drawn.
   Two delayed retries are added to the ungated viewport ref.
 
-- **Back link.** Project pages are full-screen apps with no route home, so a
-  fixed "← Portfolio" control is appended and kept alive across the bundler's
-  document swap. It sits top-centre — the one region free of app chrome on all
-  three project pages. All three pages get this one.
+- **Back link.** The exported project pages are full-screen apps with no route
+  home, so a fixed "← Portfolio" control is appended and kept alive across the
+  bundler's document swap. It sits top-centre — the one region free of app
+  chrome on all three exported pages, and all three get this one.
+  `meeting-scheduler` is hand-written and has a sticky header with room in it,
+  so its back link is a real link in that header instead.
 
 - **BOOKS pruning.** Any book in the manifest with no data in `books/` is
   commented out, so it drops off the shelf instead of failing with
@@ -155,3 +177,56 @@ public display:
 - An unused design-system bundle was stripped out.
 
 The page makes no external network requests of any kind.
+
+## Note on the Meeting Scheduler
+
+`meeting-scheduler` implements `Meeting Scheduler.dc.html` from the **New
+Enterprise Forum** design system. Unlike the eReader it is not an export: the
+canvas file is a `DCLogic` class rendered by the same React runtime, and rather
+than ship that runtime again the page is written out by hand the way the home
+page was — static markup, `<sc-if>` becomes the `hidden` attribute, `style-hover`
+and `style-focus` become real CSS rules, and `renderVals()` becomes a `render()`
+that writes into the DOM. The domain logic — ICS parsing, the slot search, the
+invitation builder — is carried over from the canvas as-is, except as noted
+below. No build step, no dependencies, ~80KB total.
+
+The app keeps everything in `localStorage` under `nef_scheduler_v1`; there is no
+server, and none of the four pages here talk to one.
+
+Four departures from the canvas, all deliberate:
+
+- **The CORS proxy is gone.** `fetchICS` retried failed requests through
+  `https://corsproxy.io/`. The Instructions tab tells people their secret
+  calendar address "works like a password", and the Add tab promises "nothing is
+  sent to any server" — routing that URL through a third party breaks both
+  claims, and it is the same class of thing that was stripped out of the
+  dashboard. The page now only ever requests the calendar host the user names.
+  When that request fails, the UI already had the right answer: the upload and
+  paste modes it points at by name.
+
+- **Slot selection was dead.** `renderVals()` built a `selectHandler` for every
+  slot card, but the template never bound it — nothing was clickable except
+  "Book", so `hasSelectedSlot` could never become true and the whole "Create
+  invitation" panel below was unreachable. The card is the select control here;
+  Book stays as the one-click shortcut it already was.
+
+- **Today was never searched.** `_computeSlots` advanced its cursor by a day
+  whenever it had landed on or before now — always true for a search starting
+  today — so today's remaining slots never appeared. The `ss <= now` test in the
+  inner loop already rejects past slots, so the day skip is dropped.
+
+- **The generated .ics was unescaped.** `generateICS` interpolated the meeting
+  title and attendee names straight into `SUMMARY` and `ATTENDEE`, so a comma or
+  semicolon in either silently split the property, and no line was folded at the
+  75-octet limit. RFC 5545 escaping and folding are applied.
+
+The first three are bugs in the design project; fixing them in
+`Meeting Scheduler.dc.html` upstream would shorten this list.
+
+Accessibility corrections live in a marked block at the top of the page's
+`<style>`, on the same principle as `style.css`: the design system's muted text
+tiers (`#7A7A7E`, `#9B9A9C`) and its brand orange as text or as a fill behind
+white all fall below 4.5:1 at the sizes this page uses them. `#E75300` is kept
+everywhere it is decoration rather than text. The tab bar, the mode switcher and
+the instruction accordions also carry the ARIA roles and keyboard behaviour the
+canvas's bare `<button>`s did not.

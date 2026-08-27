@@ -1,0 +1,25 @@
+/* New Enterprise Forum — Elevation, borders & motion tokens */
+:root {
+  /* ---- Shadows (soft, warm-tinted, low-spread — NEF is approachable not glossy) ---- */
+  --shadow-xs:  0 1px 2px rgba(42, 43, 46, 0.06);
+  --shadow-sm:  0 1px 3px rgba(42, 43, 46, 0.08), 0 1px 2px rgba(42, 43, 46, 0.05);
+  --shadow-md:  0 4px 12px rgba(42, 43, 46, 0.08), 0 2px 4px rgba(42, 43, 46, 0.05);
+  --shadow-lg:  0 12px 28px rgba(42, 43, 46, 0.12), 0 4px 8px rgba(42, 43, 46, 0.06);
+  --shadow-xl:  0 24px 48px rgba(42, 43, 46, 0.16), 0 8px 16px rgba(42, 43, 46, 0.08);
+  --shadow-brand: 0 8px 24px rgba(231, 83, 0, 0.28);
+
+  /* ---- Borders ---- */
+  --border-width:  1px;
+  --border-hair:   1px solid var(--border-subtle);
+  --border-soft:   1px solid var(--border-default);
+
+  /* ---- Focus ---- */
+  --ring-width: 3px;
+
+  /* ---- Motion (calm, professional — quick ease, no bounce) ---- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast:    120ms; /* @kind other */
+  --dur-base:    200ms; /* @kind other */
+  --dur-slow:    320ms; /* @kind other */
+}

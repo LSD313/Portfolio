@@ -1,0 +1,43 @@
+/* New Enterprise Forum — Typography tokens */
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Mulish', 'Segoe UI', system-ui, sans-serif; /* wordmark-matching humanist sans */
+  --font-sans:    'Mulish', 'Segoe UI', system-ui, sans-serif; /* UI / headings */
+  --font-body:    'Source Sans 3', 'Segoe UI', system-ui, sans-serif; /* long-form reading */
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- Weights ---- */
+  --fw-regular:   400; /* @kind font */
+  --fw-medium:    500; /* @kind font */
+  --fw-semibold:  600; /* @kind font */
+  --fw-bold:      700; /* @kind font */
+  --fw-extrabold: 800; /* @kind font */
+  --fw-black:     900; /* @kind font */
+
+  /* ---- Type scale (1.250 major-third, 16px base) ---- */
+  --text-2xs:   11px;
+  --text-xs:    12px;
+  --text-sm:    14px;
+  --text-base:  16px;
+  --text-md:    18px;
+  --text-lg:    20px;
+  --text-xl:    25px;
+  --text-2xl:   31px;
+  --text-3xl:   39px;
+  --text-4xl:   49px;
+  --text-5xl:   61px;
+  --text-6xl:   76px;
+
+  /* ---- Line heights ---- */
+  --leading-tight:   1.08;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tighter: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.02em;
+  --tracking-caps:    0.08em; /* uppercase eyebrows / labels */
+}

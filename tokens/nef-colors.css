@@ -1,0 +1,98 @@
+/* New Enterprise Forum — Color tokens
+ * Sourced from "Brand Identity Final Concept" (Q LTD, 2014) + production logo art.
+ * Primary: Warm Orange (PMS 166 C) + Dark Gray (Cool Gray 11 C)
+ * Secondary: Blue Gray (PMS 5415 C) + Beige (Warm Gray 1 C)
+ */
+:root {
+  /* ---- Brand core ---- */
+  --nef-orange:        #E75300; /* PMS 166 C — primary warm orange */
+  --nef-orange-600:    #CF4A00;
+  --nef-orange-700:    #B33F00;
+  --nef-orange-mark:   #D54F2B; /* muted terracotta used in icon-only mark art */
+  --nef-gray:          #55565A; /* Cool Gray 11 C — primary dark gray / wordmark */
+  --nef-blue-gray:     #7C98AB; /* PMS 5415 C — secondary */
+  --nef-beige:         #D8D1CA; /* Warm Gray 1 C — secondary */
+
+  /* ---- Orange ramp (tints/shades of brand orange) ---- */
+  --orange-50:   #FDF0E8;
+  --orange-100:  #FBDCC9;
+  --orange-200:  #F7B98E;
+  --orange-300:  #F2924F;
+  --orange-400:  #ED6F1E;
+  --orange-500:  #E75300;
+  --orange-600:  #CF4A00;
+  --orange-700:  #B33F00;
+  --orange-800:  #8C3100;
+  --orange-900:  #5E2100;
+
+  /* ---- Neutral ramp (warm-tinted grays, anchored on Cool Gray 11) ---- */
+  --neutral-0:    #FFFFFF;
+  --neutral-25:   #FBFAF9;
+  --neutral-50:   #F5F4F2;
+  --neutral-100:  #ECEAE7;
+  --neutral-200:  #DCD9D4;
+  --neutral-300:  #C2BFBA;
+  --neutral-400:  #9B9A9C;
+  --neutral-500:  #7A7A7E;
+  --neutral-600:  #62636A;
+  --neutral-700:  #55565A;
+  --neutral-800:  #3E3F43;
+  --neutral-900:  #2A2B2E;
+  --neutral-950:  #171819;
+
+  /* ---- Blue-gray ramp (secondary, for accents & data) ---- */
+  --bluegray-50:   #EFF3F6;
+  --bluegray-100:  #DBE4EA;
+  --bluegray-200:  #BBCBD6;
+  --bluegray-300:  #9CB2C1;
+  --bluegray-400:  #7C98AB;
+  --bluegray-500:  #5E7D92;
+  --bluegray-600:  #4A6677;
+  --bluegray-700:  #3A505E;
+
+  /* ---- Beige ramp (warm neutral surfaces) ---- */
+  --beige-50:   #FAF8F6;
+  --beige-100:  #F1EDE8;
+  --beige-200:  #E5DED7;
+  --beige-300:  #D8D1CA;
+  --beige-400:  #C4BBB1;
+
+  /* ---- Semantic status ---- */
+  --success:        #2E7D52;
+  --success-soft:   #E4F1EA;
+  --warning:        #C77400;
+  --warning-soft:   #FBEFD9;
+  --danger:         #C0392B;
+  --danger-soft:    #F8E4E1;
+  --info:           #5E7D92;
+  --info-soft:      #E6EDF1;
+
+  /* ====== Semantic aliases ====== */
+  --color-brand:            var(--nef-orange);
+  --color-brand-hover:      var(--orange-600);
+  --color-brand-active:     var(--orange-700);
+  --color-brand-soft:       var(--orange-50);
+  --color-accent:           var(--bluegray-400);
+
+  --surface-page:           var(--neutral-25);
+  --surface-card:           var(--neutral-0);
+  --surface-sunken:         var(--neutral-50);
+  --surface-warm:           var(--beige-100);
+  --surface-inverse:        var(--neutral-900);
+  --surface-brand:          var(--nef-orange);
+
+  --text-strong:            var(--neutral-900);
+  --text-body:              var(--neutral-700);
+  --text-muted:             var(--neutral-500);
+  --text-faint:             var(--neutral-400);
+  --text-on-brand:          #FFFFFF;
+  --text-on-inverse:        var(--neutral-100);
+  --text-link:              var(--nef-orange);
+
+  --border-subtle:          var(--neutral-200);
+  --border-default:         var(--neutral-300);
+  --border-strong:          var(--neutral-400);
+  --border-brand:           var(--nef-orange);
+
+  --focus-ring:             color-mix(in srgb, var(--nef-orange) 45%, transparent);
+}
