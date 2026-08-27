@@ -1,5 +1,8 @@
 # Portfolio
 
+> Picking this up after a break? See [HANDOFF.md](HANDOFF.md) for current
+> status, open items, and the reasoning behind the choices here.
+
 Personal project portfolio — a hand-written static site. No framework, no build step, no dependencies —
 just HTML and CSS that a browser can open directly.
 
