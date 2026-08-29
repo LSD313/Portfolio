@@ -104,6 +104,11 @@ The grid is grouped into sections. Each is a `<section class="group">` holding a
 `.group-note` sits under the heading. Adding a section means copying that block
 and moving cards into it.
 
+Sections and the cards inside them are ordered alphabetically in the source
+rather than sorted at runtime, so the file reads in the order the page renders
+and the order survives with JavaScript off. Titles sort as written, leading
+"The" included.
+
 Counts are authored into the HTML so they are correct with JavaScript disabled,
 then recomputed on load from the number of `.project` cards in each section — so
 they cannot drift if you move a card and forget to bump the number. Keep the
