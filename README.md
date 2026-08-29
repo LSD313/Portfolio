@@ -97,6 +97,14 @@ Then open <http://localhost:4173>. Any static server works; this one ships
 with macOS. Opening `index.html` via `file://` mostly works too, but a real
 server avoids surprises with relative paths.
 
+## Sections
+
+The grid is grouped into sections. Each is a `<section class="group">` holding a
+`.section-head` (name + count) and its own `.projects` grid; an optional
+`.group-note` sits under the heading. Adding a section means copying that block
+and moving cards into it — the counts are hand-written, so bump them when a card
+moves.
+
 ## Adding a project
 
 1. Drop the folder into `projects/`.
