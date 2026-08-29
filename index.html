@@ -201,6 +201,21 @@
   </footer>
 
 <script>
+  /* Section counts are authored into the HTML so they are correct with no
+     JavaScript, then recomputed here so they cannot drift when a card is
+     added or moved between sections. */
+  (function () {
+    var groups = document.querySelectorAll('.group');
+    for (var i = 0; i < groups.length; i++) {
+      var el = groups[i].querySelector('.count');
+      if (!el) continue;
+      var n = groups[i].querySelectorAll('.project').length;
+      el.textContent = (n < 10 ? '0' : '') + n;
+    }
+  })();
+</script>
+
+<script>
   (function () {
     var root = document.documentElement;
     var btn = document.getElementById('theme-toggle');

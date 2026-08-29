@@ -102,8 +102,12 @@ server avoids surprises with relative paths.
 The grid is grouped into sections. Each is a `<section class="group">` holding a
 `.section-head` (name + count) and its own `.projects` grid; an optional
 `.group-note` sits under the heading. Adding a section means copying that block
-and moving cards into it — the counts are hand-written, so bump them when a card
-moves.
+and moving cards into it.
+
+Counts are authored into the HTML so they are correct with JavaScript disabled,
+then recomputed on load from the number of `.project` cards in each section — so
+they cannot drift if you move a card and forget to bump the number. Keep the
+authored value honest anyway; it is what a no-JS visitor sees.
 
 ## Adding a project
 
