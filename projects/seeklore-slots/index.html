@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Votive Wheel — Seeklore</title>
+<meta name="description" content="A slot-machine game mockup for Seeklore: chart sacred places, gather mortals, and seat the gods. Design mockup, not a gambling product.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><text y='50' font-size='52'>&#9737;</text></svg>">
+<style>
+/* Seeklore webfonts — self-hosted (latin + latin-ext) so the page makes no
+   external requests. The design system's fonts.css @imports these from
+   Google and its assets/fonts folder ships empty. */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/inter-400-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/inter-400-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/inter-500-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/inter-500-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/inter-600-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/inter-600-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/jetbrains-mono-400-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/jetbrains-mono-400-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/literata-400-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/literata-400-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/literata-400-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/literata-400-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/literata-600-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/literata-600-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/literata-700-normal-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/literata-700-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ===== Seeklore design system tokens, vendored verbatim ===== */
+/* ============================================================
+   COLOR TOKENS — Seeklore
+   Light mode on :root, dark mode on [data-theme="dark"].
+   Two-world entity system: characters = oxblood, places = sea-teal.
+   ============================================================ */
+:root {
+  /* --- Reading Surface --- */
+  --surface-page: #F7F5F2;
+  --surface-raised: #FFFFFF;
+  --surface-sunken: #EDEAE5;
+  --surface-overlay: rgba(255, 255, 255, 0.97);
+
+  /* --- Text --- */
+  --text-primary: #1A1714;
+  --text-secondary: #5C564D;
+  --text-tertiary: #8A857C;
+  --text-inverse: #F7F5F2;
+
+  /* --- Entity: Characters (oxblood) --- */
+  --char-base: #8A3033;
+  --char-light: #F2E0E1;
+  --char-hover: #A33A3E;
+  --char-text: #6B2527;
+
+  /* --- Entity: Places (sea-teal) --- */
+  --place-base: #15708C;
+  --place-light: #DCF0F6;
+  --place-hover: #1A8AAD;
+  --place-text: #0F5469;
+
+  /* --- Discovery / Progression --- */
+  --discover-gold: #B8860B;
+  --discover-glow: #F5DEB3;
+  --discover-light: #FFF8E7;
+
+  /* --- User Highlighters --- */
+  --hl-amber: #F5D060;
+  --hl-amber-bg: rgba(245, 208, 96, 0.30);
+  --hl-amber-text: #6B5200;
+  --hl-rose: #E88B9C;
+  --hl-rose-bg: rgba(232, 139, 156, 0.25);
+  --hl-rose-text: #7A2030;
+  --hl-sage: #7DC08A;
+  --hl-sage-bg: rgba(125, 192, 138, 0.25);
+  --hl-sage-text: #1E5428;
+  --hl-lilac: #B09ADB;
+  --hl-lilac-bg: rgba(176, 154, 219, 0.25);
+  --hl-lilac-text: #3E2E6E;
+  --hl-sky: #6BB8E0;
+  --hl-sky-bg: rgba(107, 184, 224, 0.25);
+  --hl-sky-text: #13455E;
+
+  /* --- Fog of War --- */
+  --fog-solid: #C4BFB6;
+  --fog-edge: rgba(196, 191, 182, 0.5);
+  --fog-cleared: rgba(196, 191, 182, 0);
+
+  /* --- Borders & Dividers --- */
+  --border-subtle: #E3DFD9;
+  --border-medium: #D1CCC4;
+  --border-strong: #A9A49B;
+
+  /* --- Functional / Status --- */
+  --status-locked: #A9A49B;
+  --status-active: #2E7D4F;
+  --status-warning: #C4760A;
+  --status-error: #B33A3A;
+
+  /* --- Semantic aliases --- */
+  --focus-ring: var(--place-base);
+}
+
+[data-theme="dark"] {
+  --surface-page: #141210;
+  --surface-raised: #1E1C18;
+  --surface-sunken: #0D0C0A;
+  --surface-overlay: rgba(30, 28, 24, 0.97);
+
+  --text-primary: #E8E4DE;
+  --text-secondary: #A09A90;
+  --text-tertiary: #706B62;
+  --text-inverse: #1A1714;
+
+  --char-base: #D4686B;
+  --char-light: #2E1A1B;
+  --char-hover: #E07E81;
+  --char-text: #D4686B;
+
+  --place-base: #4DB8D4;
+  --place-light: #132A33;
+  --place-hover: #6CCAE2;
+  --place-text: #4DB8D4;
+
+  --discover-gold: #D4A543;
+  --discover-glow: #3D2E10;
+  --discover-light: #2A2010;
+
+  --hl-amber: #D4A543;
+  --hl-amber-bg: rgba(212, 165, 67, 0.22);
+  --hl-amber-text: #D4A543;
+  --hl-rose: #D4686B;
+  --hl-rose-bg: rgba(212, 104, 107, 0.20);
+  --hl-rose-text: #E89A9C;
+  --hl-sage: #5DAA6A;
+  --hl-sage-bg: rgba(93, 170, 106, 0.20);
+  --hl-sage-text: #7DC08A;
+  --hl-lilac: #9A82CC;
+  --hl-lilac-bg: rgba(154, 130, 204, 0.20);
+  --hl-lilac-text: #B9A6E0;
+  --hl-sky: #4DA8D4;
+  --hl-sky-bg: rgba(77, 168, 212, 0.20);
+  --hl-sky-text: #6CCAE2;
+
+  --fog-solid: #2A2722;
+  --fog-edge: rgba(42, 39, 34, 0.5);
+  --fog-cleared: rgba(42, 39, 34, 0);
+
+  --border-subtle: #2A2722;
+  --border-medium: #3A3630;
+  --border-strong: #524E46;
+
+  --status-locked: #524E46;
+  --status-active: #4CAF6E;
+  --status-warning: #E0A030;
+  --status-error: #E05555;
+}
+/* ============================================================
+   TYPOGRAPHY TOKENS — Seeklore
+   Literata for prose & display, Inter for UI, JetBrains Mono for metadata.
+   ============================================================ */
+:root {
+  /* --- Families --- */
+  --font-prose: 'Literata', 'Georgia', 'Times New Roman', serif;
+  --font-ui: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* --- Type scale (size / line-height / weight) --- */
+  --type-display-size: 42px;
+  --type-display-lh: 1.15;
+  --type-display-ls: -0.02em;
+
+  --type-h1-size: 28px;
+  --type-h1-lh: 1.25;
+
+  --type-h2-size: 20px;
+  --type-h2-lh: 1.3;
+
+  --type-h3-size: 16px;
+  --type-h3-lh: 1.4;
+
+  --type-body-ui-size: 14px;
+  --type-body-ui-lh: 1.5;
+
+  --type-caption-size: 12px;
+  --type-caption-lh: 1.5;
+
+  --type-eyebrow-size: 11px;
+  --type-eyebrow-ls: 0.1em;
+
+  /* --- Weights --- */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* --- Reading-surface prose --- */
+  --prose-max-width: 38em;
+  --prose-line-height: 1.72;
+  --prose-letter-spacing: 0.005em;
+  --prose-font-size: 18px;
+}
+/* ============================================================
+   SPACING & RADII TOKENS — Seeklore
+   Geometric scale 2 -> 64px.
+   ============================================================ */
+:root {
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  --radius-sm: 4px;   /* inputs, small chips, active entity fill */
+  --radius-md: 8px;   /* buttons, toasts, badges */
+  --radius-lg: 12px;  /* cards, panels */
+  --radius-xl: 20px;  /* modals, toggles */
+  --radius-full: 9999px;
+}
+/* ============================================================
+   EFFECTS — Seeklore: shadows + motion tokens.
+   Shadows are warm-tinted (near-black with warmth), never cold gray.
+   ============================================================ */
+:root {
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px rgba(26, 23, 20, 0.06);
+  --shadow-md: 0 4px 12px rgba(26, 23, 20, 0.08);
+  --shadow-lg: 0 8px 30px rgba(26, 23, 20, 0.12);
+  --shadow-panel: 0 12px 40px rgba(26, 23, 20, 0.18);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */ /* easing for all transitions */
+  --duration-fast: 120ms; /* @kind other */ /* hover, tint */
+  --duration-normal: 200ms; /* @kind other */ /* panel transitions */
+  --duration-slow: 400ms; /* @kind other */ /* theme switch, progress fill */
+  --duration-reveal: 800ms; /* @kind other */ /* fog clear, stage unlock */
+}
+
+[data-theme="dark"] {
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-panel: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+/* ============================================================
+   BASE RESET — Seeklore
+   Minimal, token-driven. Applied by consumers of styles.css.
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  background: var(--surface-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--duration-slow) var(--ease-out),
+              color var(--duration-slow) var(--ease-out);
+}
+
+::selection {
+  background: var(--hl-amber-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ===== keyframes, from the canvas helmet ===== */
+@keyframes bfxStrike { 0% { opacity: 0; } 6% { opacity: 1; } 14% { opacity: 0.2; } 22% { opacity: 1; } 34% { opacity: 0.5; } 44% { opacity: 1; } 80% { opacity: 0.95; } 100% { opacity: 0; } }
+@keyframes bfxRise { 0% { opacity: 0; transform: translateY(30%) scale(0.7); } 18% { opacity: 1; } 78% { opacity: 1; transform: translateY(0) scale(1.08); } 100% { opacity: 0; transform: translateY(-10%) scale(1.12); } }
+@keyframes bfxSweep { 0% { opacity: 0; transform: translateX(-38%); } 14% { opacity: 1; } 82% { opacity: 1; } 100% { opacity: 0; transform: translateX(38%); } }
+@keyframes bfxBurst { 0% { opacity: 0; transform: scale(0.25); } 18% { opacity: 1; } 70% { opacity: 1; transform: scale(1.12); } 100% { opacity: 0; transform: scale(1.35); } }
+@keyframes bfxDrift { 0% { opacity: 0; transform: translateY(12%); } 22% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; transform: translateY(-16%); } }
+@keyframes bfxGround { 0% { opacity: 0; transform: scaleX(0.3); } 25% { opacity: 1; } 100% { opacity: 0; transform: scaleX(1.4); } }
+@keyframes ffGod { 0% { opacity: 0; transform: translateY(34px) scale(0.4); } 55% { opacity: 1; transform: translateY(-8px) scale(1.1); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes ffWor { 0% { opacity: 0; transform: translateY(46px) scale(0.5); } 60% { opacity: 1; transform: translateY(-5px) scale(1.06); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes ffGlow { 0% { opacity: 0.35; transform: translate(-50%,-50%) scale(0.9); } 100% { opacity: 0.85; transform: translate(-50%,-50%) scale(1.15); } }
+@keyframes ffTitle { 0% { opacity: 0; transform: translateY(16px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes ffBob { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
+
+/* ===== page ===== */
+html, body { margin: 0; padding: 0; background: #F7F5F2; }
+a { color: #15708C; } a:hover { color: #1A8AAD; }
+button.step-btn:hover { background: var(--surface-sunken) !important; }
+
+/* Project pages are full-screen apps with no route home. */
+a.back {
+  position: fixed; top: 12px; left: 14px; z-index: 80;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none;
+  background: var(--surface-raised); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md); padding: 6px 11px; box-shadow: var(--shadow-sm);
+}
+a.back:hover { color: var(--text-primary); border-color: var(--border-medium); }
+</style>
+</head>
+<body>
+<a class="back" href="../../">&#8592; Portfolio</a>
+<div id="root"></div>
+<script src="vendor/react.js"></script>
+<script src="vendor/react-dom.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

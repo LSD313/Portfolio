@@ -31,6 +31,11 @@ projects/
     index.html                 self-contained project (bundled assets)
   seeklore-ereader/
     index.html                 exported app (design system + fonts bundled)
+  seeklore-slots/
+    index.html                 The Votive Wheel — slot-machine game mockup
+    app.js                     game logic + template, ported from the canvas
+    symbols-web/               god, item, place and worshipper art
+    fonts/  vendor/            self-hosted webfonts; React runtime
     books/                     book data — the export does NOT contain it
   meeting-scheduler/
     index.html                 hand-written app (uses tokens/ and assets/fonts/)
@@ -38,9 +43,11 @@ tools/
   patch-export.py              re-applies the fixes below to a fresh export
 ```
 
-Most projects are standalone files. `meeting-scheduler` is the exception: it is
+Most projects are standalone files. Two are not. `meeting-scheduler` is
 hand-written rather than exported, so it links `tokens/` and `assets/fonts/`
-the way the home page does instead of inlining copies of them.
+the way the home page does instead of inlining copies of them. `seeklore-slots`
+is implemented from a design canvas and keeps its art, fonts and runtime beside
+it, so its own folder is self-contained.
 
 Every project is a folder under `projects/` containing its own `index.html`.
 Linking to the folder (`projects/name/`) serves that file automatically.
@@ -107,6 +114,33 @@ The site is plain files, so hosting is swappable:
 - **GitHub Pages** — push and enable Pages. Zero admin, same files.
 
 Nothing in the site depends on which you pick.
+
+## Note on The Votive Wheel
+
+`seeklore-slots` implements `Seeklore Slots.dc.html` from the Seeklore Slot
+Machine Game design project. The canvas is not shippable HTML: its markup
+carries inline styles and `{{ }}` bindings, `<sc-for>`/`<sc-if>` control flow
+and a `DCLogic` class, all resolved at runtime by `support.js`. Here the
+template is ported to `React.createElement` and the bindings resolved at author
+time, while the game logic — reel strips, paytable, the mortal economy, boons
+and the Rite — is carried across essentially verbatim so behaviour matches the
+canvas.
+
+React is vendored into `vendor/` rather than dropped for vanilla DOM because the
+flying worshippers animate by transitioning the *same* elements between phases;
+that needs keyed reconciliation, not `innerHTML`. The design system's own
+`fonts.css` `@import`s Google Fonts and ships an empty `assets/fonts`, so
+Literata, Inter and JetBrains Mono are self-hosted in `fonts/` — the page makes
+no external requests.
+
+Art comes from the design project's `symbols-web/` set, rebuilt from the local
+full-resolution cutouts at 288px (2x the largest on-screen render) because the
+project's own copies are 360px and the panorama exceeds the API's 256 KiB read
+cap.
+
+It is a design mockup, not a wagering product, and says so on the page, in the
+paytable and in the help panel. Those disclosures are part of the design —
+leave them in.
 
 ## Note on the Seeklore eReader
 
