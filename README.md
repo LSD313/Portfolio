@@ -25,6 +25,8 @@ assets/
                                IBM Plex Mono (woff2)
   headshot.png                 hero avatar (optional — falls back to initials)
 projects/
+  datamat/
+    index.html                 exported app (patched with tools/patch-export.py)
   vehicle-performance-dashboard/
     index.html                 self-contained project (data embedded)
   seeklore/
