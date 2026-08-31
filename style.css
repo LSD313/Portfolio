@@ -1,45 +1,19 @@
 /* ---------------------------------------------------------------
-   Donahue portfolio — implementation of Portfolio.dc.html from the
-   Pointe Analytics design system.
+   donahue.us — the portfolio index.
 
-   The source is a Design Canvas file: its styles are inline, its
-   dynamic bits are {{ }} bindings resolved by a 70KB React runtime.
-   Here the styles are lifted into classes, `style-hover` becomes real
-   :hover rules, and the bindings are resolved at author time — so the
-   page ships as static HTML with one small theme script.
+   Layout is the Portfolio canvas from the Pointe Analytics design
+   system, with its inline styles lifted into classes and its bindings
+   resolved at author time. Colour is the site's own: Michigan maize
+   and blue, in tokens/donahue-colors.css. The type scale is still
+   Pointe's and is vendored as such.
+
+   Only this page uses these tokens — every project page carries its
+   own design and is untouched by changes here.
    --------------------------------------------------------------- */
 
-@import "tokens/pointe-fonts.css";
-@import "tokens/pointe-colors.css";
+@import "tokens/donahue-fonts.css";
+@import "tokens/donahue-colors.css";
 @import "tokens/pointe-typography.css";
-
-/* ---------------------------------------------------------------
-   Accessibility overrides on the vendored tokens.
-
-   Measured against this page's own surfaces, two of the design
-   system's roles land below WCAG AA for normal-size text. The token
-   files above are kept byte-identical to the design project so they
-   stay re-copyable; the corrections live here instead.
-
-     light --text-muted  neutral-400  2.3:1  -> oklch(0.56 …)  4.6:1
-     light --accent      brand-600    4.0:1  -> brand-700      5.5:1
-     dark  --text-muted  0.55         3.7:1  -> oklch(0.60 …)  4.5:1
-
-   Same hues throughout — only lightness moves.
-   --------------------------------------------------------------- */
-
-/* Scoped with :not([data-theme="dark"]) — a bare :root would tie the
-   vendored [data-theme="dark"] rule on specificity and, being later in
-   the cascade, would win there too and darken the accent on a dark page. */
-:root:not([data-theme="dark"]) {
-  --text-muted: oklch(0.54 0.008 60);
-  --accent: var(--brand-700);
-  --accent-hover: var(--brand-800);
-}
-
-:root[data-theme="dark"] {
-  --text-muted: oklch(0.60 0.008 60);
-}
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -88,7 +62,16 @@ a:hover { color: var(--accent-hover); }
   letter-spacing: var(--tracking-tight);
 }
 
-.brand .mark { color: var(--accent); font-size: var(--text-xs); }
+/* The wordmark is the name itself — no glyph. Serif at 19px optically
+   matches the 13px sans elsewhere in the bar, since its x-height is smaller. */
+.brand .word {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--accent);
+}
 
 /* ---------- hero ---------- */
 

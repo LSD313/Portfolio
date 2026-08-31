@@ -1,0 +1,76 @@
+/* ============================================================
+   COLOUR TOKENS — donahue.us
+
+   Michigan maize and blue. Maize cannot carry the accent in both
+   themes: it scores 1.52:1 on white, so it is unusable for text on a
+   light ground, against 9.89:1 on Michigan blue. The split is forced
+   by the colours themselves, not chosen —
+
+     dark   Michigan blue ground, maize accent   (the default view)
+     light  cool paper ground, Michigan blue accent
+
+   Both read Michigan. Maize appears on a light ground only as a fill
+   with dark text over it, never as text.
+
+   Every text pair in both themes clears WCAG AA; worst case 4.80:1.
+   ============================================================ */
+
+:root {
+  /* --- Michigan --- */
+  --maize:        #FFCB05;
+  --maize-deep:   #E0AF00;
+  --michigan:     #00274C;
+  --michigan-lit: #00437F;
+
+  /* --- Surfaces (light) --- */
+  --surface-canvas: #F4F6F9;
+  --surface-card:   #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --surface-sunken: #E9EDF3;
+
+  /* --- Text (light) --- */
+  --text-primary:   #0B1622;
+  --text-secondary: #48566A;
+  --text-muted:     #5F6E82;
+  --text-inverse:   #F4F6F9;
+
+  /* --- Lines (light) --- */
+  --border-hairline: #DBE1EA;
+  --border-strong:   #BFC9D6;
+
+  /* --- Accent (light): blue carries it, maize is a fill only --- */
+  --accent:        var(--michigan);
+  --accent-hover:  var(--michigan-lit);
+  --accent-contrast: #FFFFFF;      /* text on an accent fill */
+  --highlight:     var(--maize);   /* fill; pair with --text-primary */
+  --focus-ring:    #00437F;
+
+  --scrim: rgba(11, 22, 34, 0.45);
+}
+
+[data-theme="dark"] {
+  /* --- Surfaces (dark): the ground is the official blue --- */
+  --surface-canvas: #00274C;
+  --surface-card:   #113356;
+  --surface-raised: #1E3E60;
+  --surface-sunken: #001E40;
+
+  /* --- Text (dark) --- */
+  --text-primary:   #EEF4FC;
+  --text-secondary: #B5BFCB;
+  --text-muted:     #93A0AE;
+  --text-inverse:   #00274C;
+
+  /* --- Lines (dark) --- */
+  --border-hairline: #2A435E;
+  --border-strong:   #40566E;
+
+  /* --- Accent (dark): maize on blue, 9.89:1 --- */
+  --accent:        var(--maize);
+  --accent-hover:  #FFD84D;
+  --accent-contrast: #00274C;      /* text on a maize fill */
+  --highlight:     var(--maize);
+  --focus-ring:    #FFCB05;
+
+  --scrim: rgba(0, 12, 26, 0.6);
+}

@@ -12,9 +12,9 @@ just HTML and CSS that a browser can open directly.
 index.html                     home page + project list
 style.css                      layout, components, a11y overrides
 tokens/
-  pointe-colors.css            colour tokens, vendored from Pointe Analytics
-  pointe-typography.css        type scale, vendored
-  pointe-fonts.css             @font-face for the self-hosted webfonts
+  donahue-colors.css           colour tokens — Michigan maize and blue
+  donahue-fonts.css            @font-face for the self-hosted webfonts
+  pointe-typography.css        type scale, vendored from Pointe Analytics
   nef-colors.css               colour tokens, vendored from New Enterprise Forum
   nef-typography.css           type scale, vendored
   nef-spacing.css              spacing, radii, layout, vendored
@@ -54,38 +54,28 @@ Linking to the folder (`projects/name/`) serves that file automatically.
 
 ## Design
 
-The home page implements `Portfolio.dc.html` from the **Pointe Analytics**
-design system (a Claude Design canvas project). The canvas file keeps its
-styles inline and its dynamic parts as `{{ }}` bindings resolved by a 70KB
-React runtime; here those are lifted into CSS classes, `style-hover` becomes
-real `:hover` rules, and the bindings are resolved at author time — so the page
-is static HTML plus one small theme script.
+The home page implements `Portfolio.dc.html` from the Pointe Analytics design
+system — its inline styles lifted into classes, `style-hover` turned into real
+`:hover` rules, and its `{{ }}` bindings resolved at author time, so the page is
+static HTML plus a small theme script.
 
-`tokens/pointe-colors.css` and `tokens/pointe-typography.css` are copied
-verbatim from that project — don't edit them; re-copy to update. Where the
-system's own values fell below WCAG AA on this page, the corrections live in a
-clearly-marked override block at the top of `style.css` rather than in the
-vendored files.
+Colour is the site's own, not Pointe's: **Michigan maize and blue**, in
+`tokens/donahue-colors.css`. Maize cannot carry the accent in both themes — it
+scores 1.52:1 on white against 9.89:1 on Michigan blue — so the split is forced
+by the colours themselves:
 
-The design's webfonts are self-hosted in `assets/fonts/` instead of loading
-from Google, so the page makes no external requests at all — which is true of
-every page on the site.
+- **dark** (the default) — Michigan blue `#00274C` ground, maize `#FFCB05` accent
+- **light** — cool paper ground, Michigan blue accent; maize only as a fill with
+  dark text over it, never as text
 
-The **New Enterprise Forum** system behind `meeting-scheduler` is vendored the
-same way, as `tokens/nef-*.css`. Its `base.css` and `core.css` are deliberately
-not copied: that page uses none of their `.nef-*` classes, and the dashboard set
-the precedent of not shipping design-system code nothing calls. Its
-`tokens/fonts.css` is the one file not copied verbatim — it `@import`s three
-families from Google, so `nef-fonts.css` declares the same families, weights and
-subsets against local woff2 instead.
+Every text pair in both themes clears WCAG AA, worst case 4.80:1. The type scale
+is still Pointe's and is vendored as such; the webfonts (Instrument Sans,
+Instrument Serif for the wordmark, IBM Plex Mono) are self-hosted in
+`assets/fonts/`, so the page makes no external requests.
 
-Project previews in `assets/` should be **16:10 or wider**. The card crops with
-`object-fit: cover`, so a taller image loses its top and bottom — and a crop
-line falling through the middle of something reads as the thumbnail bleeding
-into the card text.
-
-Theme defaults to dark, per the design, with a manual toggle in the footer that
-persists to `localStorage`.
+These tokens are used by the index page only. Every project under `projects/`
+carries its own design and is unaffected by changes here — the Meeting Scheduler
+links the separate `nef-*` token set, and the rest inline their own.
 
 ## Running it locally
 
