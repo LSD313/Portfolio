@@ -64,9 +64,9 @@ Colour is the site's own, not Pointe's: **Michigan maize and blue**, in
 scores 1.52:1 on white against 9.89:1 on Michigan blue — so the split is forced
 by the colours themselves:
 
-- **dark** (the default) — Michigan blue `#00274C` ground, maize `#FFCB05` accent
-- **light** — cool paper ground, Michigan blue accent; maize only as a fill with
-  dark text over it, never as text
+- **light** (the default) — cool paper ground, Michigan blue accent; maize only
+  as a fill with dark text over it, never as text
+- **dark** — Michigan blue `#00274C` ground, maize `#FFCB05` accent
 
 Every text pair in both themes clears WCAG AA, worst case 4.80:1. The type scale
 is still Pointe's and is vendored as such; the webfonts (Instrument Sans,

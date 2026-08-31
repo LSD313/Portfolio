@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luke Donahue&#8217;s Side Projects</title>
 <meta name="description" content="Luke Donahue&#8217;s side projects.">
-<meta name="color-scheme" content="dark light">
+<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <script>
-  /* The design ships a manual theme toggle defaulting to dark. Applied before
-     paint so there's no flash; the choice persists across visits. */
+  /* Light by default, with a manual toggle. Applied before paint so there's
+     no flash; a visitor's own choice persists and wins over the default. */
   (function () {
     var saved = null;
     try { saved = localStorage.getItem('theme'); } catch (e) {}
-    document.documentElement.setAttribute('data-theme', saved || 'dark');
+    document.documentElement.setAttribute('data-theme', saved || 'light');
   })();
 </script>
 </head>
