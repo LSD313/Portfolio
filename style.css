@@ -62,16 +62,20 @@ a:hover { color: var(--accent-hover); }
   letter-spacing: var(--tracking-tight);
 }
 
-/* The wordmark is the name itself — no glyph. Serif at 19px optically
-   matches the 13px sans elsewhere in the bar, since its x-height is smaller. */
-.brand .word {
-  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-  font-size: 19px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1;
-  color: var(--accent);
+/* The face is the mark; the name is set in the same sans as the rest of
+   the bar. Circle, hairline and sunken ground match the hero avatar, so the
+   two read as the same object at two sizes. */
+.brand .face {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--border-hairline);
+  background: var(--surface-sunken);
+  flex: none;
+  align-self: center;
 }
+.brand .word { color: var(--accent); }
 
 /* ---------- hero ---------- */
 
@@ -112,11 +116,11 @@ a:hover { color: var(--accent-hover); }
   line-height: var(--leading-tight);
 }
 
-.hero .tagline {
+.hero .bio {
   margin: 0 0 20px;
-  max-width: 60ch;
+  max-width: 58ch;
   font-size: 15px;
-  line-height: var(--leading-normal);
+  line-height: 1.62;
   color: var(--text-secondary);
 }
 

@@ -70,8 +70,11 @@ by the colours themselves:
 
 Every text pair in both themes clears WCAG AA, worst case 4.80:1. The type scale
 is still Pointe's and is vendored as such; the webfonts (Instrument Sans,
-Instrument Serif for the wordmark, IBM Plex Mono) are self-hosted in
-`assets/fonts/`, so the page makes no external requests.
+IBM Plex Mono) are self-hosted in `assets/fonts/`, so the page makes no external requests.
+
+The mark is Luke's face — `assets/headshot.png` in the header at 24px, and
+`assets/favicon.png` (the same face cropped to the head and composited on
+Michigan blue, so it never floats transparent on a tab bar) as the icon.
 
 These tokens are used by the index page only. Every project under `projects/`
 carries its own design and is unaffected by changes here — the Meeting Scheduler
