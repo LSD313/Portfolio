@@ -4504,7 +4504,7 @@ const CHANGELOG_DATA = [
     'Fixed Download copy reopening without Model Year Mix (and any other newer column): the embedded reload parser was a stale, hardcoded column list from before the my_mix redesign. It\'s now generic like the main loader — any non-meta column round-trips — and recomputes Dealer Profit, Incentive Mix Cash %, and Model Year Mix Old % on reopen if they\'re missing.',
   ]},
   { version:'1.7.34', date:'2026-08-14', tag:null, items:[
-    'User Guide updated: click-to-pin data labels on line charts, the new Incentive Type Mix / Model Year Mix stacked-area visual, the loyalty metrics\' stacked column/bar exclusion, and a Model Year Mix glossary entry with its Current/New/Old logic.',
+    'User Guide updated: click-to-pin data labels on line charts, the new Incentive Type Mix / Model Year Mix stacked-area visual, the loyalty metrics\' stacked column/bar exclusion.',
   ]},
   { version:'1.7.33', date:'2026-08-14', tag:null, items:[
     'Pinned line-chart data labels now also show the period-over-period and period-over-last-year-period changes for that point, above the value label.',
@@ -4575,15 +4575,12 @@ const CHANGELOG_DATA = [
   ]},
   { version:'1.7.13', date:'2026-08-14', tag:null, items:[
     'Renamed APR Finance / APR Lease metrics to APR Fin ToS / APR Lease ToS.',
-    'Added a "How incentive type is determined" diagram to the User Guide, showing how Type of Sale (Finance/Cash/Lease) maps to Type of Incentive (Supported Finance/Cash/Lease).',
   ]},
   { version:'1.7.12', date:'2026-08-14', tag:null, items:[
     'Added four new metrics from the refreshed dataset — Dealer Gross, F&I Income, APR Finance, and APR Lease — auto-detected as custom columns and surfaced in Available Metrics with proper labels (fixing "Fi Income" → "F&I Income").',
-    'Expanded metric glossary with definitions and weighting formulas for Dealer Gross, F&I Income, APR, APR Finance, and APR Lease, sourced from the PIN Core Metrics glossary.',
   ]},
   { version:'1.7.11', date:'2026-08-14', tag:null, items:[
     'Renamed "Take Rate Mix" to "Incentive Type Mix" in the available metrics dropdown and card view header for clarity.',
-    'Expanded metric glossary from 6 to 10 definitions, adding detailed entries for Incentive Type Mix, Offer Values, Days Supply, Retail Sales, and MSRP with scope notes sourced from PIN Core Metrics reference.',
   ]},
   { version:'1.7.10', date:'2026-08-13', tag:null, items:[
     'Line chart data labels now mark only each line\u2019s start, end, max, and min points \u2014 not every nth point \u2014 and are colored to match that line instead of a fixed text color.',
@@ -4685,7 +4682,7 @@ const CHANGELOG_DATA = [
     'Accessibility: keyboard-operable sortable headers and drill-down rows, keyboard-focus tooltips, visible focus ring, AA-contrast text colors, labeled login email field.',
   ]},
   { version:'1.4.2', date:'2026-07-25', tag:null, items:[
-    'Refreshed default dataset to VPD.PIN.20260725 (new baseline CSV).',
+    'Refreshed default dataset to VPD.SYNTH.20260725 (new baseline CSV).',
     'Download copy: embedded dataset is now gzip-compressed (native CompressionStream, no library) instead of raw CSV text, cutting the saved file to a fraction of its prior size.',
     "Download copy leaves external https: assets as references rather than inlining them, shrinking the copy further.",
   ]},
@@ -5407,7 +5404,7 @@ class Component extends DCLogic {
       <li><a href="#s8">Working with your own data</a></li>
       <li><a href="#s9">Appearance</a></li>
       <li><a href="#s10">Keyboard shortcuts</a></li>
-      <li><a href="#s11">Metric glossary</a></li>
+      
     </ol>
   </div>
 
@@ -5448,7 +5445,7 @@ class Component extends DCLogic {
   <h2 id="s3"><span class="n">03</span>The subject summary strip</h2>
   <p>Directly under the top bar, the strip shows four headline metrics for the subject, each with its current value and two change chips (period-over-period and year-over-year):</p>
   <ul>
-    <li><strong>Retail Share</strong> &mdash; the subject&rsquo;s share of retail sales (see scope notes in the glossary).</li>
+    <li><strong>Retail Share</strong> &mdash; the subject&rsquo;s share of retail sales.</li>
     <li><strong>Transaction Price</strong> &mdash; average consumer-facing transaction price (CFTP).</li>
     <li><strong>Incentive / Unit</strong> &mdash; average manufacturer incentive spend per unit.</li>
     <li><strong>Dealer Profit</strong> &mdash; weighted F&amp;I income plus vehicle gross per unit.</li>
@@ -5474,9 +5471,6 @@ class Component extends DCLogic {
 
   <h3>Clicking a line-chart point</h3>
   <p>Click any point on a line chart to pin a data label there, in the same style as the chart&rsquo;s other labels &mdash; the value, plus the period-over-period and Y/Y change for that point, printed just above it. Click as many points as you like; click anywhere off the chart to clear all pinned labels. Hovering (or tabbing to) a point still shows the transient tooltip as before.</p>
-
-  <h3>Incentive Type Mix &amp; Model Year Mix</h3>
-  <p>These two metrics are 100%-stacked breakdowns (three parts that sum to ~100%) and use a dedicated chart, separate from the five general visual types. Their settings menu offers <strong>Bar</strong> (by subject, current period), <strong>Column</strong> (trended over time for the subject), and <strong>Area</strong> (the same trended data as a filled stacked area instead of discrete columns). Area is always trended &mdash; the Axis toggle hides when it&rsquo;s selected. Incentive Type Mix renders in teal / orange / slate; Model Year Mix uses its own palette (brand teal / orange / light gray) so the two are never confused at a glance.</p>
 
   <h3>Color and the peer comparison</h3>
   <p>The subject always renders in the primary accent. Peers you bring into a comparison render in <strong>light teal</strong>, and unselected peers stay neutral slate.</p>
@@ -5571,81 +5565,6 @@ class Component extends DCLogic {
       <tr><td><span class="kbd"><kbd>Alt/Opt</kbd>+<kbd>Q</kbd></span></td><td>Cycle basis: Month → Quarter → Year → YTD</td></tr>
     </tbody>
   </table>
-
-  <h2 id="s11"><span class="n">11</span>Metric glossary</h2>
-  <table>
-    <thead><tr><th>Metric</th><th>Definition &amp; scope</th></tr></thead>
-    <tbody>
-      <tr><td>Retail Share</td><td>The subject&rsquo;s share of retail sales. <b>Scope:</b> at OEM and Nameplate level it is share of the <em>total market</em>; at Series and Model level it is share of the vehicle <em>segment</em>. In Portfolio, model rows stay segment-scoped and the footer shows the nameplate&rsquo;s total-market share.</td></tr>
-      <tr><td>Transaction Price (CFTP)</td><td>Negotiated vehicle price less visible incentives and federal tax credits, where applicable. The average consumer-facing transaction price per unit, in dollars. Metric available for new vehicles only.</td></tr>
-      <tr><td>Incentive Spending / Unit</td><td>OEM/captive-funded incentive spending per unit, inclusive of both visible (cash rebates, supported rate financing) and non-visible discounts. Net of federal tax credits where applicable. Metric available for new vehicles only.</td></tr>
-      <tr><td>Incentive Type Mix</td><td>Distribution of transactions by incentive type: <b>Cash</b> (no APR or residual subvention), <b>Finance</b> (APR subvented on finance transactions), or <b>Lease</b> (lease APR, lease cash, or residual value subvented). Cash is computed as 100 \u2212 (Finance + Lease). Shown as a table, or as bar/column/area charts over time by subject.</td></tr>
-      <tr><td>Model Year Mix</td><td>Share of the subject's retail sales by model year, relative to a single <b>industry-wide current model year</b> computed each period (the model year with the largest share of total industry retail sales, held monotonic so it only ever advances). <b>Current</b> matches that model year, <b>New</b> is newer (early units of the next generation), and <b>Old</b> is any older model year, lumped together. Old is computed as 100 \u2212 (Current + New). Uses the same bar/column/area chart as Incentive Type Mix, with its own color set.</td></tr>
-      <tr><td>Offer Values (by type)</td><td>Average advertised offer amount per unit, split by <b>Cash</b>, <b>Finance</b>, and <b>Lease</b> incentives, in dollars. Reflects the market value of OEM incentive programs available to consumers.</td></tr>
-      <tr><td>Incentive Mix (Penetration)</td><td>Share of the subject&rsquo;s sales closed via <b>Cash</b>, <b>Finance</b>, or <b>Lease</b>, expressed as a percentage. Measures the proportion of units sold under each financing/purchase method.</td></tr>
-      <tr><td>Dealer Profit</td><td>Weighted-average F&amp;I income per unit (from financing reserve, insurance, service contracts) plus weighted-average vehicle gross per unit, in dollars. Represents total dealer profit opportunity per transaction.</td></tr>
-      <tr><td>Days Supply</td><td>Weighted current inventory divided by 3-month average selling rate. Indicator of inventory velocity and market saturation.</td></tr>
-      <tr><td>Retail Sales</td><td>Vehicles with less than 500 miles on the odometer bought by a retail customer. Synthetic sample generated for this demo; not derived from any real dataset.</td></tr>
-      <tr><td>Average Selling Price (MSRP)</td><td>Manufacturer&rsquo;s Suggested Retail Price as recorded in the dealer&rsquo;s system. Includes destination charges; may reflect dealer-added accessories that increase residual value.</td></tr>
-      <tr><td>Dealer Gross (Vehicle Gross)</td><td>Weighted-average vehicle gross profit per unit: <code>sum(vehgross_wtd) / sum(vehgross_weight)</code>. The dollar profit the retailer makes on the vehicle and on factory-to-dealer incentives, before F&amp;I. Sourced from the CSV's <code>vehicle_gross</code> column.</td></tr>tory/dealer-installed accessories contracted for at the time of sale (Vehicle Price less Vehicle Cost).</td></tr>
-      <tr><td>F&amp;I Income</td><td>Weighted-average finance &amp; insurance income per unit (&ldquo;back end gross&rdquo;): <code>sum(fi_income_wtd) / sum(fi_income_weight)</code>. Total commission earned by the dealer from Accident &amp; Health insurance, Credit Life insurance, Service Contracts, and Dealer Reserve (rate markup) &mdash; per vehicle retail, including transactions with no F&amp;I income.</td></tr>
-      <tr><td>APR</td><td>Blended Annual Percentage Rate / Internal Rate of Return across finance and lease transactions: <code>sum(apr_wtd) / sum(apr_weight)</code>. The annualized rate paid by the customer on the financed or leased vehicle.</td></tr>
-      <tr><td>APR Fin ToS</td><td>Weighted-average Annual Percentage Rate on finance transactions: <code>sum(apr_fin_wtd) / sum(apr_fin_weight)</code>. Applied to term and amount financed to determine monthly payments, per Regulation Z / the Truth in Lending Act.</td></tr>
-      <tr><td>APR Lease ToS</td><td>Weighted-average Internal Rate of Return on lease transactions: <code>sum(apr_lease_wtd) / sum(apr_lease_weight)</code>. Equal to the discount rate at which a lease&rsquo;s cash flows (residual, monthly payments) net to zero &mdash; the lease equivalent of APR, not the lessor&rsquo;s quoted &ldquo;factor.&rdquo;</td></tr>
-    </tbody>
-  </table>
-
-  <h3>How incentive type is determined</h3>
-  <p>Every transaction is first classified by <strong>Type of Sale</strong> (how it was paid for), then by <strong>Type of Incentive</strong> (whether and how the OEM subvented it). The two don&rsquo;t map one-to-one &mdash; most Finance and Lease sales still carry a Cash-type incentive when the rate and residual aren&rsquo;t subvented.</p>
-  <svg viewBox="0 0 860 500" style="width:100%;max-width:760px;display:block;margin:10px auto" role="img" aria-label="Flow from Type of Sale to Type of Incentive">
-    <text x="20" y="34" font-family="var(--disp)" font-weight="700" font-size="17" fill="var(--ink)">Type of Sale</text>
-    <text x="660" y="34" font-family="var(--disp)" font-weight="700" font-size="17" fill="var(--ink)">Type of Incentive</text>
-
-    <rect x="200" y="64" width="460" height="40" fill="var(--bt)" opacity="0.12"/>
-    <rect x="200" y="104" width="460" height="260" fill="var(--teal-l)" opacity="0.18"/>
-    <rect x="200" y="364" width="460" height="96" fill="var(--teal-d)" opacity="0.12"/>
-
-    <rect x="20" y="64" width="180" height="257.4" fill="var(--bt)"/>
-    <text x="110" y="185" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="15" fill="#fff">Dealer F&amp;I —</text>
-    <text x="110" y="205" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="15" fill="#fff">Arranged Financing</text>
-    <text x="110" y="228" text-anchor="middle" font-family="var(--mono)" font-size="13" fill="#DDECEA">65%</text>
-
-    <rect x="20" y="321.4" width="180" height="39.6" fill="var(--teal-l)"/>
-    <text x="110" y="345" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="12.5" fill="var(--ink)">All Cash Deal · 10%</text>
-
-    <rect x="20" y="361" width="180" height="99" fill="var(--teal-d)"/>
-    <text x="110" y="405" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="15" fill="#fff">Lease</text>
-    <text x="110" y="425" text-anchor="middle" font-family="var(--mono)" font-size="13" fill="#DDECEA">25%</text>
-
-    <rect x="660" y="64" width="180" height="40" fill="var(--bt)"/>
-    <text x="750" y="89" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="12.5" fill="#fff">Supported Finance · 10%</text>
-
-    <rect x="660" y="104" width="180" height="260" fill="var(--teal-l)"/>
-    <text x="750" y="228" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="16" fill="var(--ink)">Cash</text>
-    <text x="750" y="250" text-anchor="middle" font-family="var(--mono)" font-size="13" fill="var(--teal-d)">65%</text>
-
-    <rect x="660" y="364" width="180" height="96" fill="var(--teal-d)"/>
-    <text x="750" y="406" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="15" fill="#fff">Lease</text>
-    <text x="750" y="426" text-anchor="middle" font-family="var(--mono)" font-size="13" fill="#DDECEA">24%</text>
-
-    <rect x="322" y="70" width="98" height="22" rx="4" fill="var(--bt)"/>
-    <text x="371" y="85" text-anchor="middle" font-family="var(--body)" font-weight="600" font-size="11" fill="#fff">APR Subsidy</text>
-    <rect x="440" y="70" width="98" height="22" rx="4" fill="var(--bt)"/>
-    <text x="489" y="85" text-anchor="middle" font-family="var(--body)" font-weight="600" font-size="11" fill="#fff">Combo Subsidy</text>
-
-    <rect x="381" y="222" width="98" height="22" rx="4" fill="var(--teal-l)"/>
-    <text x="430" y="237" text-anchor="middle" font-family="var(--body)" font-weight="600" font-size="11" fill="var(--ink)">Rebate</text>
-    <rect x="381" y="250" width="98" height="22" rx="4" fill="var(--teal-l)"/>
-    <text x="430" y="265" text-anchor="middle" font-family="var(--body)" font-weight="600" font-size="11" fill="var(--ink)">No Incentive</text>
-
-    <rect x="381" y="400" width="98" height="22" rx="4" fill="var(--teal-d)"/>
-    <text x="430" y="415" text-anchor="middle" font-family="var(--body)" font-weight="600" font-size="11" fill="#fff">Lease Subsidy</text>
-
-    <text x="850" y="475" text-anchor="end" font-family="var(--mono)" font-size="10.5" fill="var(--muted)">Source: PIN Core Metrics glossary — Incentive Type (Cash / Finance / Lease)</text>
-  </svg>
-  <div class="note"><b>Reading it:</b> most Dealer F&amp;I &ndash; Arranged Financing and Lease sales still land in the Cash incentive column when neither the rate nor the residual is subvented; only the subvented slice counts as Supported Finance or Lease incentive.</div>
-
-  <table>
 
   <footer class="guide">&copy; 2026 Pointe Ventures &mdash; Portfolio demo build. All figures are synthetic. This guide reflects the dashboard build dated ${today}.</footer>
 </main>

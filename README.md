@@ -227,6 +227,14 @@ public display:
 
 The page makes no external network requests of any kind.
 
+- The User Guide's metric glossary is removed, along with the "How incentive
+  type is determined" diagram and the Incentive Type Mix visual description.
+  Metric definitions, weighting formulas and the Type of Sale to Type of
+  Incentive mapping are methodology, and stay proprietary even though the data
+  is synthetic. Changelog entries attributing them to the PIN Core Metrics
+  glossary went too — the attribution is itself a disclosure. If the guide is
+  ever regenerated from an upstream export, this has to be redone.
+
 ## Note on the Meeting Scheduler
 
 `meeting-scheduler` implements `Meeting Scheduler.dc.html` from the **New
