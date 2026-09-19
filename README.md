@@ -27,6 +27,9 @@ assets/
 projects/
   datamat/
     index.html                 exported app (patched with tools/patch-export.py)
+  hunnydone-app/
+    index.html                 hand-written video page (uses tokens/ and assets/fonts/)
+    intro.mp4  poster.jpg      the walkthrough, self-hosted
   hunnydone-pitch-deck/
     index.html                 hand-written slide viewer (uses tokens/ and assets/fonts/)
     slides/                    the deck, one JPEG per slide
@@ -48,10 +51,10 @@ tools/
   patch-export.py              re-applies the fixes below to a fresh export
 ```
 
-Most projects are standalone files. Three are not. `meeting-scheduler` and
-`hunnydone-pitch-deck` are hand-written rather than exported, so they link
-`tokens/` and `assets/fonts/` the way the home page does instead of inlining
-copies of them. `seeklore-slots`
+Most projects are standalone files. Four are not. `meeting-scheduler`,
+`hunnydone-app` and `hunnydone-pitch-deck` are hand-written rather than
+exported, so they link `tokens/` and `assets/fonts/` the way the home page does
+instead of inlining copies of them. `seeklore-slots`
 is implemented from a design canvas and keeps its art, fonts and runtime beside
 it, so its own folder is self-contained.
 
@@ -82,8 +85,8 @@ The mark is Luke's face — `assets/headshot.png` in the header at 24px, and
 `assets/favicon.png` (the same face cropped to the head and composited on
 Michigan blue, so it never floats transparent on a tab bar) as the icon.
 
-These tokens are used by the index page and the HunnyDone deck viewer, which is
-deliberately site chrome around someone else's slides. Every other project under
+These tokens are used by the index page and the two HunnyDone pages, which are
+deliberately site chrome around a deck and a video made elsewhere. Every other project under
 `projects/` carries its own design and is unaffected by changes here — the Meeting Scheduler
 links the separate `nef-*` token set, and the rest inline their own.
 
@@ -216,6 +219,31 @@ python3 tools/patch-export.py projects/seeklore-ereader/index.html "Seeklore eRe
 
 The title and chapter-alignment bugs are in the design project, so fixing them
 in `Seeklore.dc.html` upstream would shrink this list.
+
+## Note on the Home Management Application video
+
+`hunnydone-app` is a June 2024 screen recording of the application HunnyDone's
+home managers worked from, in a plain `<video>` with a poster and a chapter list.
+Chapters are ordinary `#t=SECONDS` links that the script turns into seeks, so
+they are shareable and the page still reads with JavaScript off.
+
+- **Trimmed and re-encoded.** 5:06–6:44 of the original (306–404 s) showed two
+  real contractors' names, phone numbers and quoted prices, and is cut; the
+  video runs 5:53 of the original 7:31. It was re-encoded rather than spliced
+  on purpose: a passthrough splice keeps the frames back to the previous
+  keyframe in the file and merely hides them. AVFoundation's
+  `AVAssetExportPresetHighestQuality` over an `AVMutableComposition`, still
+  1380x882, with `shouldOptimizeForNetworkUse` so the `moov` index comes first
+  and playback starts before the file has arrived. The audio cuts mid-thought
+  at the join.
+- **Seeking needs HTTP Range requests.** GitHub Pages serves them;
+  `python3 -m http.server` does not, so chapter links may do nothing locally
+  until the file has fully buffered. That is the server, not the page.
+- The homeowner, addresses and email in the recording are sample data. The
+  source recording is not in the repo, and should not be added.
+- At 13 MB it is the largest single file in the repo after the dashboard.
+  GitHub warns at 50 MB and refuses at 100 MB; anything longer wants re-encoding
+  first.
 
 ## Note on the HunnyDone pitch deck
 

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Management Application</title>
+<meta name="description" content="A six-minute walkthrough of the HunnyDone home manager application.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+
+<!-- Hand-written, like hunnydone-pitch-deck beside it: links the home page's
+     tokens and fonts rather than inlining copies. The video is self-hosted, so
+     the page makes no external requests. -->
+<link rel="stylesheet" href="../../tokens/donahue-fonts.css">
+<link rel="stylesheet" href="../../tokens/donahue-colors.css">
+<link rel="stylesheet" href="../../tokens/pointe-typography.css">
+
+<script>
+  /* Same origin as the home page, so the visitor's theme choice carries over. */
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved || 'light');
+  })();
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+.shell { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+/* ---------- header ---------- */
+
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  height: 48px;
+  background: var(--surface-canvas);
+  border-bottom: 1px solid var(--border-hairline);
+}
+.topbar .shell {
+  height: 48px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.back {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.topbar .name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.counter {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- intro ---------- */
+
+.intro { padding: 40px 0 28px; }
+.intro h1 {
+  margin: 0 0 10px;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+.intro p {
+  margin: 0;
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--text-secondary);
+}
+
+/* ---------- video ---------- */
+
+.player {
+  background: #000;
+  border: 1px solid var(--border-hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px oklch(0.185 0.01 60 / 0.06);
+}
+.player video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1380 / 882;
+  background: #000;
+}
+
+/* ---------- chapters ----------
+   Plain links to #t=SECONDS, so they are real, shareable URLs. The script
+   turns a click into a seek instead of a jump. */
+
+.chapters-head {
+  margin: 28px 0 10px;
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.chapters {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 8px;
+}
+.chapters a {
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 10px 12px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+.chapters a:hover { border-color: var(--border-strong); background: var(--surface-sunken); color: var(--text-primary); }
+.chapters a[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.chapters time {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+.tail { height: 72px; }
+
+@media (max-width: 640px) {
+  .shell { padding: 0 20px; }
+  .intro { padding: 28px 0 20px; }
+}
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="shell">
+      <a class="back" href="../../">&#8592; Portfolio</a>
+      <span class="name">Home Management Application</span>
+      <span class="counter">5:53</span>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <section class="intro">
+      <h1>Home Management Application</h1>
+      <p>A walkthrough of the application HunnyDone&#8217;s home managers worked
+      from: every home on a map, and behind each pin a record of the house &mdash;
+      its rooms, the appliances and mechanicals in them down to make and model, the
+      preventative maintenance checklist for a visit, and the open projects
+      against it. Recorded in June 2024, against sample homeowners; a stretch
+      showing real contractors&#8217; quotes has been cut.</p>
+    </section>
+
+    <div class="player">
+      <video id="video" controls playsinline preload="metadata" poster="poster.jpg"
+             width="1380" height="882">
+        <source src="intro.mp4" type="video/mp4">
+        <p>This browser cannot play the video inline.
+        <a href="intro.mp4">Download it</a> (13 MB, MP4).</p>
+      </video>
+    </div>
+
+    <h2 class="chapters-head">Chapters</h2>
+    <ol class="chapters" id="chapters">
+      <li><a href="#t=0"><time datetime="PT0S">0:00</time> Introduction</a></li>
+      <li><a href="#t=75"><time datetime="PT1M15S">1:15</time> Every home on a map</a></li>
+      <li><a href="#t=90"><time datetime="PT1M30S">1:30</time> One home&#8217;s record</a></li>
+      <li><a href="#t=180"><time datetime="PT3M">3:00</time> A preventative maintenance visit</a></li>
+      <li><a href="#t=225"><time datetime="PT3M45S">3:45</time> Rooms, and the items in them</a></li>
+      <li><a href="#t=258"><time datetime="PT4M18S">4:18</time> An appliance, down to the model</a></li>
+      <li><a href="#t=282"><time datetime="PT4M42S">4:42</time> A home&#8217;s open projects</a></li>
+      <li><a href="#t=313"><time datetime="PT5M13S">5:13</time> The list across every home</a></li>
+    </ol>
+
+    <div class="tail"></div>
+  </main>
+
+<script>
+  (function () {
+    var video = document.getElementById('video');
+    var links = [].slice.call(document.querySelectorAll('#chapters a'));
+    var starts = links.map(function (a) { return parseFloat(a.hash.slice(3)) || 0; });
+
+    function seek(t, play) {
+      var run = function () {
+        video.currentTime = t;
+        if (play) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+      };
+      /* Before metadata arrives there is no timeline to seek on. */
+      if (video.readyState >= 1) run();
+      else { video.addEventListener('loadedmetadata', run, { once: true }); video.load(); }
+    }
+
+    links.forEach(function (a, i) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        try { history.replaceState(null, '', a.hash); } catch (err) {}
+        seek(starts[i], true);
+        video.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      });
+    });
+
+    video.addEventListener('timeupdate', function () {
+      var at = 0;
+      for (var i = 0; i < starts.length; i++) if (video.currentTime >= starts[i] - 0.25) at = i;
+      for (var k = 0; k < links.length; k++) {
+        links[k].setAttribute('aria-current', k === at && video.currentTime > 0 ? 'true' : 'false');
+      }
+    });
+
+    /* A #t=N link opens at that point, but does not autoplay. */
+    var m = /^#t=(\d+(?:\.\d+)?)$/.exec(location.hash);
+    if (m) seek(parseFloat(m[1]), false);
+  })();
+</script>
+</body>
+</html>
