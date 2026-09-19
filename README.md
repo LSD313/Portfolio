@@ -27,6 +27,9 @@ assets/
 projects/
   datamat/
     index.html                 exported app (patched with tools/patch-export.py)
+  hunnydone-pitch-deck/
+    index.html                 hand-written slide viewer (uses tokens/ and assets/fonts/)
+    slides/                    the deck, one JPEG per slide
   vehicle-performance-dashboard/
     index.html                 self-contained project (data embedded)
   seeklore/
@@ -45,9 +48,10 @@ tools/
   patch-export.py              re-applies the fixes below to a fresh export
 ```
 
-Most projects are standalone files. Two are not. `meeting-scheduler` is
-hand-written rather than exported, so it links `tokens/` and `assets/fonts/`
-the way the home page does instead of inlining copies of them. `seeklore-slots`
+Most projects are standalone files. Three are not. `meeting-scheduler` and
+`hunnydone-pitch-deck` are hand-written rather than exported, so they link
+`tokens/` and `assets/fonts/` the way the home page does instead of inlining
+copies of them. `seeklore-slots`
 is implemented from a design canvas and keeps its art, fonts and runtime beside
 it, so its own folder is self-contained.
 
@@ -78,8 +82,9 @@ The mark is Luke's face — `assets/headshot.png` in the header at 24px, and
 `assets/favicon.png` (the same face cropped to the head and composited on
 Michigan blue, so it never floats transparent on a tab bar) as the icon.
 
-These tokens are used by the index page only. Every project under `projects/`
-carries its own design and is unaffected by changes here — the Meeting Scheduler
+These tokens are used by the index page and the HunnyDone deck viewer, which is
+deliberately site chrome around someone else's slides. Every other project under
+`projects/` carries its own design and is unaffected by changes here — the Meeting Scheduler
 links the separate `nef-*` token set, and the rest inline their own.
 
 ## Running it locally
@@ -211,6 +216,29 @@ python3 tools/patch-export.py projects/seeklore-ereader/index.html "Seeklore eRe
 
 The title and chapter-alignment bugs are in the design project, so fixing them
 in `Seeklore.dc.html` upstream would shrink this list.
+
+## Note on the HunnyDone pitch deck
+
+`hunnydone-pitch-deck` is the November 2024 seed deck, rendered from the PDF to
+one 1600x900 JPEG per slide with `pdftoppm` and shown in a small hand-written
+viewer. With JavaScript off the page is every slide stacked in order; with it,
+one slide at a time with arrow keys, a filmstrip, fullscreen, and `#N` deep
+links. Each slide's content is carried in its `alt`.
+
+The deck was written to be handed to investors, not posted, so it was edited for
+public display:
+
+- **The team slide and the contact slide are left out.** The first carries
+  other people's names, photos and backgrounds; the second was phone numbers
+  and a street address.
+- **The phone number is masked** on the title slide. The mask is painted into
+  the image — the source PDF is not in the repo, and should not be added,
+  because it still carries everything above.
+- The PDF's trailing blank page is dropped too, so the deck is fourteen slides
+  of the original seventeen pages.
+
+If the slides are ever re-rendered from the PDF, pages 12, 16 and 17 have to be
+skipped and the masking redone.
 
 ## Note on the dashboard project
 

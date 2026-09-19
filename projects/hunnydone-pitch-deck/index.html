@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HunnyDone Pitch Deck</title>
+<meta name="description" content="The November 2024 seed pitch for HunnyDone, a home management technology company.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+
+<!-- Hand-written, like meeting-scheduler: links the home page's tokens and
+     fonts rather than inlining copies. The slides are flat images rendered
+     from the deck PDF — see the README for what was masked and why. -->
+<link rel="stylesheet" href="../../tokens/donahue-fonts.css">
+<link rel="stylesheet" href="../../tokens/donahue-colors.css">
+<link rel="stylesheet" href="../../tokens/pointe-typography.css">
+
+<script>
+  /* Same origin as the home page, so the visitor's theme choice carries over. */
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    document.documentElement.setAttribute('data-theme', saved || 'light');
+    document.documentElement.className = 'js';
+  })();
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: var(--text-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+.shell { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+/* ---------- header ---------- */
+
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  height: 48px;
+  background: var(--surface-canvas);
+  border-bottom: 1px solid var(--border-hairline);
+}
+.topbar .shell {
+  height: 48px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.back {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.topbar .name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.counter {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- intro ---------- */
+
+.intro { padding: 40px 0 28px; }
+.intro h1 {
+  margin: 0 0 10px;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+.intro p {
+  margin: 0;
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--text-secondary);
+}
+
+/* ---------- slides ----------
+   Without JavaScript this is every slide stacked in order, which is a
+   perfectly good way to read a deck. With it, .js shows one at a time. */
+
+.slides { list-style: none; margin: 0; padding: 0; display: grid; gap: 24px; }
+
+.slide {
+  margin: 0;
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px oklch(0.185 0.01 60 / 0.06);
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-sunken);
+}
+
+.js .slide:not(.is-current) { display: none; }
+
+.stage { position: relative; }
+
+.nav {
+  position: absolute; top: 0; bottom: 0;
+  width: 18%;
+  min-width: 56px;
+  padding: 0 14px;
+  display: flex; align-items: center;
+  background: none; border: 0; cursor: pointer;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+.nav--prev { left: 0; justify-content: flex-start; }
+.nav--next { right: 0; justify-content: flex-end; }
+.stage:hover .nav, .nav:focus-visible { opacity: 1; }
+.nav:disabled { visibility: hidden; }
+.nav span {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--scrim);
+  font-size: 18px; line-height: 1;
+}
+@media (hover: none) { .nav { opacity: 1; } }
+
+/* ---------- controls + filmstrip ---------- */
+
+.controls {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-top: 14px;
+}
+.controls .hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+.btn {
+  height: 26px; padding: 0 10px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+.btn:hover { background: var(--surface-sunken); border-color: var(--border-strong); }
+
+.strip {
+  list-style: none; margin: 18px 0 0; padding: 4px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+.strip button {
+  display: block; width: 100%; padding: 0;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-hairline);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.72;
+  transition: opacity 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+.strip button:hover { opacity: 1; }
+.strip button[aria-current="true"] {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.strip img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+
+.tail { height: 72px; }
+
+/* Fullscreen: the stage fills the screen, the slide letterboxes inside it. */
+.stage:fullscreen {
+  background: #000;
+  display: grid; place-items: center;
+}
+.stage:fullscreen .slides { width: min(100vw, calc(100vh * 16 / 9)); }
+.stage:fullscreen .slide { border: 0; border-radius: 0; }
+
+@media (max-width: 640px) {
+  .shell { padding: 0 20px; }
+  .intro { padding: 28px 0 20px; }
+  .strip { grid-template-columns: repeat(4, 1fr); }
+  .controls .hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="shell">
+      <a class="back" href="../../">&#8592; Portfolio</a>
+      <span class="name">HunnyDone Pitch Deck</span>
+      <span class="counter" id="counter" aria-live="polite">14 slides</span>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <section class="intro">
+      <h1>HunnyDone Pitch Deck</h1>
+      <p>The November 2024 seed pitch for HunnyDone, a home management company I
+      founded in southeast Michigan: a local home manager on subscription for
+      preventative maintenance and contractor oversight, a free iOS app as the way
+      in, and the home data that builds up underneath as the long game.</p>
+    </section>
+
+    <div class="stage" id="stage">
+      <ol class="slides" id="slides">
+        <li class="slide is-current"><img src="slides/01.jpg" width="1600" height="900" alt="Title slide. HunnyDone: a home management technology company. Luke Donahue, luke@hunnydone.com."></li>
+        <li class="slide"><img src="slides/02.jpg" width="1600" height="900" loading="lazy" alt="What is the best part about living in a rental? The word maintenance, struck through with a red prohibition sign."></li>
+        <li class="slide"><img src="slides/03.jpg" width="1600" height="900" loading="lazy" alt="The problem. Millennial homeowners often lack the nurtured skills and time to maintain and improve their homes. A long list of what needs upkeep: refrigerator, furnace, water heater, sump pump, gutters, roofing, siding and more."></li>
+        <li class="slide"><img src="slides/04.jpg" width="1600" height="900" loading="lazy" alt="We are trusted home managers. Maintenance management: preventative maintenance, inspections, light handyman work, advice and guidance. Contractor management: contract review, license and insurance, work history, mediation and negotiation. Underneath both, a home operating system."></li>
+        <li class="slide"><img src="slides/05.jpg" width="1600" height="900" loading="lazy" alt="Revenue from in-home services: home management under $100 a month, home services priced by market, contractor management at 10% of project cost. Future revenue from data: Snapshot by HunnyDone, a CARFAX for homes, and market research and consulting."></li>
+        <li class="slide"><img src="slides/06.jpg" width="1600" height="900" loading="lazy" alt="Traction. HunnyDone broke through $100K in September and $1,000 MRR. Payment dashboard charts: 12 active subscribers, $1,205.84 MRR, $6,029.40 subscriber lifetime value, $119.5K gross volume."></li>
+        <li class="slide"><img src="slides/07.jpg" width="1600" height="900" loading="lazy" alt="The home management market is huge but hyper local. $67B is 10% of all U.S. home improvement; $1.3B Midwest millennials; $100M southeast Michigan millennials. After one year: there is a problem to solve, solving it is hard, and whoever cracks it will have a huge moat."></li>
+        <li class="slide"><img src="slides/08.jpg" width="1600" height="900" loading="lazy" alt="How does this scale? Local LLC managers are incentivized to focus on quality relationships, while HunnyDone Co. provides the infrastructure for scalability. Org diagram: HunnyDone Co. above a Michigan-based local LLC prototype, HunnyDone Technology, and future HunnyDone areas."></li>
+        <li class="slide"><img src="slides/09.jpg" width="1600" height="900" loading="lazy" alt="Competitive comparison across inspections, to-do list, finding pros and hiring pros. HunnyDone covers all four with the homeowner as the customer; lead-generation marketplaces, maintenance apps, property management and DIY each cover only some."></li>
+        <li class="slide"><img src="slides/10.jpg" width="1600" height="900" loading="lazy" alt="Go to market: a freemium application leads to local loyalty. One, a free home management app. Two, premium features. Three, upsell to a local manager. Four, build local knowledge. Five, expand data partnerships."></li>
+        <li class="slide"><img src="slides/11.jpg" width="1600" height="900" loading="lazy" alt="Flexible revenue model equals controlled scalability. Projection for 2024 to 2029: a single service area grows from 60 active doors and $0.1M revenue to 7,134 doors and $15.9M; service areas grow from 1 to 176; HunnyDone Co. income reaches $104.3M including data revenue."></li>
+        <li class="slide"><img src="slides/12.jpg" width="1600" height="900" loading="lazy" alt="The ask. HunnyDone must invest in customers, process and software. $500K to reach 250 clients at roughly $800 CAC, serve them while developing a scalable data acquisition model, and fund UX and IP software development. Use of funds: 40% customer acquisition, 30% client service and process, 10% each for bid system, applied AI and data acquisition tech."></li>
+        <li class="slide"><img src="slides/13.jpg" width="1600" height="900" loading="lazy" alt="Property technology and service franchise company exits and large funding rounds, followed by new home maintenance startups actively raising."></li>
+        <li class="slide"><img src="slides/14.jpg" width="1600" height="900" loading="lazy" alt="Closing slide. HunnyDo? HunnyDone. A modern home management company."></li>
+      </ol>
+      <button class="nav nav--prev" id="prev" type="button" aria-label="Previous slide" hidden><span aria-hidden="true">&#8592;</span></button>
+      <button class="nav nav--next" id="next" type="button" aria-label="Next slide" hidden><span aria-hidden="true">&#8594;</span></button>
+    </div>
+
+    <div class="controls" id="controls" hidden>
+      <span class="hint">&#8592; &#8594; to move &middot; F for fullscreen</span>
+      <button class="btn" id="full" type="button"><span aria-hidden="true">&#9974;</span> fullscreen</button>
+    </div>
+
+    <ol class="strip" id="strip" aria-label="All slides" hidden></ol>
+
+    <div class="tail"></div>
+  </main>
+
+<script>
+  (function () {
+    var slides = [].slice.call(document.querySelectorAll('.slide'));
+    var stage = document.getElementById('stage');
+    var strip = document.getElementById('strip');
+    var counter = document.getElementById('counter');
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var thumbs = [];
+    var at = 0;
+
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+    /* The markup lazy-loads every slide but the first, which is right for the
+       no-JS stack. Here the others sit in display: none, and whether a deferred
+       image resumes when its parent is revealed varies by engine — so drop the
+       attribute and re-assign src, which starts the fetch unconditionally. */
+    function load(slide) {
+      var img = slide.querySelector('img');
+      if (!img.hasAttribute('loading')) return;
+      img.removeAttribute('loading');
+      if (!(img.complete && img.naturalWidth)) img.src = img.getAttribute('src');
+    }
+
+    function go(i, fromHash) {
+      at = Math.max(0, Math.min(slides.length - 1, i));
+      for (var k = 0; k < slides.length; k++) {
+        slides[k].classList.toggle('is-current', k === at);
+        thumbs[k].setAttribute('aria-current', k === at ? 'true' : 'false');
+      }
+      /* The slide after this one is a keypress away — fetch it with this one. */
+      load(slides[at]);
+      if (slides[at + 1]) load(slides[at + 1]);
+      counter.textContent = pad(at + 1) + ' / ' + pad(slides.length);
+      prev.disabled = at === 0;
+      next.disabled = at === slides.length - 1;
+      if (!fromHash) {
+        try { history.replaceState(null, '', '#' + (at + 1)); } catch (e) {}
+      }
+    }
+
+    slides.forEach(function (s, i) {
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      var img = document.createElement('img');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Slide ' + (i + 1));
+      img.src = s.querySelector('img').getAttribute('src');
+      img.alt = '';
+      img.loading = 'lazy';
+      img.width = 1600; img.height = 900;
+      b.appendChild(img);
+      b.addEventListener('click', function () { go(i); });
+      li.appendChild(b);
+      strip.appendChild(li);
+      thumbs.push(b);
+    });
+
+    prev.addEventListener('click', function () { go(at - 1); });
+    next.addEventListener('click', function () { go(at + 1); });
+
+    var full = document.getElementById('full');
+    function toggleFull() {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (stage.requestFullscreen) stage.requestFullscreen();
+    }
+    if (stage.requestFullscreen) full.addEventListener('click', toggleFull);
+    else full.hidden = true;
+
+    document.addEventListener('keydown', function (e) {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') { go(at + 1); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { go(at - 1); e.preventDefault(); }
+      else if (e.key === 'Home') { go(0); e.preventDefault(); }
+      else if (e.key === 'End') { go(slides.length - 1); e.preventDefault(); }
+      else if (e.key === 'f' || e.key === 'F') toggleFull();
+    });
+
+    function fromHash() {
+      var n = parseInt(location.hash.slice(1), 10);
+      go(isNaN(n) ? 0 : n - 1, true);
+    }
+    window.addEventListener('hashchange', fromHash);
+
+    prev.hidden = next.hidden = strip.hidden = false;
+    document.getElementById('controls').hidden = false;
+    fromHash();
+  })();
+</script>
+</body>
+</html>
