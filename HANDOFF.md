@@ -1,24 +1,35 @@
 # Handoff
 
-Written 2026-08-27, at the point of pausing work. The README covers *how* the
-site is built and how to add to it; this covers where things stand, what is
-still open, and the reasoning behind choices that would otherwise look
-arbitrary later.
+Written 2026-08-27 at the point of pausing work; project list brought up to date
+2026-09-19. The README covers *how* the site is built and how to add to it; this
+covers where things stand, what is still open, and the reasoning behind choices
+that would otherwise look arbitrary later.
 
 ## Status
 
 Live at <https://donahue.us> — GitHub Pages from `LSD313/Portfolio`, `main`,
-served from the repo root. Four projects, all self-contained single pages, all
-verified serving at the time of writing.
+served from the repo root, so **merging to `main` is publishing**. Eight
+projects in four sections, in the order the home page renders them:
 
-| Project | Size | Preview |
-|---|---|---|
-| `vehicle-performance-dashboard` | 13.6 MB | yes |
-| `seeklore` | 4.8 MB | yes |
-| `seeklore-ereader` | 3.5 MB + book data | yes |
-| `meeting-scheduler` | 80 KB | yes |
+| Section | Project | Kind | Size | Preview |
+|---|---|---|---|---|
+| Analytics | `datamat` | export, patched | 632 KB | yes |
+| Analytics | `vehicle-performance-dashboard` | single file, data embedded | 13.6 MB | yes |
+| HunnyDone | `hunnydone-app` | hand-written page + self-hosted MP4 | 13 MB | yes |
+| HunnyDone | `hunnydone-pitch-deck` | hand-written viewer + 14 JPEG slides | 1.5 MB | yes |
+| The Seeklore Universe | `seeklore-ereader` | export, patched, + book data | 3.9 MB | yes |
+| The Seeklore Universe | `seeklore` | single file | 4.6 MB | yes |
+| The Seeklore Universe | `seeklore-slots` | hand-ported, own art/fonts/runtime | 3.9 MB | yes |
+| Tools | `meeting-scheduler` | hand-written | 80 KB | yes |
 
-Working tree is clean and pushed. Nothing is half-finished in the repo.
+No longer "all self-contained single pages": five are one file (or one file plus
+data), and three — `meeting-scheduler` and the two HunnyDone pages — are
+hand-written and link the shared `tokens/` and `assets/fonts/`. What still holds
+for every one of them is the constraint that matters: zero external requests.
+
+Work happens on `claude/*` branches in worktrees under `.claude/worktrees/` and
+lands by pull request; the pitch deck was
+[LSD313/Portfolio#1](https://github.com/LSD313/Portfolio/pull/1).
 
 ## Open items
 
@@ -63,17 +74,37 @@ the dark palette was neutralised, so it shows slightly warmer surfaces than the
 live dashboard. Cosmetic, only visible side by side. A re-capture dropped at
 `assets/vehicle-performance-dashboard.jpg` fixes it.
 
+**3. The app video's audio has never been reviewed.** The picture was checked
+frame by frame and edited (see the decision below), but nobody has listened to
+it with publication in mind, and the cut at 5:06 lands mid-thought. The
+HunnyDone business line is also on screen for most of the recording — the same
+number that was on the deck's removed contact slide. It is a business number
+for a company that is no longer trading, so it was left; blurring it needs
+ffmpeg or an AVFoundation composition, and neither is set up here.
+
+**4. The video has no captions.** There is no transcript to build a WebVTT track
+from. If one is ever made, it is a `<track kind="captions">` inside the
+`<video>` and a `.vtt` beside `intro.mp4`.
+
 ## Decisions worth not re-litigating
 
-**Every project page is self-contained and makes zero external requests.** This
-is the constraint the whole site is built around, and it is checked before
-anything ships. It is why the webfonts are vendored into `assets/fonts/` rather
-than `@import`ed from Google, and why the dashboard's user guide lost its font
-links. Verify a new page with:
-
-```js
-performance.getEntriesByType('resource').filter(r => !r.name.startsWith(location.origin))
-```
+**HunnyDone material is edited for public display, and the sources stay out of
+the repo.** The deck was written for investors and the video for customers;
+neither was written to be posted. The deck lost its team and contact slides and
+had a phone number masked in the image; the PDF is not committed because it
+still carries all of that. The originals live in the iCloud archive under
+`Pointe VC/Archive/HunnyDone Archive/`. The video lost 98 seconds (306–404 s of
+the source) that showed two real contractors' names, numbers and quoted prices,
+and was re-encoded so the footage is absent rather than hidden. The removed
+slides were squashed out before the branch was first pushed, so they are not in
+GitHub's history either — keep it that way by reviewing before the first push,
+not after. **Every project page is self-contained and makes zero external
+requests.** This is the constraint the whole site is built around, and it is
+checked before anything ships. It is why the webfonts are vendored into
+`assets/fonts/` rather than `@import`ed from Google, and why the dashboard's
+user guide lost its font links. Verify a new page with: ```js
+performance.getEntriesByType('resource').filter(r =>
+!r.name.startsWith(location.origin)) ```
 
 **The dashboard runs on fully synthetic data.** It began as a work artifact and
 was rebuilt for public display: real vehicle hierarchy and segment taxonomy
@@ -122,6 +153,26 @@ avoids the window entirely.
 **`git stash` without `stash pop`** left a session's work parked and the working
 tree looking reverted. If something appears to have vanished, check
 `git stash list` before re-doing it.
+
+**A renamed image can show its old contents locally.** `git mv` keeps the
+file's mtime, and `python3 -m http.server` answers `If-Modified-Since` from
+mtime alone — so after renumbering the deck's slides the browser got
+`304 Not Modified` and drew the wrong slide under the right filename. `touch`
+the files and hard-refresh. GitHub Pages is unaffected; it validates on content.
+
+**The app's automatic file preview is not the site.** Opening an `.html` file in
+the editor's Browser pane loads it as a `data:` URL, so every relative path —
+stylesheets, slides, the video — resolves to nothing and the page looks broken.
+Only the single-file exports survive that. Check hand-written pages over HTTP.
+
+**`python3 -m http.server` has no Range support.** Video seeking, and therefore
+the chapter links on `hunnydone-app`, may not work against it. They work on
+GitHub Pages.
+
+**Port 4173 belongs to whichever session started first.** A second session (a
+worktree, say) cannot reuse the `portfolio` launch config. A temporary
+`autoPort` entry in `.claude/launch.json` running
+`python3 -m http.server ${PORT}` works; do not commit it.
 
 ## Resuming
 
