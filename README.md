@@ -301,9 +301,10 @@ Methodology stays private even though the data is synthetic:
   Metric definitions, weighting formulas, tuning thresholds and the Type of Sale
   to Type of Incentive mapping are not published. The guide keeps how the
   interface works, not how the numbers are derived.
-- Release notes from 1.9.7 on were rewritten at feature level. The originals
+- The release notes are replaced by a single generic entry saying a changelog
+  was created during development, with the dev-version logic. The originals
   quoted real figures, dataset and pipeline names, a client, and the vendor.
-  Older entries had their dataset-name and sign-in references cleaned too.
+  The app version reads the placeholder `VX.X.X`.
 - Code comments that quoted real figures, vehicle examples or measurements from
   the real panel were reworded.
 

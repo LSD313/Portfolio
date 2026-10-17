@@ -111,7 +111,7 @@ data can be regenerated without the real file. What is *not* in the repo is the
 script that sanitizes a fresh upstream export: its edit anchors contain the
 original brand strings. The README's dashboard note lists everything it has to
 do (rebrand, synthetic data, tracker and email gate out, methodology docs out,
-release notes rewritten, fonts swapped to embedded Instrument Sans / IBM Plex
+changelog replaced by one generic entry, version shown as `VX.X.X`, fonts swapped to embedded Instrument Sans / IBM Plex
 Mono, no external requests). The splash screen states the terms the project is
 published under; leave it in.
 
