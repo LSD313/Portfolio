@@ -300,7 +300,9 @@ Methodology stays private even though the data is synthetic:
   export embeds as a string, with its own link in the guide) are removed.
   Metric definitions, weighting formulas, tuning thresholds and the Type of Sale
   to Type of Incentive mapping are not published. The guide keeps how the
-  interface works, not how the numbers are derived.
+  interface works, not how the numbers are derived: its CSV column table lists
+  names and units only, and the Mix walk and Summary email sections say what each
+  element shows, not how it is built.
 - The release notes are replaced by a single generic entry saying a changelog
   was created during development, with the dev-version logic. The originals
   quoted real figures, dataset and pipeline names, a client, and the vendor.

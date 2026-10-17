@@ -6583,13 +6583,7 @@ class Component extends DCLogic {
   </ul>
 
   <h2 id="s3"><span class="n">03</span>The subject summary strip</h2>
-  <p>Directly under the top bar, the strip shows four headline metrics for the subject, each with its current value and two change chips (period-over-period and year-over-year):</p>
-  <ul>
-    <li><strong>Retail Share</strong> &mdash; the subject&rsquo;s share of retail sales.</li>
-    <li><strong>Transaction Price</strong> &mdash; average consumer-facing transaction price (CFTP).</li>
-    <li><strong>Incentive / Unit</strong> &mdash; average manufacturer incentive spend per unit.</li>
-    <li><strong>Dealer Profit</strong> &mdash; weighted F&amp;I income plus vehicle gross per unit.</li>
-  </ul>
+  <p>Directly under the top bar, the strip shows four headline metrics for the subject &mdash; <strong>Retail Share</strong>, <strong>Transaction Price</strong> (CFTP), <strong>Incentive / Unit</strong> and <strong>Dealer Profit</strong> &mdash; each with its current value and two change chips (period-over-period and year-over-year).</p>
 
   <h2 id="s4"><span class="n">04</span>Charts &amp; visual settings</h2>
   <p>The top row holds four charts. Out of the box they are line charts plotting the subject&rsquo;s full history for <strong>Retail Share</strong>, <strong>CFTP</strong>, <strong>Incentive Spend</strong>, and <strong>Dealer Profit</strong>. A dashed vertical line marks the selected period; hover any point to read its exact value. In Portfolio view the charts follow the nameplate (total-market), so their scale matches the footer row rather than the individual model rows.</p>
@@ -6616,14 +6610,10 @@ class Component extends DCLogic {
   <p><strong>Seasonal</strong> is a visual type for trend metrics that lays the months of the year (Jan to Dec) along the bottom and draws one line per year, so you can see whether this year is running ahead of or behind the same months in earlier years. The newest year is the heavy line in the accent color. The <strong>History</strong> slider picks which years appear: the default 5 years of months (60 months) shows up to six year-lines, since the first and last years are usually partial. On the Quarter basis it shows Q1 to Q4 instead; Year and YTD have no months within the year, so the chart falls back to an ordinary line. Measure (absolute or change) works as on a line chart.</p>
 
   <h3>Mix walks</h3>
-  <p><strong>Mix walk</strong> explains why a per-unit metric moved for an Industry, OEM, Nameplate or Portfolio subject. It splits the change between the period and the comparison period into two kinds of bar:</p>
-  <ul>
-    <li><strong>Mix</strong>: sales moving between the subject&rsquo;s models, series, nameplates or segments. If Ford sold more of its fast-turning models, its Days To Turn falls even though no single model turned faster.</li>
-    <li><strong>One bar per model, series, nameplate or segment</strong>: that unit&rsquo;s own change, weighted by its current share of the subject&rsquo;s sales. The largest five (more on wider cards) get their own bar; the rest are grouped into Other.</li>
-  </ul>
-  <p><strong>Break down by</strong> picks the units. An OEM can be broken down by nameplate, series, model or segment; a nameplate by model, series or segment; Industry by segment, OEM, nameplate or model; and a segment at Industry level by model, series, nameplate or OEM. A model that is new or has ended counts entirely in Mix.</p>
+  <p><strong>Mix walk</strong> explains why a per-unit metric moved for an Industry, OEM, Nameplate or Portfolio subject. It shows which parts of the subject drove the change between the period and the comparison period: a <strong>Mix</strong> bar, and one bar per model, series, nameplate or segment. The largest five (more on wider cards) get their own bar; the rest are grouped into Other.</p>
+  <p><strong>Break down by</strong> picks the units. An OEM can be broken down by nameplate, series, model or segment; a nameplate by model, series or segment; Industry by segment, OEM, nameplate or model; and a segment at Industry level by model, series, nameplate or OEM.</p>
   <p>The walk is <strong>directional</strong>: it shows which units drove the change and roughly by how much. The difference between the walk and the published change is drawn as <strong>Residual</strong>. Bars are teal when the change is good for the subject and red when it isn&rsquo;t, for example a longer Days To Turn is red and a higher CFTP is teal.</p>
-  <p>Mix walk is offered on Incentive / Unit, Dealer Profit, CFTP, Vehicle Price, MSRP, CFTP % of MSRP, Days To Turn, the lease payments, and F&amp;I Income, Vehicle Gross, APR and Finance Term when the data includes them. The finance payments keep the Payment walk instead. It is not offered on the loyalty metrics, which can&rsquo;t be built up from their parts, or on totals such as Retail Inventory, which already add up.</p>
+  <p>Mix walk is offered on Incentive / Unit, Dealer Profit, CFTP, Vehicle Price, MSRP, CFTP % of MSRP, Days To Turn, the lease payments, and F&amp;I Income, Vehicle Gross, APR and Finance Term when the data includes them. The finance payments keep the Payment walk instead. It is not offered on the loyalty metrics or on totals such as Retail Inventory.</p>
 
   <h3>History range</h3>
   <p>Trend charts, scatters and the mix charts have a <strong>History</strong> slider with two handles. Drag the left one to set where the chart starts and the right one to set where it ends, for example Oct &rsquo;21 to Dec &rsquo;25 to leave out the current year. With the right handle at the far end the chart keeps up to the latest period as new data arrives. Until you move a handle, the chart shows a rolling window (5 years, or 1 for the mix column chart); <strong>Reset to rolling</strong> goes back to it. The range is kept by month, so it carries across Basis: Oct &rsquo;21 to Dec &rsquo;25 on Quarter shows Q4 &rsquo;21 to Q4 &rsquo;25. <strong>All Trend Charts</strong> applies the same range to every trend card.</p>
@@ -6707,23 +6697,23 @@ class Component extends DCLogic {
       <tr><td>segment</td><td>Vehicle segment (or &ldquo;Total Market&rdquo; for OEM/Nameplate)</td></tr>
       <tr><td>period_type</td><td>Granularity of this row: <code>monthly</code>, <code>quarterly</code>, <code>full_year</code>, or <code>ytd</code>. Pre-aggregated in the source data &mdash; the dashboard filters by it rather than computing quarters/years itself. Rows without this column default to <code>monthly</code>.</td></tr>
       <tr><td>month, month_label</td><td>Period key and its display label. Format depends on period_type: monthly = <code>YYYY-MM</code>, quarterly = <code>YYYY-Qn</code>, full_year = <code>YYYY</code>, ytd = <code>YYYY-YTD</code>.</td></tr>
-      <tr><td>retail_sales</td><td>Retail sales volume (# units) for the row&rsquo;s entity and period</td></tr>
-      <tr><td>retail_share, my_mix_current, my_mix_new (my_mix_old derived)</td><td>Retail share (%) and model-year mix (%), split into Current / New / Old; Old is computed as 100 − (Current + New)</td></tr>      <tr><td>incentive_unit, cftp</td><td>Incentive per unit ($) and transaction price ($)</td></tr>
-      <tr><td>vehicle_price, msrp, cftp_pct_msrp</td><td>Vehicle price ($), MSRP ($), and CFTP as a percent of MSRP (%)</td></tr>
+      <tr><td>retail_sales</td><td>Retail sales (# units)</td></tr>
+      <tr><td>retail_share, my_mix_current, my_mix_new (my_mix_old derived)</td><td>Retail share (%) and model-year mix (%)</td></tr>      <tr><td>incentive_unit, cftp</td><td>Incentive per unit ($) and transaction price ($)</td></tr>
+      <tr><td>vehicle_price, msrp, cftp_pct_msrp</td><td>Vehicle price ($), MSRP ($), CFTP % of MSRP (%)</td></tr>
       <tr><td>retail_inventory, dtt</td><td>Retail inventory units (#) and days to turn (#)</td></tr>
-      <tr><td>wholesales (derived)</td><td>Vehicles added to dealer inventories (#) &mdash; computed by the dashboard, not read from a column</td></tr>
-      <tr><td>consumer_exp</td><td>Consumer expenditure ($, retail units &times; average CFTP)</td></tr>
-      <tr><td>lease_monthly_payment, lease_monthly_payment_48</td><td>Average lease monthly payment, 36mo and 48mo term ($)</td></tr>
+      <tr><td>wholesales (derived)</td><td>Wholesales (#), computed by the dashboard</td></tr>
+      <tr><td>consumer_exp</td><td>Consumer expenditure ($)</td></tr>
+      <tr><td>lease_monthly_payment, lease_monthly_payment_48</td><td>Average lease monthly payment ($)</td></tr>
       <tr><td>finance_monthly_payment_60 / 72 / 84</td><td>Average finance monthly payment by term ($)</td></tr>
-      <tr><td>pw60/72/84_term, _apr, _trade_equity, _cash_down, _amount_financed</td><td>Payment Walk drivers per finance term: average term (mo), APR (%), trade equity ($), cash down ($), amount financed ($) &mdash; populated only on the periods a walk compares, null elsewhere</td></tr>
+      <tr><td>pw60/72/84_term, _apr, _trade_equity, _cash_down, _amount_financed</td><td>Payment Walk inputs per finance term: term (mo), APR (%), trade equity ($), cash down ($), amount financed ($)</td></tr>
       <tr><td>average_finance_term</td><td>Average finance term (months)</td></tr>
       <tr><td>trade_volume</td><td>Trade-in volume (# units)</td></tr>
-      <tr><td>series_model_loyalty</td><td>Share of series trade-ins retained by the model (%)</td></tr>
-      <tr><td>nameplate_loyalty</td><td>Share of nameplate trade-ins retained by the nameplate (%)</td></tr>
-      <tr><td>dealer_profit (derived)</td><td>F&amp;I income + vehicle gross per unit ($) &mdash; computed as vehicle_gross + fi_income when both are present, rather than read from a column</td></tr>
+      <tr><td>series_model_loyalty</td><td>Series / model loyalty (%)</td></tr>
+      <tr><td>nameplate_loyalty</td><td>Nameplate loyalty (%)</td></tr>
+      <tr><td>dealer_profit (derived)</td><td>Dealer profit per unit ($), computed by the dashboard</td></tr>
       <tr><td>offer_cash / finance / lease</td><td>Average offer value by finance type ($)</td></tr>
-      <tr><td>pen_finance / lease (pen_cash derived)</td><td>Incentive mix / penetration by finance type (%) &mdash; Cash is computed as 1 − (Finance + Lease)</td></tr>
-      <tr><td>sale_mix_finance / lease (sale_mix_cash derived)</td><td>Type of Sale mix &mdash; share of transactions closed as Cash / Finance / Lease (%). Cash is computed as 100 − (Finance + Lease)</td></tr>
+      <tr><td>pen_finance / lease (pen_cash derived)</td><td>Incentive mix by finance type (%)</td></tr>
+      <tr><td>sale_mix_finance / lease (sale_mix_cash derived)</td><td>Type of Sale mix (%)</td></tr>
     </tbody>
   </table>
   <div class="note"><b>Enabling Portfolio:</b> populate the <code>nameplate</code> column on every Model row (e.g. F-150 &rarr; Ford). Without it, Portfolio view has nothing to group and shows a short setup message.</div>
@@ -6733,9 +6723,9 @@ class Component extends DCLogic {
   <h3>Summary email</h3>
   <p><strong>Summary email</strong>, in the menu under Key movements, writes a plain-text performance summary you can paste into Outlook or Gmail. <strong>Point of view</strong> picks whose story it tells: Industry, or any brand in the loaded data (type to search the list). It starts on the brand of your current subject, or Industry at the OEM and Segments levels. Changing it doesn&rsquo;t change your dashboard subject.</p>
   <p>The email always works on monthly data: the month selected on the dashboard, or the latest month when the Basis is Quarter, Year or YTD. <strong>Comparison</strong> sets what that month is compared with: the prior month (the default) or the same month last year. When the month isn&rsquo;t complete yet, the email says so and lists each source&rsquo;s data-through date. The Fuel and Class filters apply, and the email names them in its opening line. <strong>Copy email</strong> copies the subject line and body together.</p>
-  <p>The incentive section breaks the change down by model (by brand for Industry) with the same math as the Mix walk. Model-year notes, such as &ldquo;coinciding with the new model year rising 12 pts&rdquo;, describe what moved together; they don&rsquo;t prove what caused the change. <strong>MY threshold</strong> sets how many points a model-year share must move before it is mentioned.</p>
-  <p>For a brand, the share section splits the change the same way as the Share walk: <strong>segment mix</strong> (the brand\u2019s segments growing or shrinking as a share of industry sales) and each model\u2019s own move within its segment, weighted by the segment\u2019s size. These parts are quoted to 0.01 pt so they add up. When the models\u2019 gains and losses largely cancel out, the email names both sides (for example, one model\u2019s gain offset by two others\u2019 losses) instead of reporting a net of zero, and it points out a model gaining share in a shrinking segment. When a model\u2019s share and its incentive spending moved together, the email notes it as context; it doesn\u2019t claim one caused the other.</p>
-  <p><strong>Incentive tactics</strong> covers the type of incentive behind each deal: cash, subvented finance or subvented lease. It lists each type\u2019s share of deals and average offer, and splits the change in spending into offer values and the shift between types, using the incentive waterfall\u2019s math. Major shifts in a type, and the models (brands, for Industry) whose mix moved most, are called out.</p>
+  <p>The incentive section breaks the change down by model (by brand for Industry) consistent with the Mix walk. Model-year notes, such as &ldquo;coinciding with the new model year rising 12 pts&rdquo;, describe what moved together; they don&rsquo;t prove what caused the change. <strong>MY threshold</strong> sets how many points a model-year share must move before it is mentioned.</p>
+  <p>For a brand, the share section splits the change the same way as the Share walk: <strong>segment mix</strong> and each model’s own move within its segment. When the models’ gains and losses largely cancel out, the email names both sides instead of reporting a net of zero, and it points out a model gaining share in a shrinking segment. When a model’s share and its incentive spending moved together, the email notes it as context; it doesn’t claim one caused the other.</p>
+  <p><strong>Incentive tactics</strong> covers shifts in the type of incentive behind each deal (cash, finance or lease). It lists each type’s share of deals and average offer, and calls out major shifts and the models (brands, for Industry) whose mix moved most.</p>
 
   <h2 id="s9"><span class="n">09</span>Appearance</h2>
   <p>The <strong>Light / Dark</strong> toggle in the footer switches the color theme and remembers your choice for next time.</p>
