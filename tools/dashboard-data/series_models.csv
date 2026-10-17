@@ -1,0 +1,628 @@
+series,nameplate,segment,model,model_segment
+TLX,Acura,Compact Premium Car,TLX,Compact Premium Car
+RDX,Acura,Compact Premium SUV,RDX,Compact Premium SUV
+MDX,Acura,Midsize Premium SUV,MDX,Midsize Premium SUV
+ZDX,Acura,Midsize Premium SUV,ZDX,Midsize Premium SUV
+Integra,Acura,Small Premium Car,Integra,Small Premium Car
+ADX,Acura,Small Premium SUV,ADX,Small Premium SUV
+Giulia,Alfa Romeo,Compact Premium Car,Giulia,Compact Premium Car
+Giulia,Alfa Romeo,Compact Premium Car,Giulia Quadrifoglio,Compact Premium Car
+Stelvio,Alfa Romeo,Compact Premium SUV,Stelvio,Compact Premium SUV
+Stelvio,Alfa Romeo,Compact Premium SUV,Stelvio Quadrifoglio,Compact Premium SUV
+Tonale,Alfa Romeo,Small Premium SUV,Tonale,Small Premium SUV
+Tonale,Alfa Romeo,Small Premium SUV,Tonale PHEV,Small Premium SUV
+Vantage,Aston Martin,Super Premium,Vantage,Super Premium
+DBX,Aston Martin,Super Premium,DBX,Super Premium
+DB,Aston Martin,Super Premium,DB12,Super Premium
+Vanquish,Aston Martin,Super Premium,Vanquish,Super Premium
+Valhalla,Aston Martin,Super Premium,Valhalla,Super Premium
+DB,Aston Martin,Super Premium,DBS Superleggera,Super Premium
+A5,Audi,Compact Premium Car,A5,Compact Premium Car
+A5,Audi,Compact Premium Car,A5 Sportback,Compact Premium Car
+A5,Audi,Compact Premium Car,S5,Compact Premium Car
+A5,Audi,Compact Premium Car,S5 Sportback,Compact Premium Car
+Q5,Audi,Compact Premium SUV,Q5,Compact Premium SUV
+Q5,Audi,Compact Premium SUV,SQ5,Compact Premium SUV
+Q5,Audi,Compact Premium SUV,Q5 Sportback,Compact Premium SUV
+Q5,Audi,Compact Premium SUV,SQ5 Sportback,Compact Premium SUV
+Q4,Audi,Compact Premium SUV,Q4 e-tron,Compact Premium SUV
+Q5,Audi,Compact Premium SUV,Q5 PHEV,Compact Premium SUV
+Q4,Audi,Compact Premium SUV,Q4 e-tron Sportback,Compact Premium SUV
+A8,Audi,Large Premium Car,A8,Large Premium Car
+A8,Audi,Large Premium Car,S8,Large Premium Car
+A6,Audi,Midsize Premium Car,A6,Midsize Premium Car
+A6,Audi,Midsize Premium Car,A6 e-tron Sportback,Midsize Premium Car
+A6,Audi,Midsize Premium Car,RS 6,Midsize Premium Car
+A7,Audi,Midsize Premium Car,RS 7,Midsize Premium Car
+A6,Audi,Midsize Premium Car,S6 e-tron Sportback,Midsize Premium Car
+A6,Audi,Midsize Premium Car,A6 allroad,Midsize Premium Car
+e-tron GT,Audi,Midsize Premium Car,S e-tron GT,Midsize Premium Car
+e-tron GT,Audi,Midsize Premium Car,RS e-tron GT,Midsize Premium Car
+A7,Audi,Midsize Premium Car,A7,Midsize Premium Car
+A6,Audi,Midsize Premium Car,S6,Midsize Premium Car
+A7,Audi,Midsize Premium Car,S7,Midsize Premium Car
+e-tron GT,Audi,Midsize Premium Car,e-tron GT,Midsize Premium Car
+Q7,Audi,Midsize Premium SUV,Q7,Midsize Premium SUV
+Q8,Audi,Midsize Premium SUV,Q8,Midsize Premium SUV
+Q6,Audi,Midsize Premium SUV,Q6 e-tron,Midsize Premium SUV
+Q8,Audi,Midsize Premium SUV,RS Q8,Midsize Premium SUV
+Q8,Audi,Midsize Premium SUV,SQ8,Midsize Premium SUV
+Q6,Audi,Midsize Premium SUV,SQ6 e-tron,Midsize Premium SUV
+Q7,Audi,Midsize Premium SUV,SQ7,Midsize Premium SUV
+Q6,Audi,Midsize Premium SUV,Q6 e-tron Sportback,Midsize Premium SUV
+Q6,Audi,Midsize Premium SUV,SQ6 e-tron Sportback,Midsize Premium SUV
+Q8,Audi,Midsize Premium SUV,Q8 e-tron,Midsize Premium SUV
+A3,Audi,Small Premium Car,A3,Small Premium Car
+A3,Audi,Small Premium Car,RS 3,Small Premium Car
+A3,Audi,Small Premium Car,S3,Small Premium Car
+Q3,Audi,Small Premium SUV,Q3,Small Premium SUV
+X3,BMW,Compact Premium SUV,X3,Compact Premium SUV
+X4,BMW,Compact Premium SUV,X4,Compact Premium SUV
+iX3,BMW,Compact Premium SUV,iX3,Compact Premium SUV
+X4,BMW,Compact Premium SUV,X4 M,Compact Premium SUV
+Z4,BMW,Compact Premium Sporty Car,Z4,Compact Premium Sporty Car
+7 Series,BMW,Large Premium Car,740I,Large Premium Car
+7 Series,BMW,Large Premium Car,760I xDrive,Large Premium Car
+i7,BMW,Large Premium Car,i7,Large Premium Car
+7 Series,BMW,Large Premium Car,740I xDrive,Large Premium Car
+7 Series,BMW,Large Premium Car,750e xDrive Plug-In Hybrid,Large Premium Car
+X7,BMW,Large Premium SUV,X7,Large Premium SUV
+XM,BMW,Large Premium SUV,XM,Large Premium SUV
+X7,BMW,Large Premium SUV,Alpina XB7,Large Premium SUV
+5 Series,BMW,Midsize Premium Car,530I,Midsize Premium Car
+i5,BMW,Midsize Premium Car,i5,Midsize Premium Car
+5 Series,BMW,Midsize Premium Car,530I xDrive,Midsize Premium Car
+5 Series,BMW,Midsize Premium Car,540I xDrive,Midsize Premium Car
+5 Series,BMW,Midsize Premium Car,550e xDrive Plug-In Hybrid,Midsize Premium Car
+5 Series,BMW,Midsize Premium Car,M5 Plug-In Hybrid,Midsize Premium Car
+5 Series,BMW,Midsize Premium Car,M5 Touring Plug-In Hybrid,Midsize Premium Car
+X5,BMW,Midsize Premium SUV,X5,Midsize Premium SUV
+X5,BMW,Midsize Premium SUV,X5 Plug-In Hybrid,Midsize Premium SUV
+X6,BMW,Midsize Premium SUV,X6,Midsize Premium SUV
+iX,BMW,Midsize Premium SUV,iX,Midsize Premium SUV
+X5,BMW,Midsize Premium SUV,X5 M,Midsize Premium SUV
+X6,BMW,Midsize Premium SUV,X6 M,Midsize Premium SUV
+8 Series,BMW,Midsize Premium Sporty Car,840I,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,840I Gran Coupe,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,840I xDrive,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,840I xDrive Gran Coupe,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,Alpina B8 xDrive Gran Coupe,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,M8,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,M8 Gran Coupe,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,M850I xDrive,Midsize Premium Sporty Car
+8 Series,BMW,Midsize Premium Sporty Car,M850I xDrive Gran Coupe,Midsize Premium Sporty Car
+2 Series,BMW,Small Premium Car,228 Gran Coupe,Small Premium Car
+2 Series,BMW,Small Premium Car,228 xDrive Gran Coupe,Small Premium Car
+2 Series,BMW,Small Premium Car,228I Gran Coupe,Small Premium Car
+2 Series,BMW,Small Premium Car,228I xDrive Gran Coupe,Small Premium Car
+2 Series,BMW,Small Premium Car,230I,Small Premium Car
+2 Series,BMW,Small Premium Car,230I xDrive,Small Premium Car
+2 Series,BMW,Small Premium Car,M2,Small Premium Car
+2 Series,BMW,Small Premium Car,M235 xDrive Gran Coupe,Small Premium Car
+2 Series,BMW,Small Premium Car,M235I xDrive Gran Coupe,Small Premium Car
+2 Series,BMW,Small Premium Car,M240I,Small Premium Car
+2 Series,BMW,Small Premium Car,M240I xDrive,Small Premium Car
+X1,BMW,Small Premium SUV,X1,Small Premium SUV
+X2,BMW,Small Premium SUV,X2,Small Premium SUV
+Bentayga,Bentley,Super Premium,Bentayga,Super Premium
+Flying Spur,Bentley,Super Premium,Flying Spur PHEV,Super Premium
+Continental - Super Premium,Bentley,Super Premium,Continental GT,Super Premium
+Bentayga,Bentley,Super Premium,Bentayga EWB,Super Premium
+Continental - Super Premium,Bentley,Super Premium,Continental GTC PHEV,Super Premium
+Continental - Super Premium,Bentley,Super Premium,Continental GT PHEV,Super Premium
+Bentayga,Bentley,Super Premium,Bentayga PHEV,Super Premium
+Bentayga,Bentley,Super Premium,Flying Spur,Super Premium
+Envision,Buick,Compact SUV,Envision,Compact SUV
+Enclave,Buick,Midsize SUV,Enclave,Midsize SUV
+Envista,Buick,Small SUV,Envista,Small SUV
+Encore GX,Buick,Small SUV,Encore GX,Small SUV
+CT5,Cadillac,Compact Premium Car,CT5,Compact Premium Car
+CT5,Cadillac,Compact Premium Car,CT5-V,Compact Premium Car
+OPTIQ,Cadillac,Compact Premium SUV,OPTIQ,Compact Premium SUV
+XT4,Cadillac,Compact Premium SUV,XT4,Compact Premium SUV
+OPTIQ,Cadillac,Compact Premium SUV,OPTIQ-V,Compact Premium SUV
+CELESTIQ,Cadillac,Large Premium Car,CELESTIQ,Large Premium Car
+Escalade,Cadillac,Large Premium SUV,Escalade,Large Premium SUV
+Escalade,Cadillac,Large Premium SUV,Escalade ESV,Large Premium SUV
+Escalade,Cadillac,Large Premium SUV,Escalade ESV-V,Large Premium SUV
+Escalade,Cadillac,Large Premium SUV,Escalade IQ,Large Premium SUV
+Escalade,Cadillac,Large Premium SUV,Escalade IQL,Large Premium SUV
+Escalade,Cadillac,Large Premium SUV,Escalade-V,Large Premium SUV
+XT5,Cadillac,Midsize Premium SUV,XT5,Midsize Premium SUV
+LYRIQ,Cadillac,Midsize Premium SUV,LYRIQ,Midsize Premium SUV
+VISTIQ,Cadillac,Midsize Premium SUV,VISTIQ,Midsize Premium SUV
+XT6,Cadillac,Midsize Premium SUV,XT6,Midsize Premium SUV
+LYRIQ,Cadillac,Midsize Premium SUV,LYRIQ-V,Midsize Premium SUV
+CT4,Cadillac,Small Premium Car,CT4,Small Premium Car
+CT4,Cadillac,Small Premium Car,CT4-V,Small Premium Car
+Equinox,Chevrolet,Compact SUV,Equinox,Compact SUV
+Equinox,Chevrolet,Compact SUV,Equinox EV,Compact SUV
+Silverado - Large Pickup - HD,Chevrolet,Large Pickup - HD,Silverado 2500 HD,Large Pickup - HD
+Silverado - Large Pickup - HD,Chevrolet,Large Pickup - HD,Silverado 3500,Large Pickup - HD
+Silverado - Large Pickup - LD,Chevrolet,Large Pickup - LD,Silverado 1500,Large Pickup - LD
+Silverado - Large Pickup - LD,Chevrolet,Large Pickup - LD,Silverado EV,Large Pickup - LD
+Tahoe,Chevrolet,Large SUV,Tahoe,Large SUV
+Suburban,Chevrolet,Large SUV,Suburban K1500,Large SUV
+Suburban,Chevrolet,Large SUV,Suburban C1500,Large SUV
+Express,Chevrolet,Large Van,Express 2500,Large Van
+Express,Chevrolet,Large Van,Express 3500,Large Van
+BrightDrop Zevo,Chevrolet,Large Van,BrightDrop 600,Large Van
+Malibu,Chevrolet,Midsize Car,Malibu,Midsize Car
+Colorado,Chevrolet,Midsize Pickup,Colorado,Midsize Pickup
+Corvette,Chevrolet,Midsize Premium Sporty Car,Corvette,Midsize Premium Sporty Car
+Corvette,Chevrolet,Midsize Premium Sporty Car,Corvette E-Ray,Midsize Premium Sporty Car
+Traverse,Chevrolet,Midsize SUV,Traverse,Midsize SUV
+Blazer,Chevrolet,Midsize SUV,Blazer,Midsize SUV
+Blazer,Chevrolet,Midsize SUV,Blazer EV,Midsize SUV
+Blazer,Chevrolet,Midsize SUV,Traverse Limited,Midsize SUV
+Camaro,Chevrolet,Midsize Sporty Car,Camaro,Midsize Sporty Car
+Trax,Chevrolet,Small SUV,Trax,Small SUV
+Trailblazer,Chevrolet,Small SUV,Trailblazer,Small SUV
+Bolt - Small SUV,Chevrolet,Small SUV,Bolt,Small SUV
+300,Chrysler,Large Car,300,Large Car
+Pacifica,Chrysler,Midsize Van,Pacifica,Midsize Van
+Voyager,Chrysler,Midsize Van,Voyager,Midsize Van
+Pacifica,Chrysler,Midsize Van,Pacifica Plug-In Hybrid,Midsize Van
+Charger,Dodge,Large Car,Charger,Large Car
+Charger,Dodge,Large Car,Charger Daytona,Large Car
+Durango,Dodge,Midsize SUV,Durango,Midsize SUV
+Challenger,Dodge,Midsize Sporty Car,Challenger,Midsize Sporty Car
+Hornet,Dodge,Small SUV,Hornet,Small SUV
+Hornet,Dodge,Small SUV,Hornet PHEV,Small SUV
+Purosangue,Ferrari,Super Premium,Purosangue,Super Premium
+296,Ferrari,Super Premium,296 GTS,Super Premium
+Roma,Ferrari,Super Premium,Roma,Super Premium
+12Cilindri,Ferrari,Super Premium,12Cilindri,Super Premium
+SF90,Ferrari,Super Premium,SF90,Super Premium
+296,Ferrari,Super Premium,296 GTB,Super Premium
+296,Ferrari,Super Premium,296 Speciale,Super Premium
+F80,Ferrari,Super Premium,F80,Super Premium
+12Cilindri,Ferrari,Super Premium,812 GTS,Super Premium
+296,Ferrari,Super Premium,F8 Spider,Super Premium
+812,Ferrari,Super Premium,812 Competizione,Super Premium
+12Cilindri,Ferrari,Super Premium,812 Competizione A,Super Premium
+296,Ferrari,Super Premium,Portofino M,Super Premium
+12Cilindri,Ferrari,Super Premium,Daytona SP3,Super Premium
+500,Fiat,Small Car,500e,Small Car
+500X,Fiat,Small SUV,500X,Small SUV
+Transit Connect,Ford,Compact MPV,Transit Connect,Compact MPV
+Bronco,Ford,Compact SUV,Bronco,Compact SUV
+Escape,Ford,Compact SUV,Escape,Compact SUV
+Mustang Mach-E,Ford,Compact SUV,Mustang Mach-E,Compact SUV
+Escape,Ford,Compact SUV,Escape Hybrid,Compact SUV
+Escape,Ford,Compact SUV,Escape PHEV,Compact SUV
+F-Series - Large Pickup - HD,Ford,Large Pickup - HD,F-250,Large Pickup - HD
+F-Series - Large Pickup - HD,Ford,Large Pickup - HD,F-350,Large Pickup - HD
+F-Series - Large Pickup - HD,Ford,Large Pickup - HD,F-450,Large Pickup - HD
+F-Series - Large Pickup - LD,Ford,Large Pickup - LD,F-150,Large Pickup - LD
+F-Series - Large Pickup - LD,Ford,Large Pickup - LD,F-150 Hybrid,Large Pickup - LD
+F-Series - Large Pickup - LD,Ford,Large Pickup - LD,F-150 Lightning,Large Pickup - LD
+Expedition,Ford,Large SUV,Expedition,Large SUV
+Expedition,Ford,Large SUV,Expedition Max,Large SUV
+Transit,Ford,Large Van,E-Transit T-350,Large Van
+Transit,Ford,Large Van,Transit T-150,Large Van
+Transit,Ford,Large Van,Transit T-250,Large Van
+Transit,Ford,Large Van,Transit T-350,Large Van
+Maverick,Ford,Midsize Pickup,Maverick Hybrid,Midsize Pickup
+Ranger,Ford,Midsize Pickup,Ranger,Midsize Pickup
+Maverick,Ford,Midsize Pickup,Maverick,Midsize Pickup
+Explorer,Ford,Midsize SUV,Explorer,Midsize SUV
+Edge,Ford,Midsize SUV,Edge,Midsize SUV
+Explorer,Ford,Midsize SUV,Explorer Hybrid,Midsize SUV
+Mustang,Ford,Midsize Sporty Car,Mustang,Midsize Sporty Car
+Mustang,Ford,Midsize Sporty Car,Mustang GTD,Midsize Sporty Car
+Bronco Sport,Ford,Small SUV,Bronco Sport,Small SUV
+Terrain,GMC,Compact SUV,Terrain,Compact SUV
+Sierra - Large Pickup - HD,GMC,Large Pickup - HD,Sierra 2500 HD,Large Pickup - HD
+Sierra - Large Pickup - HD,GMC,Large Pickup - HD,Sierra 3500,Large Pickup - HD
+Sierra - Large Pickup - HD,GMC,Large Pickup - HD,Sierra Denali 2500 HD,Large Pickup - HD
+Sierra - Large Pickup - HD,GMC,Large Pickup - HD,Sierra Denali 3500,Large Pickup - HD
+Sierra - Large Pickup - LD,GMC,Large Pickup - LD,Sierra 1500,Large Pickup - LD
+Sierra - Large Pickup - LD,GMC,Large Pickup - LD,Sierra Denali,Large Pickup - LD
+Sierra - Large Pickup - LD,GMC,Large Pickup - LD,Sierra EV,Large Pickup - LD
+Hummer EV,GMC,Large Pickup - LD,Hummer EV,Large Pickup - LD
+Sierra - Large Pickup - LD,GMC,Large Pickup - LD,Sierra Denali EV,Large Pickup - LD
+Hummer EV SUV,GMC,Large Premium SUV,Hummer EV SUV,Large Premium SUV
+Yukon,GMC,Large SUV,Yukon,Large SUV
+Yukon,GMC,Large SUV,Yukon Denali,Large SUV
+Yukon XL,GMC,Large SUV,Yukon XL Denali,Large SUV
+Yukon XL,GMC,Large SUV,Yukon XL K1500,Large SUV
+Yukon XL,GMC,Large SUV,Yukon XL C1500,Large SUV
+Savana,GMC,Large Van,Savana 2500,Large Van
+Savana,GMC,Large Van,Savana 3500,Large Van
+Canyon,GMC,Midsize Pickup,Canyon,Midsize Pickup
+Acadia,GMC,Midsize SUV,Acadia,Midsize SUV
+G70,Genesis,Compact Premium Car,G70,Compact Premium Car
+GV70,Genesis,Compact Premium SUV,GV70,Compact Premium SUV
+GV60,Genesis,Compact Premium SUV,GV60,Compact Premium SUV
+GV70,Genesis,Compact Premium SUV,Electrified GV70,Compact Premium SUV
+GV60,Genesis,Compact Premium SUV,GV60 Magma,Compact Premium SUV
+G90,Genesis,Large Premium Car,G90,Large Premium Car
+G80,Genesis,Midsize Premium Car,Electrified G80,Midsize Premium Car
+G80,Genesis,Midsize Premium Car,G80,Midsize Premium Car
+GV80,Genesis,Midsize Premium SUV,GV80,Midsize Premium SUV
+GV80,Genesis,Midsize Premium SUV,GV80 Coupe,Midsize Premium SUV
+Civic,Honda,Compact Car,Civic,Compact Car
+Civic,Honda,Compact Car,Civic Hybrid,Compact Car
+Civic,Honda,Compact Car,Civic Type R,Compact Car
+CR-V,Honda,Compact SUV,CR-V,Compact SUV
+CR-V,Honda,Compact SUV,CR-V FCEV,Compact SUV
+CR-V,Honda,Compact SUV,CR-V Hybrid,Compact SUV
+Prelude,Honda,Compact Sporty Car,Prelude,Compact Sporty Car
+Accord,Honda,Midsize Car,Accord,Midsize Car
+Accord,Honda,Midsize Car,Accord Hybrid,Midsize Car
+Ridgeline,Honda,Midsize Pickup,Ridgeline,Midsize Pickup
+Pilot,Honda,Midsize SUV,Pilot,Midsize SUV
+Passport,Honda,Midsize SUV,Passport,Midsize SUV
+Prologue,Honda,Midsize SUV,Prologue,Midsize SUV
+Odyssey,Honda,Midsize Van,Odyssey,Midsize Van
+HR-V,Honda,Small SUV,HR-V,Small SUV
+Elantra,Hyundai,Compact Car,Elantra,Compact Car
+Elantra,Hyundai,Compact Car,Elantra Hybrid,Compact Car
+Elantra,Hyundai,Compact Car,Elantra N,Compact Car
+IONIQ 5,Hyundai,Compact SUV,IONIQ 5,Compact SUV
+IONIQ 5,Hyundai,Compact SUV,IONIQ 5 N,Compact SUV
+IONIQ 5,Hyundai,Compact SUV,Nexo,Compact SUV
+Sonata,Hyundai,Midsize Car,Sonata,Midsize Car
+Sonata,Hyundai,Midsize Car,Sonata Hybrid,Midsize Car
+IONIQ 6,Hyundai,Midsize Car,IONIQ 6,Midsize Car
+Santa Cruz,Hyundai,Midsize Pickup,Santa Cruz,Midsize Pickup
+Palisade,Hyundai,Midsize SUV,Palisade,Midsize SUV
+Santa Fe,Hyundai,Midsize SUV,Santa Fe Hybrid,Midsize SUV
+Santa Fe,Hyundai,Midsize SUV,Santa Fe,Midsize SUV
+Palisade,Hyundai,Midsize SUV,Palisade Hybrid,Midsize SUV
+IONIQ 9,Hyundai,Midsize SUV,IONIQ 9,Midsize SUV
+IONIQ 9,Hyundai,Midsize SUV,Santa Fe Plug-In Hybrid,Midsize SUV
+Tucson,Hyundai,Small SUV,Tucson,Small SUV
+Tucson,Hyundai,Small SUV,Tucson Hybrid,Small SUV
+Kona,Hyundai,Small SUV,Kona,Small SUV
+Venue,Hyundai,Small SUV,Venue,Small SUV
+Tucson,Hyundai,Small SUV,Tucson Plug-In Hybrid,Small SUV
+Kona,Hyundai,Small SUV,Kona Electric,Small SUV
+Q50,Infiniti,Compact Premium Car,Q50 Red Sport 400,Compact Premium Car
+QX50,Infiniti,Compact Premium SUV,QX50,Compact Premium SUV
+QX55,Infiniti,Compact Premium SUV,QX55,Compact Premium SUV
+QX80,Infiniti,Large Premium SUV,QX80,Large Premium SUV
+QX60,Infiniti,Midsize Premium SUV,QX60,Midsize Premium SUV
+QX65,Infiniti,Midsize Premium SUV,QX65,Midsize Premium SUV
+F-Pace,Jaguar,Compact Premium SUV,F-Pace R-Dynamic S,Compact Premium SUV
+F-Pace,Jaguar,Compact Premium SUV,F-Pace SVR 575 Edition,Compact Premium SUV
+I-Pace,Jaguar,Compact Premium SUV,I-Pace R-Dynamic HSE,Compact Premium SUV
+XF,Jaguar,Midsize Premium Car,XF R-Dynamic SE,Midsize Premium Car
+F-Type,Jaguar,Midsize Premium Sporty Car,F-Type 75,Midsize Premium Sporty Car
+F-Type,Jaguar,Midsize Premium Sporty Car,F-Type R,Midsize Premium Sporty Car
+F-Type,Jaguar,Midsize Premium Sporty Car,F-Type R-Dynamic,Midsize Premium Sporty Car
+F-Type,Jaguar,Midsize Premium Sporty Car,F-Type R75,Midsize Premium Sporty Car
+E-Pace,Jaguar,Small Premium SUV,E-Pace R-Dynamic SE,Small Premium SUV
+Wrangler,Jeep,Compact SUV,Wrangler,Compact SUV
+Cherokee,Jeep,Compact SUV,Cherokee Hybrid,Compact SUV
+Wrangler,Jeep,Compact SUV,Wrangler 4xe,Compact SUV
+Cherokee,Jeep,Compact SUV,Cherokee,Compact SUV
+Grand Wagoneer,Jeep,Large SUV,Grand Wagoneer,Large SUV
+Wagoneer,Jeep,Large SUV,Wagoneer,Large SUV
+Grand Wagoneer,Jeep,Large SUV,Grand Wagoneer L,Large SUV
+Wagoneer,Jeep,Large SUV,Wagoneer L,Large SUV
+Gladiator,Jeep,Midsize Pickup,Gladiator,Midsize Pickup
+Grand Cherokee,Jeep,Midsize SUV,Grand Cherokee,Midsize SUV
+Grand Cherokee,Jeep,Midsize SUV,Grand Cherokee L,Midsize SUV
+Wagoneer S,Jeep,Midsize SUV,Wagoneer S,Midsize SUV
+Grand Cherokee,Jeep,Midsize SUV,Grand Cherokee 4xe,Midsize SUV
+Compass,Jeep,Small SUV,Compass,Small SUV
+Renegade,Jeep,Small SUV,Renegade,Small SUV
+Revero,Karma,Super Premium,Revero,Super Premium
+K4,Kia,Compact Car,K4,Compact Car
+Forte,Kia,Compact Car,Forte,Compact Car
+Soul,Kia,Compact MPV,Soul,Compact MPV
+EV6,Kia,Compact SUV,EV6,Compact SUV
+K5,Kia,Midsize Car,K5,Midsize Car
+Telluride,Kia,Midsize SUV,Telluride,Midsize SUV
+Sorento,Kia,Midsize SUV,Sorento,Midsize SUV
+Telluride,Kia,Midsize SUV,Telluride Hybrid,Midsize SUV
+Sorento,Kia,Midsize SUV,Sorento Hybrid,Midsize SUV
+EV9,Kia,Midsize SUV,EV9,Midsize SUV
+Sorento,Kia,Midsize SUV,Sorento Plug-In Hybrid,Midsize SUV
+Carnival,Kia,Midsize Van,Carnival,Midsize Van
+Carnival,Kia,Midsize Van,Carnival Hybrid,Midsize Van
+Sportage,Kia,Small SUV,Sportage,Small SUV
+Sportage,Kia,Small SUV,Sportage Hybrid,Small SUV
+Seltos,Kia,Small SUV,Seltos,Small SUV
+Niro,Kia,Small SUV,Niro,Small SUV
+Sportage,Kia,Small SUV,Sportage Plug-In Hybrid,Small SUV
+Niro,Kia,Small SUV,Niro EV,Small SUV
+Niro,Kia,Small SUV,Niro Plug-In Hybrid,Small SUV
+EV3,Kia,Small SUV,EV3,Small SUV
+Urus,Lamborghini,Super Premium,Urus,Super Premium
+Revuelto,Lamborghini,Super Premium,Revuelto,Super Premium
+Temerario,Lamborghini,Super Premium,Temerario,Super Premium
+Huracan,Lamborghini,Super Premium,Huracan,Super Premium
+Range Rover Velar,Land Rover,Compact Premium SUV,Range Rover Velar,Compact Premium SUV
+Discovery Sport,Land Rover,Compact Premium SUV,Discovery Sport,Compact Premium SUV
+Range Rover,Land Rover,Large Premium SUV,Range Rover,Large Premium SUV
+Range Rover,Land Rover,Large Premium SUV,Range Rover LWB,Large Premium SUV
+Range Rover,Land Rover,Large Premium SUV,Range Rover PHEV,Large Premium SUV
+Range Rover Sport,Land Rover,Midsize Premium SUV,Range Rover Sport,Midsize Premium SUV
+Defender 110,Land Rover,Midsize Premium SUV,Defender 110,Midsize Premium SUV
+Defender 130,Land Rover,Midsize Premium SUV,Defender 130,Midsize Premium SUV
+Range Rover Sport,Land Rover,Midsize Premium SUV,Range Rover Sport PHEV,Midsize Premium SUV
+Discovery,Land Rover,Midsize Premium SUV,Discovery,Midsize Premium SUV
+Defender 90,Land Rover,Midsize Premium SUV,Defender 90,Midsize Premium SUV
+Range Rover Evoque,Land Rover,Small Premium SUV,Range Rover Evoque,Small Premium SUV
+IS Series,Lexus,Compact Premium Car,IS 350,Compact Premium Car
+ES Series,Lexus,Compact Premium Car,ES 350,Compact Premium Car
+ES Series,Lexus,Compact Premium Car,ES 350H,Compact Premium Car
+ES Series,Lexus,Compact Premium Car,ES 300H,Compact Premium Car
+ES Series,Lexus,Compact Premium Car,ES 350e,Compact Premium Car
+IS Series,Lexus,Compact Premium Car,IS 300,Compact Premium Car
+IS Series,Lexus,Compact Premium Car,IS 500,Compact Premium Car
+ES Series,Lexus,Compact Premium Car,ES 500e,Compact Premium Car
+RC Series,Lexus,Compact Premium Car,RC 350,Compact Premium Car
+RC Series,Lexus,Compact Premium Car,RC F,Compact Premium Car
+RC Series,Lexus,Compact Premium Car,RC 300,Compact Premium Car
+NX Series,Lexus,Compact Premium SUV,NX 350,Compact Premium SUV
+NX Series,Lexus,Compact Premium SUV,NX 350H,Compact Premium SUV
+NX Series,Lexus,Compact Premium SUV,NX 450H+,Compact Premium SUV
+RZ Series,Lexus,Compact Premium SUV,RZ 350e,Compact Premium SUV
+RZ Series,Lexus,Compact Premium SUV,RZ 450e,Compact Premium SUV
+RZ Series,Lexus,Compact Premium SUV,RZ 450e/RZ 550e,Compact Premium SUV
+RZ Series,Lexus,Compact Premium SUV,RZ 550e,Compact Premium SUV
+NX Series,Lexus,Compact Premium SUV,NX 250,Compact Premium SUV
+RZ Series,Lexus,Compact Premium SUV,RZ 300e,Compact Premium SUV
+LS Series,Lexus,Large Premium Car,LS 500,Large Premium Car
+LS Series,Lexus,Large Premium Car,LS 500H,Large Premium Car
+LX Series,Lexus,Large Premium SUV,LX 600,Large Premium SUV
+LX Series,Lexus,Large Premium SUV,LX 700H,Large Premium SUV
+RX Series,Lexus,Midsize Premium SUV,RX 350,Midsize Premium SUV
+TX Series,Lexus,Midsize Premium SUV,TX 350,Midsize Premium SUV
+RX Series,Lexus,Midsize Premium SUV,RX 350H,Midsize Premium SUV
+GX Series,Lexus,Midsize Premium SUV,GX 550,Midsize Premium SUV
+TX Series,Lexus,Midsize Premium SUV,TX 500H,Midsize Premium SUV
+RX Series,Lexus,Midsize Premium SUV,RX 450H+,Midsize Premium SUV
+RX Series,Lexus,Midsize Premium SUV,RX 500H,Midsize Premium SUV
+TX Series,Lexus,Midsize Premium SUV,TX 550H+,Midsize Premium SUV
+GX Series,Lexus,Midsize Premium SUV,GX 460,Midsize Premium SUV
+LC Series,Lexus,Midsize Premium Sporty Car,LC 500,Midsize Premium Sporty Car
+UX Series,Lexus,Small Premium SUV,UX 250H,Small Premium SUV
+UX Series,Lexus,Small Premium SUV,UX 300H,Small Premium SUV
+Corsair,Lincoln,Compact Premium SUV,Corsair,Compact Premium SUV
+Corsair,Lincoln,Compact Premium SUV,Corsair PHEV,Compact Premium SUV
+Navigator,Lincoln,Large Premium SUV,Navigator,Large Premium SUV
+Navigator,Lincoln,Large Premium SUV,Navigator L,Large Premium SUV
+Aviator,Lincoln,Midsize Premium SUV,Aviator,Midsize Premium SUV
+Nautilus,Lincoln,Midsize Premium SUV,Nautilus Hybrid,Midsize Premium SUV
+Nautilus,Lincoln,Midsize Premium SUV,Nautilus,Midsize Premium SUV
+Aviator,Lincoln,Midsize Premium SUV,Aviator PHEV,Midsize Premium SUV
+Emira,Lotus,Super Premium,Emira,Super Premium
+Air,Lucid,Midsize Premium Car,Air,Midsize Premium Car
+Gravity,Lucid,Midsize Premium SUV,Gravity,Midsize Premium SUV
+Grecale,Maserati,Compact Premium SUV,Grecale,Compact Premium SUV
+Grecale,Maserati,Compact Premium SUV,Grecale Folgore,Compact Premium SUV
+Quattroporte,Maserati,Large Premium Car,Quattroporte,Large Premium Car
+Ghibli,Maserati,Midsize Premium Car,Ghibli,Midsize Premium Car
+Levante,Maserati,Midsize Premium SUV,Levante,Midsize Premium SUV
+GranTurismo,Maserati,Midsize Premium Sporty Car,GranCabrio,Midsize Premium Sporty Car
+GranTurismo,Maserati,Midsize Premium Sporty Car,GranTurismo,Midsize Premium Sporty Car
+MC20,Maserati,Midsize Premium Sporty Car,MC20 Cielo,Midsize Premium Sporty Car
+GranTurismo,Maserati,Midsize Premium Sporty Car,MC20,Midsize Premium Sporty Car
+3,Mazda,Compact Car,3,Compact Car
+CX-5,Mazda,Compact SUV,CX-5,Compact SUV
+CX-50,Mazda,Compact SUV,CX-50,Compact SUV
+CX-50,Mazda,Compact SUV,CX-50 Hybrid,Compact SUV
+MX-5,Mazda,Compact Sporty Car,MX-5,Compact Sporty Car
+MX-5,Mazda,Compact Sporty Car,MX-5 RF,Compact Sporty Car
+CX-90,Mazda,Midsize SUV,CX-90,Midsize SUV
+CX-70,Mazda,Midsize SUV,CX-70,Midsize SUV
+CX-90,Mazda,Midsize SUV,CX-90 PHEV,Midsize SUV
+CX-70,Mazda,Midsize SUV,CX-70 PHEV,Midsize SUV
+CX-30,Mazda,Small SUV,CX-30,Small SUV
+Super,McLaren,Super Premium,750S Spider,Super Premium
+Sport,McLaren,Super Premium,Artura,Super Premium
+Super,McLaren,Super Premium,GTS,Super Premium
+Super,McLaren,Super Premium,750S,Super Premium
+Sport,McLaren,Super Premium,720S Spider,Super Premium
+C-Class,Mercedes-Benz,Compact Premium Car,C300,Compact Premium Car
+CLE,Mercedes-Benz,Compact Premium Car,CLE53,Compact Premium Car
+CLE,Mercedes-Benz,Compact Premium Car,CLE300,Compact Premium Car
+CLE,Mercedes-Benz,Compact Premium Car,CLE450,Compact Premium Car
+C-Class,Mercedes-Benz,Compact Premium Car,C43,Compact Premium Car
+C-Class,Mercedes-Benz,Compact Premium Car,C63e,Compact Premium Car
+S-Class,Mercedes-Benz,Large Premium Car,S580,Large Premium Car
+S-Class,Mercedes-Benz,Large Premium Car,S500,Large Premium Car
+S-Class,Mercedes-Benz,Large Premium Car,S63e,Large Premium Car
+S-Class,Mercedes-Benz,Large Premium Car,S580e,Large Premium Car
+EQS,Mercedes-Benz,Large Premium Car,EQS450,Large Premium Car
+S-Class,Mercedes-Benz,Large Premium Car,S680,Large Premium Car
+EQS,Mercedes-Benz,Large Premium Car,EQS450+,Large Premium Car
+EQS,Mercedes-Benz,Large Premium Car,EQS580,Large Premium Car
+EQS,Mercedes-Benz,Large Premium Car,AMG EQS,Large Premium Car
+GLS,Mercedes-Benz,Large Premium SUV,GLS450,Large Premium SUV
+G-Class,Mercedes-Benz,Large Premium SUV,G63,Large Premium SUV
+GLS,Mercedes-Benz,Large Premium SUV,GLS580,Large Premium SUV
+G-Class,Mercedes-Benz,Large Premium SUV,G550,Large Premium SUV
+G-Class EV,Mercedes-Benz,Large Premium SUV,G580 EV,Large Premium SUV
+GLS,Mercedes-Benz,Large Premium SUV,GLS63,Large Premium SUV
+GLS,Mercedes-Benz,Large Premium SUV,GLS600,Large Premium SUV
+EQS SUV,Mercedes-Benz,Large Premium SUV,EQS400 SUV,Large Premium SUV
+EQS SUV,Mercedes-Benz,Large Premium SUV,EQS680 SUV,Large Premium SUV
+EQS SUV,Mercedes-Benz,Large Premium SUV,EQS550 SUV,Large Premium SUV
+EQS SUV,Mercedes-Benz,Large Premium SUV,EQS450 SUV,Large Premium SUV
+G-Class,Mercedes-Benz,Large Premium SUV,G63 4x4 Squared,Large Premium SUV
+EQS SUV,Mercedes-Benz,Large Premium SUV,EQS450+ SUV,Large Premium SUV
+E-Class,Mercedes-Benz,Midsize Premium Car,E350,Midsize Premium Car
+E-Class,Mercedes-Benz,Midsize Premium Car,E450,Midsize Premium Car
+E-Class,Mercedes-Benz,Midsize Premium Car,E53e,Midsize Premium Car
+EQE,Mercedes-Benz,Midsize Premium Car,EQE350,Midsize Premium Car
+EQE,Mercedes-Benz,Midsize Premium Car,AMG EQE,Midsize Premium Car
+EQE,Mercedes-Benz,Midsize Premium Car,EQE320+,Midsize Premium Car
+EQE,Mercedes-Benz,Midsize Premium Car,EQE320,Midsize Premium Car
+EQE,Mercedes-Benz,Midsize Premium Car,EQE350+,Midsize Premium Car
+CLS-Class,Mercedes-Benz,Midsize Premium Car,CLS450,Midsize Premium Car
+CLS-Class,Mercedes-Benz,Midsize Premium Car,EQE500,Midsize Premium Car
+AMG GT,Mercedes-Benz,Midsize Premium Sporty Car,AMG GT 43,Midsize Premium Sporty Car
+AMG GT,Mercedes-Benz,Midsize Premium Sporty Car,AMG GT 55,Midsize Premium Sporty Car
+AMG GT,Mercedes-Benz,Midsize Premium Sporty Car,AMG GT 53,Midsize Premium Sporty Car
+AMG GT,Mercedes-Benz,Midsize Premium Sporty Car,AMG GT 63,Midsize Premium Sporty Car
+SL-Class,Mercedes-Benz,Midsize Premium Sporty Car,SL55,Midsize Premium Sporty Car
+SL-Class,Mercedes-Benz,Midsize Premium Sporty Car,SL43,Midsize Premium Sporty Car
+SL-Class,Mercedes-Benz,Midsize Premium Sporty Car,SL680,Midsize Premium Sporty Car
+AMG GT,Mercedes-Benz,Midsize Premium Sporty Car,AMG GT 63e,Midsize Premium Sporty Car
+SL-Class,Mercedes-Benz,Midsize Premium Sporty Car,SL63,Midsize Premium Sporty Car
+SL-Class,Mercedes-Benz,Midsize Premium Sporty Car,SL63e,Midsize Premium Sporty Car
+CLA,Mercedes-Benz,Small Premium Car,CLA220 Hybrid,Small Premium Car
+CLA,Mercedes-Benz,Small Premium Car,CLA250,Small Premium Car
+CLA,Mercedes-Benz,Small Premium Car,CLA250+,Small Premium Car
+CLA,Mercedes-Benz,Small Premium Car,CLA35,Small Premium Car
+CLA,Mercedes-Benz,Small Premium Car,CLA350,Small Premium Car
+CLA,Mercedes-Benz,Small Premium Car,CLA45,Small Premium Car
+GLA,Mercedes-Benz,Small Premium SUV,GLA250,Small Premium SUV
+GLA,Mercedes-Benz,Small Premium SUV,GLA35,Small Premium SUV
+Metris,Mercedes-Benz Vans,Compact MPV,Metris,Compact MPV
+Sprinter,Mercedes-Benz Vans,Large Van,Sprinter 2500,Large Van
+Sprinter,Mercedes-Benz Vans,Large Van,Sprinter 3500,Large Van
+Sprinter,Mercedes-Benz Vans,Large Van,Sprinter 3500XD,Large Van
+Sprinter,Mercedes-Benz Vans,Large Van,Sprinter 4500,Large Van
+Sprinter,Mercedes-Benz Vans,Large Van,eSprinter 2500,Large Van
+Cooper,Mini,Compact Sporty Car,Cooper,Compact Sporty Car
+Countryman,Mini,Small SUV,Countryman,Small SUV
+Countryman,Mini,Small SUV,Countryman Electric,Small SUV
+Outlander,Mitsubishi,Compact SUV,Outlander,Compact SUV
+Eclipse Cross,Mitsubishi,Compact SUV,Eclipse Cross,Compact SUV
+Outlander,Mitsubishi,Compact SUV,Outlander PHEV,Compact SUV
+Mirage,Mitsubishi,Small Car,Mirage,Small Car
+Mirage,Mitsubishi,Small Car,Mirage G4,Small Car
+Outlander Sport,Mitsubishi,Small SUV,Outlander Sport,Small SUV
+Sentra,Nissan,Compact Car,Sentra,Compact Car
+LEAF - Compact Car,Nissan,Compact Car,LEAF,Compact Car
+Z Car,Nissan,Compact Premium Sporty Car,Z,Compact Premium Sporty Car
+Rogue,Nissan,Compact SUV,Rogue,Compact SUV
+Ariya,Nissan,Compact SUV,Ariya,Compact SUV
+Rogue,Nissan,Compact SUV,Rogue Plug-In Hybrid,Compact SUV
+Titan - Large Pickup - HD,Nissan,Large Pickup - HD,Titan XD,Large Pickup - HD
+Titan - Large Pickup - LD,Nissan,Large Pickup - LD,Titan,Large Pickup - LD
+Armada,Nissan,Large SUV,Armada,Large SUV
+Altima,Nissan,Midsize Car,Altima,Midsize Car
+Frontier,Nissan,Midsize Pickup,Frontier,Midsize Pickup
+Pathfinder,Nissan,Midsize SUV,Pathfinder,Midsize SUV
+Murano,Nissan,Midsize SUV,Murano,Midsize SUV
+Versa,Nissan,Small Car,Versa,Small Car
+Kicks,Nissan,Small SUV,Kicks,Small SUV
+Kicks,Nissan,Small SUV,Kicks Play,Small SUV
+LEAF - Small SUV,Nissan,Small SUV,LEAF,Small SUV
+Polestar 2,Polestar,Compact Premium Car,Polestar 2,Compact Premium Car
+Polestar 3,Polestar,Midsize Premium SUV,Polestar 3,Midsize Premium SUV
+Polestar 4,Polestar,Midsize Premium SUV,Polestar 4,Midsize Premium SUV
+Macan,Porsche,Compact Premium SUV,Macan,Compact Premium SUV
+Macan,Porsche,Compact Premium SUV,Macan Electric,Compact Premium SUV
+718,Porsche,Compact Premium Sporty Car,718 Boxster,Compact Premium Sporty Car
+718,Porsche,Compact Premium Sporty Car,718 Cayman,Compact Premium Sporty Car
+Panamera,Porsche,Large Premium Car,Panamera,Large Premium Car
+Panamera,Porsche,Large Premium Car,Panamera E-Hybrid,Large Premium Car
+Taycan,Porsche,Midsize Premium Car,Taycan,Midsize Premium Car
+Taycan,Porsche,Midsize Premium Car,Taycan Cross Turismo,Midsize Premium Car
+Taycan,Porsche,Midsize Premium Car,Taycan Sport Turismo,Midsize Premium Car
+Cayenne,Porsche,Midsize Premium SUV,Cayenne,Midsize Premium SUV
+Cayenne,Porsche,Midsize Premium SUV,Cayenne Coupe,Midsize Premium SUV
+Cayenne,Porsche,Midsize Premium SUV,Cayenne E-Hybrid,Midsize Premium SUV
+Cayenne,Porsche,Midsize Premium SUV,Cayenne E-Hybrid Coupe,Midsize Premium SUV
+Cayenne,Porsche,Midsize Premium SUV,Cayenne Electric,Midsize Premium SUV
+Cayenne,Porsche,Midsize Premium SUV,Cayenne Electric Coupe,Midsize Premium SUV
+911,Porsche,Midsize Premium Sporty Car,911,Midsize Premium Sporty Car
+Ram Pickup - Large Pickup - HD,RAM,Large Pickup - HD,Ram 2500,Large Pickup - HD
+Ram Pickup - Large Pickup - HD,RAM,Large Pickup - HD,Ram 2500 Mega Cab,Large Pickup - HD
+Ram Pickup - Large Pickup - HD,RAM,Large Pickup - HD,Ram 3500,Large Pickup - HD
+Ram Pickup - Large Pickup - HD,RAM,Large Pickup - HD,Ram 3500 Mega Cab,Large Pickup - HD
+Ram Pickup - Large Pickup - LD,RAM,Large Pickup - LD,Ram 1500,Large Pickup - LD
+Ram Pickup - Large Pickup - LD,RAM,Large Pickup - LD,Ram 1500 Classic,Large Pickup - LD
+Ram Pickup - Large Pickup - LD,RAM,Large Pickup - LD,Ram 1500 TRX SRT,Large Pickup - LD
+ProMaster,RAM,Large Van,ProMaster 1500,Large Van
+ProMaster,RAM,Large Van,ProMaster 2500,Large Van
+ProMaster,RAM,Large Van,ProMaster 3500,Large Van
+ProMaster,RAM,Large Van,ProMaster 3500 EV,Large Van
+R2,Rivian,Compact Premium SUV,R2,Compact Premium SUV
+R1T,Rivian,Large Pickup - LD,R1T,Large Pickup - LD
+R1S,Rivian,Midsize Premium SUV,R1S,Midsize Premium SUV
+Cullinan,Rolls-Royce,Super Premium,Cullinan,Super Premium
+Ghost,Rolls-Royce,Super Premium,Ghost,Super Premium
+Spectre,Rolls-Royce,Super Premium,Spectre,Super Premium
+Phantom,Rolls-Royce,Super Premium,Phantom,Super Premium
+Impreza,Subaru,Compact Car,Impreza,Compact Car
+WRX,Subaru,Compact Car,WRX,Compact Car
+Forester,Subaru,Compact SUV,Forester,Compact SUV
+Forester,Subaru,Compact SUV,Forester Hybrid,Compact SUV
+Solterra,Subaru,Compact SUV,Solterra,Compact SUV
+BRZ,Subaru,Compact Sporty Car,BRZ,Compact Sporty Car
+Legacy,Subaru,Midsize Car,Legacy,Midsize Car
+Outback,Subaru,Midsize SUV,Outback,Midsize SUV
+Ascent,Subaru,Midsize SUV,Ascent,Midsize SUV
+Trailseeker,Subaru,Midsize SUV,Trailseeker,Midsize SUV
+Crosstrek,Subaru,Small SUV,Crosstrek,Small SUV
+Crosstrek,Subaru,Small SUV,Crosstrek Hybrid,Small SUV
+Uncharted,Subaru,Small SUV,Uncharted,Small SUV
+Model 3,Tesla,Compact Premium Car,Model 3,Compact Premium Car
+Model Y,Tesla,Compact Premium SUV,Model Y,Compact Premium SUV
+Cybertruck,Tesla,Large Pickup - LD,Cybertruck,Large Pickup - LD
+Model S,Tesla,Midsize Premium Car,Model S,Midsize Premium Car
+Model X,Tesla,Midsize Premium SUV,Model X,Midsize Premium SUV
+Corolla,Toyota,Compact Car,Corolla,Compact Car
+Corolla,Toyota,Compact Car,Corolla Hybrid,Compact Car
+Prius,Toyota,Compact Car,Prius,Compact Car
+Prius,Toyota,Compact Car,Prius Plug-In Hybrid,Compact Car
+Corolla,Toyota,Compact Car,GR Corolla,Compact Car
+Prius,Toyota,Compact Car,Prius Prime,Compact Car
+Supra,Toyota,Compact Premium Sporty Car,Supra,Compact Premium Sporty Car
+RAV4,Toyota,Compact SUV,RAV4 Hybrid,Compact SUV
+RAV4,Toyota,Compact SUV,RAV4,Compact SUV
+RAV4,Toyota,Compact SUV,RAV4 Plug-In Hybrid,Compact SUV
+bZ,Toyota,Compact SUV,bZ,Compact SUV
+bZ4X,Toyota,Compact SUV,bZ4X,Compact SUV
+RAV4,Toyota,Compact SUV,RAV4 Prime,Compact SUV
+86,Toyota,Compact Sporty Car,GR86,Compact Sporty Car
+Crown,Toyota,Large Car,Crown,Large Car
+Tundra,Toyota,Large Pickup - LD,Tundra,Large Pickup - LD
+Tundra,Toyota,Large Pickup - LD,Tundra CrewMax,Large Pickup - LD
+Tundra,Toyota,Large Pickup - LD,Tundra CrewMax Hybrid,Large Pickup - LD
+Sequoia,Toyota,Large SUV,Sequoia,Large SUV
+Camry,Toyota,Midsize Car,Camry Hybrid,Midsize Car
+Camry,Toyota,Midsize Car,Camry,Midsize Car
+Mirai,Toyota,Midsize Car,Mirai,Midsize Car
+Tacoma,Toyota,Midsize Pickup,Tacoma,Midsize Pickup
+Tacoma,Toyota,Midsize Pickup,Tacoma Hybrid,Midsize Pickup
+4Runner,Toyota,Midsize SUV,4Runner,Midsize SUV
+Grand Highlander,Toyota,Midsize SUV,Grand Highlander Hybrid,Midsize SUV
+Grand Highlander,Toyota,Midsize SUV,Grand Highlander,Midsize SUV
+Land Cruiser - Midsize SUV,Toyota,Midsize SUV,Land Cruiser,Midsize SUV
+4Runner,Toyota,Midsize SUV,4Runner Hybrid,Midsize SUV
+Highlander,Toyota,Midsize SUV,Highlander Hybrid,Midsize SUV
+Crown Signia,Toyota,Midsize SUV,Crown Signia,Midsize SUV
+Highlander,Toyota,Midsize SUV,Highlander,Midsize SUV
+bZ Woodland,Toyota,Midsize SUV,bZ Woodland,Midsize SUV
+Sienna,Toyota,Midsize Van,Sienna,Midsize Van
+Corolla Cross,Toyota,Small SUV,Corolla Cross,Small SUV
+Corolla Cross,Toyota,Small SUV,Corolla Cross Hybrid,Small SUV
+C-HR,Toyota,Small SUV,C-HR EV,Small SUV
+Jetta,Volkswagen,Compact Car,Jetta,Compact Car
+GTI,Volkswagen,Compact Car,GTI,Compact Car
+Golf,Volkswagen,Compact Car,Golf R,Compact Car
+Tiguan,Volkswagen,Compact SUV,Tiguan LWB,Compact SUV
+ID.4,Volkswagen,Compact SUV,ID.4,Compact SUV
+Atlas,Volkswagen,Midsize SUV,Atlas,Midsize SUV
+Atlas,Volkswagen,Midsize SUV,Atlas Cross Sport,Midsize SUV
+ID.Buzz,Volkswagen,Midsize Van,ID.Buzz,Midsize Van
+Taos,Volkswagen,Small SUV,Taos,Small SUV
+V60,Volvo,Compact Premium Car,V60 Cross Country,Compact Premium Car
+S60,Volvo,Compact Premium Car,S60,Compact Premium Car
+S60,Volvo,Compact Premium Car,S60 Recharge PHEV,Compact Premium Car
+XC60,Volvo,Compact Premium SUV,XC60,Compact Premium SUV
+XC60,Volvo,Compact Premium SUV,XC60 Recharge PHEV,Compact Premium SUV
+EX60,Volvo,Compact Premium SUV,EX60,Compact Premium SUV
+V90,Volvo,Midsize Premium Car,V90 Cross Country,Midsize Premium Car
+S90,Volvo,Midsize Premium Car,S90,Midsize Premium Car
+S90,Volvo,Midsize Premium Car,S90 Recharge PHEV,Midsize Premium Car
+XC90,Volvo,Midsize Premium SUV,XC90,Midsize Premium SUV
+XC90,Volvo,Midsize Premium SUV,XC90 Recharge PHEV,Midsize Premium SUV
+EX90,Volvo,Midsize Premium SUV,EX90,Midsize Premium SUV
+XC40,Volvo,Small Premium SUV,XC40,Small Premium SUV
+EX30,Volvo,Small Premium SUV,EX30,Small Premium SUV
+EX40,Volvo,Small Premium SUV,EX40,Small Premium SUV
+EX30,Volvo,Small Premium SUV,EX30 Cross Country,Small Premium SUV
+XC40,Volvo,Small Premium SUV,XC40 Recharge,Small Premium SUV
+C40,Volvo,Small Premium SUV,C40 Recharge,Small Premium SUV
