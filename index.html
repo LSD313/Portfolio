@@ -32,13 +32,21 @@
   <div class="shell">
 
     <section class="hero">
-      <!-- Drop the headshot in at assets/headshot.png and it replaces the
-           initials automatically — no markup change needed. -->
-      <img class="avatar" src="assets/headshot.png" alt="Luke Donahue"
-           onerror="this.outerHTML='&lt;div class=&quot;avatar avatar--fallback&quot; aria-label=&quot;Luke Donahue&quot;&gt;LD&lt;/div&gt;'">
-      <h1>Luke Donahue</h1>
-      <p class="bio">Spreadsheet jockey by trade, storyteller by inclination. I build dashboards and data models for a living, and stories and characters for the fun of it. A few years ago I also started HunnyDone, a home management company for homeowners around Detroit who didn&#8217;t have the time or the know-how to keep up with their houses. We got it to paying subscribers and a little over $100K in revenue.</p>
-      <p class="bio">I enjoy finding problems and creating data-driven solutions to solve them.</p>
+      <div class="hero-id">
+        <!-- Drop the headshot in at assets/headshot.png and it replaces the
+             initials automatically — no markup change needed. -->
+        <img class="avatar" src="assets/headshot.png" alt="Luke Donahue"
+             onerror="this.outerHTML='&lt;div class=&quot;avatar avatar--fallback&quot; aria-label=&quot;Luke Donahue&quot;&gt;LD&lt;/div&gt;'">
+        <div>
+          <h1>Luke Donahue</h1>
+          <p class="lede">Spreadsheet jockey by trade, storyteller by inclination.</p>
+        </div>
+      </div>
+      <nav class="hero-index" aria-label="About me">
+        <a href="#professional">I turn data into stories people act on.</a>
+        <a href="#new-enterprise-forum">I coach founders.</a>
+        <a href="#pointe-ventures">I start and back companies.</a>
+      </nav>
       <div class="meta">
         <a href="mailto:Luke@Donahue.us">Luke@Donahue.us</a>
         <a href="https://LinkedIn.com/in/lukesdonahue">LinkedIn.com/in/lukesdonahue</a>
@@ -46,8 +54,58 @@
       </div>
     </section>
 
-    <main>
-      <section class="group">
+    <section class="bios" aria-label="About">
+
+      <article class="bio-band" id="professional">
+        <h2>Professional</h2>
+        <div class="bio-prose">
+          <p>I lead Customer Success for OEM Data Products at J.D. Power, and most of what I do is build the tools that make a team&#8217;s performance visible, and the stories behind it easy to tell. I designed and built a live client-tracking dashboard that flags at-risk accounts within days of a change in engagement.</p>
+          <p>I also build the data processes behind the dashboards, in SQL and BigQuery. They cut analyst workload and surface new revenue opportunities.</p>
+          <p>Data only changes a decision when someone can follow it. During COVID-19 I ran a weekly webinar for more than 1,000 automotive professionals, and I designed our analyst curriculum to teach communication alongside analytics and client management.</p>
+          <p class="bio-links">Analytics projects on this page: <a href="#analytics">Datamat and the Vehicle Performance Dashboard</a>.</p>
+        </div>
+        <dl class="bio-facts">
+          <div><dt>Now</dt><dd>Senior Director, Customer Success Operations, J.D. Power, Troy, MI. Since 2018.</dd></div>
+          <div><dt>Storytelling</dt><dd>A weekly webinar for 1,000+ automotive professionals. Dashboards in Tableau and Power BI.</dd></div>
+          <div><dt>Before</dt><dd>Eaton, American Axle and Fiat Chrysler, in key account management and sales. 2013 to 2018.</dd></div>
+          <div><dt>Education</dt><dd>MBA, Ross School of Business, 2018. B.S., University of Michigan, 2013.</dd></div>
+        </dl>
+      </article>
+
+      <article class="bio-band" id="new-enterprise-forum">
+        <h2>New Enterprise Forum</h2>
+        <div class="bio-prose">
+          <p>I serve on the board of directors of New Enterprise Forum in Ann Arbor. Each year I coach a few early-stage startups, and I help market our monthly networking events.</p>
+          <p class="bio-links">Related work: <a href="#tools">NEF Meeting Scheduler</a>.</p>
+        </div>
+        <dl class="bio-facts">
+          <div><dt>Role</dt><dd>Director, Board of Directors. Since 2018.</dd></div>
+          <div><dt>Coaching</dt><dd>A few startups a year.</dd></div>
+          <div><dt>Marketing</dt><dd>Our monthly networking events.</dd></div>
+        </dl>
+      </article>
+
+      <article class="bio-band" id="pointe-ventures">
+        <h2><span class="wm">Pointe</span> <span class="wm-accent">Ventures</span></h2>
+        <div class="bio-prose">
+          <p>Pointe Ventures is where I run my entrepreneurial work: starting and testing companies of my own, and backing a few of other people&#8217;s.</p>
+          <p>I&#8217;m a very small-time angel investor. I support local startups with their initial seed funding and with the practical help that gets them started.</p>
+          <p>HunnyDone was the company I founded, a home management service for homeowners around Detroit that reached paying subscribers and a little over $100K in revenue. Kindred, a relationship-tracking app for iPhone, Mac and Apple Watch, is what I&#8217;m building now.</p>
+          <p class="bio-links">Related work: <a href="#hunnydone">HunnyDone</a>, <a href="#kindred">Kindred</a>.</p>
+        </div>
+        <dl class="bio-facts">
+          <div><dt>Investing</dt><dd>Angel investor, very small scale. Seed and support for local startups.</dd></div>
+          <div><dt>Pointe Angels</dt><dd>Executive Committee. 2023 to 2025.</dd></div>
+          <div><dt>Founded</dt><dd>HunnyDone, 2023 to 2024. BInbox.ai, 2025 to 2026.</dd></div>
+          <div><dt>Building</dt><dd>Kindred.</dd></div>
+        </dl>
+      </article>
+
+    </section>
+
+    <main class="work">
+      <h2 class="work-title">Projects</h2>
+      <section class="group" id="analytics">
         <div class="section-head">
           <h2>Analytics</h2>
           <span class="count">02</span>
@@ -64,12 +122,7 @@
               <h3>Datamat</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>Modern BI analytics platform for users to bring their own .csv data
-            &mdash; refreshed by re-uploading, not by wiring a live connection. It sorts
-            columns into metrics and dimensions and reads periods from a date column;
-            drop a metric on the mat and it becomes a table, line, scatter or waterfall,
-            each with its own settings, metric overlays for comparison, and selections
-            that cross-filter every visual.</p>
+            <p>Bring your own CSV; build cross-filtered visuals by dropping metrics.</p>
           </div>
         </a>
 
@@ -82,17 +135,13 @@
               <h3>Vehicle Performance Dashboard</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>A single-page analytics dashboard for automotive market data: configurable
-            charts and comparison tables across six levels of vehicle hierarchy, five years
-            of history, and fifty-odd metrics, with fuel and premium filters, share, mix and
-            payment walks, and a written summary of the month &mdash; all driven by one
-            embedded synthetic dataset, with no server behind it.</p>
+            <p>Automotive market analytics across six hierarchy levels, on synthetic data.</p>
           </div>
         </a>
 
         </div>
       </section>
-      <section class="group">
+      <section class="group" id="kindred">
         <div class="section-head">
           <h2>Kindred</h2>
           <span class="count">01</span>
@@ -110,14 +159,13 @@
               <h3>Kindred</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>Pick a cadence for each person, log what you talked about, and get a
-            nudge before anyone drifts. Coming soon to the App Store.</p>
+            <p>Relationship tracker for Apple devices. Coming soon to the App Store.</p>
           </div>
         </a>
 
         </div>
       </section>
-      <section class="group">
+      <section class="group" id="hunnydone">
         <div class="section-head">
           <h2>HunnyDone</h2>
           <span class="count">02</span>
@@ -135,10 +183,7 @@
               <h3>Home Management Application</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>A six-minute walkthrough of the application HunnyDone&#8217;s home
-            managers worked from: every home on a map, and behind each pin its rooms,
-            its appliances down to make and model, the checklist for a preventative
-            maintenance visit, and the open projects across every house.</p>
+            <p>Six-minute walkthrough of the app HunnyDone&#8217;s home managers used.</p>
           </div>
         </a>
 
@@ -151,16 +196,13 @@
               <h3>HunnyDone Pitch Deck</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>The November 2024 seed pitch, fourteen slides: why millennial homeowners
-            fall behind on maintenance, the home manager subscription that answers it,
-            traction past $100K in gross volume, a service-area model for scaling
-            something stubbornly local, and the $500K ask.</p>
+            <p>The November 2024 seed pitch: fourteen slides and a $500K ask.</p>
           </div>
         </a>
 
         </div>
       </section>
-      <section class="group">
+      <section class="group" id="seeklore">
         <div class="section-head">
           <h2>The Seeklore Universe</h2>
           <span class="count">03</span>
@@ -181,10 +223,7 @@
               <h3>Seeklore eReader</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>A reader that assembles the book around you as you go: tap any name for
-            a dossier that knows only what you know, watch the fog lift off the map as
-            regions are charted, and keep a log of every reveal — each field gated to
-            the chapter that earns it, so nothing arrives early.</p>
+            <p>A reader that assembles each book around you as you read.</p>
           </div>
         </a>
 
@@ -200,10 +239,7 @@
               <h3>The Seeklore Card Game</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>A two-player card game where rival courts of gods contend for the worship
-            of humankind across three domains — matter, life and spirit. Hotseat on one
-            device or against the Machine Court, with the rules, art and full game state
-            bundled into a single HTML file.</p>
+            <p>Two-player card game of rival gods, in a single HTML file.</p>
           </div>
         </a>
 
@@ -219,16 +255,13 @@
               <h3>The Votive Wheel</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>A slot-machine game design for Seeklore. Five reels of gods, relics and
-            sacred places sit over a map that fills as you play — charted places gather
-            mortals, enthroned gods call their flock, and a full shrine opens the
-            Worshipper Rite. A design mockup, not a gambling product.</p>
+            <p>Slot-machine game design for Seeklore. A mockup, not a gambling product.</p>
           </div>
         </a>
 
         </div>
       </section>
-      <section class="group">
+      <section class="group" id="tools">
         <div class="section-head">
           <h2>Tools</h2>
           <span class="count">01</span>
@@ -246,10 +279,7 @@
               <h3>NEF Meeting Scheduler</h3>
               <span class="arrow">&#8599;</span>
             </div>
-            <p>A scheduling tool that reads everyone's calendar without ever uploading
-            one: paste an ICS feed or mark your free windows, and the intersection is
-            worked out in the browser to surface the 90-minute slots that clear for the
-            whole group &mdash; then hands back a calendar invitation.</p>
+            <p>Finds 90-minute slots across everyone&#8217;s calendars without uploading them.</p>
           </div>
         </a>
 
