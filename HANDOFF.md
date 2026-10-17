@@ -1,7 +1,7 @@
 # Handoff
 
 Written 2026-08-27 at the point of pausing work; project list brought up to date
-2026-09-19. The README covers *how* the site is built and how to add to it; this
+2026-09-19; dashboard rebuilt from the v1.12.12 export 2026-10-16. The README covers *how* the site is built and how to add to it; this
 covers where things stand, what is still open, and the reasoning behind choices
 that would otherwise look arbitrary later.
 
@@ -14,7 +14,7 @@ projects in four sections, in the order the home page renders them:
 | Section | Project | Kind | Size | Preview |
 |---|---|---|---|---|
 | Analytics | `datamat` | export, patched | 632 KB | yes |
-| Analytics | `vehicle-performance-dashboard` | single file, data embedded | 13.6 MB | yes |
+| Analytics | `vehicle-performance-dashboard` | single file, data embedded | 15.5 MB | yes |
 | HunnyDone | `hunnydone-app` | hand-written page + self-hosted MP4 | 13 MB | yes |
 | HunnyDone | `hunnydone-pitch-deck` | hand-written viewer + 14 JPEG slides | 1.5 MB | yes |
 | The Seeklore Universe | `seeklore-ereader` | export, patched, + book data | 3.9 MB | yes |
@@ -69,12 +69,7 @@ Both should list `www.donahue.us` alongside the apex. Note the re-save takes
 the site off HTTPS briefly, so pick a quiet moment. This is optional — the bare
 domain works fine and is the URL worth sharing.
 
-**2. The dashboard card preview is one palette behind.** It was captured before
-the dark palette was neutralised, so it shows slightly warmer surfaces than the
-live dashboard. Cosmetic, only visible side by side. A re-capture dropped at
-`assets/vehicle-performance-dashboard.jpg` fixes it.
-
-**3. The app video's audio has never been reviewed.** The picture was checked
+**2. The app video's audio has never been reviewed.** The picture was checked
 frame by frame and edited (see the decision below), but nobody has listened to
 it with publication in mind, and the cut at 5:06 lands mid-thought. The
 HunnyDone business line is also on screen for most of the recording — the same
@@ -82,7 +77,7 @@ number that was on the deck's removed contact slide. It is a business number
 for a company that is no longer trading, so it was left; blurring it needs
 ffmpeg or an AVFoundation composition, and neither is set up here.
 
-**4. The video has no captions.** There is no transcript to build a WebVTT track
+**3. The video has no captions.** There is no transcript to build a WebVTT track
 from. If one is ever made, it is a `<track kind="captions">` inside the
 `<video>` and a `.vtt` beside `intro.mp4`.
 
@@ -107,11 +102,18 @@ performance.getEntriesByType('resource').filter(r =>
 !r.name.startsWith(location.origin)) ```
 
 **The dashboard runs on fully synthetic data.** It began as a work artifact and
-was rebuilt for public display: real vehicle hierarchy and segment taxonomy
-(both public knowledge, and viewers need to recognise the names), but every
-figure generated. The generator lives in the session scratchpad, not the repo —
-if the dataset ever needs regenerating, that is the piece to reconstruct. The
-splash screen states the terms the project is published under; leave it in.
+was rebuilt for public display (twice now; the second time from the v1.12.12
+export): real vehicle hierarchy and segment taxonomy (both public knowledge, and
+viewers need to recognise the names), but every figure generated. The generator
+is in the repo — `tools/dashboard-data/`, seeded and deterministic, and
+`extract_structure.py` rebuilds its input from the shipped dashboard, so the
+data can be regenerated without the real file. What is *not* in the repo is the
+script that sanitizes a fresh upstream export: its edit anchors contain the
+original brand strings. The README's dashboard note lists everything it has to
+do (rebrand, synthetic data, tracker and email gate out, methodology docs out,
+release notes rewritten, fonts swapped to embedded Instrument Sans / IBM Plex
+Mono, no external requests). The splash screen states the terms the project is
+published under; leave it in.
 
 **Vendored token files are copied verbatim and never edited.** Where a design
 system's own values fail WCAG AA on these pages, the corrections live in a
@@ -135,6 +137,17 @@ scoped `:root:not([data-theme="dark"])`.
 **There are two `</head>` tags** in the dashboard — the document's own and one
 inside the user-guide template string. Inserting before the *last* one puts
 your markup inside a JS string where it silently does nothing.
+
+**The upstream export has two inline CSV parsers**, and the older one (no
+`sale_mix_cash` derivation) can finish decoding last and overwrite the good
+result. The rebuild keeps only the newer one. If a future export is wired in by
+hand, check that exactly one `parseCsvText` script survives.
+
+**`--at-600` is a fill, not a text colour.** White text sits on it; as text on a
+dark surface it is only ~3.8:1. Text uses go through `--at-text` (lighter teal in
+dark). Peer-coloured row labels are mixed toward the theme's text colour for the
+same reason. Both were found by sweeping several views (Model level, EV and
+Premium filters), not just the default one — the default view alone passes.
 
 **Never string-replace across the whole dashboard file.** It mixes app code, a
 vendored React build, and base64 blobs. A `"JDP" → "NLT"` replacement corrupted
@@ -188,4 +201,5 @@ alignment, and injects the back link, idempotently.
 Contrast is checked on every change with an in-page sweep over all visible text,
 compositing layered/translucent backgrounds and handling `oklch()` / `oklab()`
 computed values. Both themes on both the home page and the dashboard currently
-pass WCAG AA with zero failures; worth re-running after any palette work.
+pass WCAG AA with zero failures (the dashboard across Segments, OEM, Model and
+Model with EV and Premium filters); worth re-running after any palette work.
