@@ -278,7 +278,8 @@ v1.12.12) from a fresh export of the upstream app. Every rebuild redoes the
 same sanitization:
 
 - All branding replaced with a placeholder brand ("Pointe Ventures"), including
-  the tab icon and the design-system comments.
+  the tab icon and the design-system comments. The visible wordmark — in the
+  header, the welcome dialog and the User Guide cover — then reads "Luke Donahue".
 - The embedded dataset is **entirely synthetic** — it keeps the real vehicle
   hierarchy, segment taxonomy and time grid, and which rows and columns exist,
   but every figure is invented. No real market data is present. It is generated
@@ -291,6 +292,8 @@ same sanitization:
   IBM Plex Mono, embedded from `assets/fonts/`, and the app's CSS tokens carry
   the Seeklore-derived palette (token names unchanged, values remapped).
 - The header link to the original company's platform was removed.
+- The copyright lines in the bottom bar and the User Guide footer were removed;
+  both now just say it is a portfolio demo with synthetic data.
 
 The page makes no external network requests of any kind.
 
