@@ -3912,7 +3912,7 @@ button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:2px so
 <div style="height:100vh;display:flex;flex-direction:column;overflow:hidden">
   <header style="min-height:40px;flex:none;position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:5px 56px 5px 20px;background:var(--surface-card);border-bottom:1px solid var(--border-primary)">
     <div style="display:flex;align-items:center;gap:10px">
-      <span style="font-family:var(--ff-display);font-weight:800;font-size:17px;letter-spacing:-0.01em">Pointe <span style="color:var(--bt-500)">Ventures</span></span>
+      <span style="font-family:var(--ff-display);font-weight:800;font-size:17px;letter-spacing:-0.01em">Luke <span style="color:var(--bt-500)">Donahue</span></span>
     </div>
     {{ topControls }}
     <div style="position:absolute;top:5px;right:16px">{{ hamburgerMenu }}</div>
@@ -6509,7 +6509,7 @@ class Component extends DCLogic {
 
 <header class="cover">
   <div class="wrap">
-    <div class="brand">Pointe <span>Ventures</span></div>
+    <div class="brand">Luke <span>Donahue</span></div>
     <h1>Vehicle Performance Dashboard</h1>
     <p>A working guide for OEM analysts: how to set your view, read every panel, and pull the numbers behind retail share, pricing, incentives, and finance offers across the market hierarchy.</p>
     <div class="meta"><span>Guide generated ${today}</span><span>Data window: ${range}</span><span>Source: ${src}</span></div>
@@ -6749,7 +6749,7 @@ class Component extends DCLogic {
     </tbody>
   </table>
 
-  <footer class="guide">&copy; 2026 Pointe Ventures &mdash; Portfolio demo build. All figures are synthetic. This guide reflects the dashboard build dated ${today}.</footer>
+  <footer class="guide">Portfolio demo build. All figures are synthetic. This guide reflects the dashboard build dated ${today}.</footer>
 </main>
 <script>
   // Plain "#s1" hrefs can escape this iframe and navigate the host page instead of
@@ -7221,7 +7221,7 @@ class Component extends DCLogic {
     const splashGate = (!S.splashSeen) ? h('div',{style:{position:'fixed',inset:0,zIndex:2100,display:'flex',alignItems:'center',justifyContent:'center',background:'rgba(0,0,0,0.65)',backdropFilter:'blur(8px)',padding:20}},
       h('div',{style:{width:620,maxWidth:'94vw',maxHeight:'90vh',overflowY:'auto',background:'var(--surface-card)',border:'1px solid var(--border-primary)',borderRadius:20,boxShadow:'0 28px 28px -12px rgba(0,0,0,0.30)'}},
         h('div',{style:{padding:'22px 26px 0',display:'flex',alignItems:'baseline',justifyContent:'space-between',gap:12,flexWrap:'wrap'}},
-          h('div',{style:{fontFamily:'var(--ff-display)',fontWeight:800,fontSize:17,letterSpacing:'-0.01em'}}, 'Pointe ', h('span',{style:{color:'var(--bt-500)'}},'Ventures')),
+          h('div',{style:{fontFamily:'var(--ff-display)',fontWeight:800,fontSize:17,letterSpacing:'-0.01em'}}, 'Luke ', h('span',{style:{color:'var(--bt-500)'}},'Donahue')),
           h('span',{style:{fontFamily:'var(--ff-mono)',fontSize:11,color:'var(--text-secondary)'}}, 'Portfolio demo · '+APP_VERSION)),
         h('div',{style:{display:'grid',gridTemplateColumns:'1fr',gap:26,padding:'14px 26px 6px',alignItems:'start'}},
           h('div',{},
@@ -8042,7 +8042,7 @@ class Component extends DCLogic {
       sliceActive ? h('span',{style:{display:'inline-flex',alignItems:'center',gap:6,fontSize:12,color:'var(--at-text)',background:'var(--surface-tertiary)',border:'1px solid var(--at-600)',borderRadius:9999,padding:'5px 12px'}},
         h('span',{className:'ms',style:{fontSize:15}},'filter_alt'),
         h('span',{style:{fontWeight:700}}, sliceLabel)) : null,
-      h('span',{style:{marginLeft:'auto',fontSize:10,color:'var(--text-secondary)'}}, '\u00A9 2026 Pointe Ventures \u2014 Portfolio demo \u00B7 Synthetic data'),
+      h('span',{style:{marginLeft:'auto',fontSize:10,color:'var(--text-secondary)'}}, 'Portfolio demo \u00B7 Synthetic data'),
       h('span',{style:{fontSize:10,fontFamily:'var(--ff-mono)',color:'var(--text-secondary)'}}, APP_VERSION)
     );
 
