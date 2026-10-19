@@ -1,20 +1,25 @@
 # Handoff
 
 Written 2026-08-27 at the point of pausing work; project list brought up to date
-2026-09-19; dashboard rebuilt from the v1.12.12 export 2026-10-16. The README covers *how* the site is built and how to add to it; this
+2026-09-19; dashboard rebuilt from the v1.12.12 export 2026-10-16; Kindred and
+Kin & Heirs added 2026-10-17. The README covers *how* the site is built and how to add to it; this
 covers where things stand, what is still open, and the reasoning behind choices
 that would otherwise look arbitrary later.
 
 ## Status
 
 Live at <https://donahue.us> — GitHub Pages from `LSD313/Portfolio`, `main`,
-served from the repo root, so **merging to `main` is publishing**. Eight
-projects in four sections, in the order the home page renders them:
+served from the repo root, so **merging to `main` is publishing**. Eleven
+cards in six sections, in the order the home page renders them — eight hosted
+projects and three cards that link off-site:
 
 | Section | Project | Kind | Size | Preview |
 |---|---|---|---|---|
 | Analytics | `datamat` | export, patched | 632 KB | yes |
 | Analytics | `vehicle-performance-dashboard` | single file, data embedded | 15.5 MB | yes |
+| Kindred | kindredcontact.com | off-site link | — | yes |
+| Kindred | Kindred on the App Store | off-site link | — | yes |
+| Kin & Heirs | kinandheirs.com | off-site link | — | yes |
 | HunnyDone | `hunnydone-app` | hand-written page + self-hosted MP4 | 13 MB | yes |
 | HunnyDone | `hunnydone-pitch-deck` | hand-written viewer + 14 JPEG slides | 1.5 MB | yes |
 | The Seeklore Universe | `seeklore-ereader` | export, patched, + book data | 3.9 MB | yes |
@@ -26,6 +31,8 @@ No longer "all self-contained single pages": five are one file (or one file plus
 data), and three — `meeting-scheduler` and the two HunnyDone pages — are
 hand-written and link the shared `tokens/` and `assets/fonts/`. What still holds
 for every one of them is the constraint that matters: zero external requests.
+The off-site cards don't break it — a link the visitor chooses to follow is not
+a request the page makes, and their thumbnails are local JPEGs, not hotlinked.
 
 Work happens on `claude/*` branches in worktrees under `.claude/worktrees/` and
 lands by pull request; the pitch deck was
@@ -115,6 +122,33 @@ changelog replaced by one generic entry, version shown as `VX.X.X`, fonts swappe
 Mono, no external requests). The splash screen states the terms the project is
 published under; leave it in.
 
+**Kindred and Kin & Heirs are link cards, not hosted projects.** Both are
+products in their own right with their own sites, so the portfolio points at
+them rather than copying anything in. Each has its own section with a
+`.group-note`, the cards open in a new tab (`target="_blank" rel="noopener"`),
+and the arrow is the same `↗` the hosted cards use. Kindred has two cards — the
+site and the App Store listing — because a single `<a>` card cannot hold a
+second link. The App Store URL is the id-only form
+(`apps.apple.com/us/app/id6813167503`), which keeps working if the listing's
+name slug changes. Both are listed in the Pointe Ventures bio under *Founded*
+(2026) and again under *Building*; the repetition is intentional.
+
+**These sections break the README's alphabetical order on purpose.** Kindred
+was placed directly after Analytics, above HunnyDone, when it was added
+([LSD313/Portfolio#3](https://github.com/LSD313/Portfolio/pull/3)), and Kin &
+Heirs follows it ([LSD313/Portfolio#8](https://github.com/LSD313/Portfolio/pull/8)):
+the products being built now come before the closed company. Alphabetically
+both would sort after HunnyDone. The README's "Sections" note still describes
+strict alphabetical order and should say this.
+
+**The off-site thumbnails are snapshots and will drift.** None of them update
+when the sites do. Kindred's main card is cropped from kindredcontact.com's
+social image. kinandheirs.com has no `og:image`, so its thumbnail is the hero of
+a 1440×900 headless screenshot cropped to 960×600. The App Store card is three
+of the listing's screenshots, cropped from a 1440×1200 capture and scaled to
+960×600. Retake them when a site changes visibly; see the headless-browser
+gotcha below for how.
+
 **Vendored token files are copied verbatim and never edited.** Where a design
 system's own values fail WCAG AA on these pages, the corrections live in a
 documented override block in `style.css`. This keeps the vendored copies
@@ -186,6 +220,19 @@ GitHub Pages.
 worktree, say) cannot reuse the `portfolio` launch config. A temporary
 `autoPort` entry in `.claude/launch.json` running
 `python3 -m http.server ${PORT}` works; do not commit it.
+
+**There is no Chrome on this Mac; use headless Edge for screenshots.** It
+needs its own `--user-data-dir` or it collides with a running Edge:
+
+```bash
+"/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge" --headless=new \
+  --hide-scrollbars --window-size=1440,900 --force-device-scale-factor=1 \
+  --virtual-time-budget=8000 --user-data-dir=/tmp/edge-shot \
+  --screenshot=shot.png https://www.kinandheirs.com/
+```
+
+Crop and re-encode with Pillow (`quality=85, progressive`) to 960×600, matching
+the other thumbnails.
 
 ## Resuming
 
