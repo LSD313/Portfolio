@@ -206,7 +206,7 @@ a:hover { color: var(--accent-hover); }
   color: var(--text-primary);
 }
 
-/* the Pointe Ventures wordmark, as it is set in the dashboard header */
+/* the Pointe Ventures wordmark, accent on the second word */
 .bio-band h2 .wm-accent { color: var(--accent); }
 
 .bio-prose {

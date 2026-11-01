@@ -33,8 +33,6 @@ projects/
   hunnydone-pitch-deck/
     index.html                 hand-written slide viewer (uses tokens/ and assets/fonts/)
     slides/                    the deck, one JPEG per slide
-  vehicle-performance-dashboard/
-    index.html                 self-contained project (data embedded)
   seeklore/
     index.html                 self-contained project (bundled assets)
   seeklore-ereader/
@@ -49,7 +47,6 @@ projects/
     index.html                 hand-written app (uses tokens/ and assets/fonts/)
 tools/
   patch-export.py              re-applies the fixes below to a fresh export
-  dashboard-data/              generates the dashboard's synthetic dataset
 ```
 
 Most projects are standalone files. Four are not. `meeting-scheduler`,
@@ -243,7 +240,7 @@ they are shareable and the page still reads with JavaScript off.
   until the file has fully buffered. That is the server, not the page.
 - The homeowner, addresses and email in the recording are sample data. The
   source recording is not in the repo, and should not be added.
-- At 13 MB it is the largest single file in the repo after the dashboard.
+- At 13 MB it is the largest single file in the repo.
   GitHub warns at 50 MB and refuses at 100 MB; anything longer wants re-encoding
   first.
 
@@ -270,75 +267,6 @@ public display:
 If the slides are ever re-rendered from the PDF, pages 12, 16 and 17 have to be
 skipped and the masking redone.
 
-## Note on the dashboard project
-
-`vehicle-performance-dashboard` began as a work artifact and was rebuilt for
-public display. It has been rebuilt twice, the second time (October 2026,
-v1.12.12) from a fresh export of the upstream app. Every rebuild redoes the
-same sanitization:
-
-- All branding replaced with a placeholder brand ("Pointe Ventures"), including
-  the tab icon and the design-system comments. The visible wordmark — in the
-  header, the welcome dialog and the User Guide cover — then reads "Luke Donahue".
-- The embedded dataset is **entirely synthetic** — it keeps the real vehicle
-  hierarchy, segment taxonomy and time grid, and which rows and columns exist,
-  but every figure is invented. No real market data is present. It is generated
-  by `tools/dashboard-data/` (see below).
-- A third-party analytics agent (which transmitted visitor email addresses)
-  was removed, along with the email gate that fed it and the session-timer
-  code that reported to it.
-- The unused design-system bundle was stripped out, along with the original
-  brand typeface and two Google Fonts imports. The page uses Instrument Sans and
-  IBM Plex Mono, embedded from `assets/fonts/`, and the app's CSS tokens carry
-  the Seeklore-derived palette (token names unchanged, values remapped).
-- The header link to the original company's platform was removed.
-- The copyright lines in the bottom bar and the User Guide footer were removed;
-  both now just say it is a portfolio demo with synthetic data.
-
-The page makes no external network requests of any kind.
-
-Methodology stays private even though the data is synthetic:
-
-- The User Guide's metric glossary, the "How incentive type is determined"
-  diagram and the "Payment walk math" document (a 190 KB methodology guide the
-  export embeds as a string, with its own link in the guide) are removed.
-  Metric definitions, weighting formulas, tuning thresholds and the Type of Sale
-  to Type of Incentive mapping are not published. The guide keeps how the
-  interface works, not how the numbers are derived: its CSV column table lists
-  names and units only, and the Mix walk and Summary email sections say what each
-  element shows, not how it is built.
-- The release notes are replaced by a single generic entry saying a changelog
-  was created during development, with the dev-version logic. The originals
-  quoted real figures, dataset and pipeline names, a client, and the vendor.
-  The app version reads the placeholder `VX.X.X`.
-- Code comments that quoted real figures, vehicle examples or measurements from
-  the real panel were reworded.
-
-If the dashboard is ever regenerated from an upstream export, all of this has to
-be redone. The build script that does it is not in the repo, because its edit
-anchors contain the original brand strings. It works on the export with base64
-payloads (fonts, icons, the dataset) set aside first, applies assertion-guarded
-text edits, and finishes with a scan for banned terms and external URLs.
-
-### The synthetic dataset
-
-`tools/dashboard-data/generate.py` writes the panel from three inputs beside it:
-`tiers.csv` (a coarse 0–9 size decile per entity), `series_models.csv` (which
-Models roll up into which Series) and `structure.csv` (row list and fill mask,
-no figures). `extract_structure.py` rebuilds `structure.csv` from the shipped
-dashboard, so the data can be regenerated from the repo alone; the round trip
-reproduces the shipped dataset byte for byte (seeded, ~5 s).
-
-The panel is internally consistent: Series, Nameplate, OEM and Industry totals
-add up, shares sum to 100 within their group, quarters, YTD and full years roll
-up from the monthly rows, and the payment-walk inputs satisfy the loan formula.
-The values themselves come from public-knowledge price points, seasonality and
-a rate path, plus the size deciles; nothing is perturbed from a real figure.
-Known soft spots: a few Series totals differ from their Models where the
-structure gives a Series a row in a month none of its Models has one; percent
-columns are rounded to integers and dollar columns to $10–$100 to keep the file
-near 15 MB; the largest segments are bigger than in the real market.
-
 ## Note on the Meeting Scheduler
 
 `meeting-scheduler` implements `Meeting Scheduler.dc.html` from the **New
@@ -360,8 +288,8 @@ Four departures from the canvas, all deliberate:
   `https://corsproxy.io/`. The Instructions tab tells people their secret
   calendar address "works like a password", and the Add tab promises "nothing is
   sent to any server" — routing that URL through a third party breaks both
-  claims, and it is the same class of thing that was stripped out of the
-  dashboard. The page now only ever requests the calendar host the user names.
+  claims, and it breaks the zero-external-requests rule every page here
+  keeps. The page now only ever requests the calendar host the user names.
   When that request fails, the UI already had the right answer: the upload and
   paste modes it points at by name.
 

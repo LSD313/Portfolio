@@ -1,20 +1,19 @@
 # Handoff
 
 Written 2026-08-27 at the point of pausing work; project list brought up to date
-2026-09-19; dashboard rebuilt from the v1.12.12 export 2026-10-16. The README covers *how* the site is built and how to add to it; this
+2026-09-19; Vehicle Performance Dashboard removed 2026-11-01. The README covers *how* the site is built and how to add to it; this
 covers where things stand, what is still open, and the reasoning behind choices
 that would otherwise look arbitrary later.
 
 ## Status
 
 Live at <https://donahue.us> — GitHub Pages from `LSD313/Portfolio`, `main`,
-served from the repo root, so **merging to `main` is publishing**. Eight
+served from the repo root, so **merging to `main` is publishing**. Seven
 projects in four sections, in the order the home page renders them:
 
 | Section | Project | Kind | Size | Preview |
 |---|---|---|---|---|
 | Analytics | `datamat` | export, patched | 632 KB | yes |
-| Analytics | `vehicle-performance-dashboard` | single file, data embedded | 15.5 MB | yes |
 | HunnyDone | `hunnydone-app` | hand-written page + self-hosted MP4 | 13 MB | yes |
 | HunnyDone | `hunnydone-pitch-deck` | hand-written viewer + 14 JPEG slides | 1.5 MB | yes |
 | The Seeklore Universe | `seeklore-ereader` | export, patched, + book data | 3.9 MB | yes |
@@ -22,7 +21,7 @@ projects in four sections, in the order the home page renders them:
 | The Seeklore Universe | `seeklore-slots` | hand-ported, own art/fonts/runtime | 3.9 MB | yes |
 | Tools | `meeting-scheduler` | hand-written | 80 KB | yes |
 
-No longer "all self-contained single pages": five are one file (or one file plus
+No longer "all self-contained single pages": four are one file (or one file plus
 data), and three — `meeting-scheduler` and the two HunnyDone pages — are
 hand-written and link the shared `tokens/` and `assets/fonts/`. What still holds
 for every one of them is the constraint that matters: zero external requests.
@@ -96,24 +95,9 @@ GitHub's history either — keep it that way by reviewing before the first push,
 not after. **Every project page is self-contained and makes zero external
 requests.** This is the constraint the whole site is built around, and it is
 checked before anything ships. It is why the webfonts are vendored into
-`assets/fonts/` rather than `@import`ed from Google, and why the dashboard's
-user guide lost its font links. Verify a new page with: ```js
+`assets/fonts/` rather than `@import`ed from Google,. Verify a new page with: ```js
 performance.getEntriesByType('resource').filter(r =>
 !r.name.startsWith(location.origin)) ```
-
-**The dashboard runs on fully synthetic data.** It began as a work artifact and
-was rebuilt for public display (twice now; the second time from the v1.12.12
-export): real vehicle hierarchy and segment taxonomy (both public knowledge, and
-viewers need to recognise the names), but every figure generated. The generator
-is in the repo — `tools/dashboard-data/`, seeded and deterministic, and
-`extract_structure.py` rebuilds its input from the shipped dashboard, so the
-data can be regenerated without the real file. What is *not* in the repo is the
-script that sanitizes a fresh upstream export: its edit anchors contain the
-original brand strings. The README's dashboard note lists everything it has to
-do (rebrand, synthetic data, tracker and email gate out, methodology docs out,
-changelog replaced by one generic entry, version shown as `VX.X.X`, fonts swapped to embedded Instrument Sans / IBM Plex
-Mono, no external requests). The splash screen states the terms the project is
-published under; leave it in.
 
 **Vendored token files are copied verbatim and never edited.** Where a design
 system's own values fail WCAG AA on these pages, the corrections live in a
@@ -127,33 +111,10 @@ after deriving — they are in git history if needed.
 
 ## Gotchas that cost time
 
-**CSS cascade in the dashboard.** The file carries *duplicated* `:root` token
-blocks, so a later copy silently overrides earlier dark-theme values at equal
-specificity. The dark palette therefore lives in a `:root[data-theme="dark"]`
-block at the end of `<head>` — higher specificity *and* last in source. The
-same trap caught the home page's accessibility overrides, which is why they are
-scoped `:root:not([data-theme="dark"])`.
-
-**There are two `</head>` tags** in the dashboard — the document's own and one
-inside the user-guide template string. Inserting before the *last* one puts
-your markup inside a JS string where it silently does nothing.
-
-**The upstream export has two inline CSV parsers**, and the older one (no
-`sale_mix_cash` derivation) can finish decoding last and overwrite the good
-result. The rebuild keeps only the newer one. If a future export is wired in by
-hand, check that exactly one `parseCsvText` script survives.
-
-**`--at-600` is a fill, not a text colour.** White text sits on it; as text on a
-dark surface it is only ~3.8:1. Text uses go through `--at-text` (lighter teal in
-dark). Peer-coloured row labels are mixed toward the theme's text colour for the
-same reason. Both were found by sweeping several views (Model level, EV and
-Premium filters), not just the default one — the default view alone passes.
-
-**Never string-replace across the whole dashboard file.** It mixes app code, a
-vendored React build, and base64 blobs. A `"JDP" → "NLT"` replacement corrupted
-the embedded font; a model rename rewrote React's internal key table
-(`Esc: "Escape"` → the fictional name), breaking every Escape-key handler. Vault
-the base64 blobs before any text substitution.
+**Duplicated `:root` token blocks override silently.** A later copy at equal
+specificity wins over earlier dark-theme values. This caught the home page's
+accessibility overrides, which is why they are scoped
+`:root:not([data-theme="dark"])`.
 
 **GitHub Pages is case-sensitive.** An upload named `Seeklore.jpeg` will not
 resolve a reference to `seeklore.jpg`, and the failure is silent — the image
@@ -200,6 +161,5 @@ alignment, and injects the back link, idempotently.
 
 Contrast is checked on every change with an in-page sweep over all visible text,
 compositing layered/translucent backgrounds and handling `oklch()` / `oklab()`
-computed values. Both themes on both the home page and the dashboard currently
-pass WCAG AA with zero failures (the dashboard across Segments, OEM, Model and
-Model with EV and Premium filters); worth re-running after any palette work.
+computed values. Both themes on the home page currently pass WCAG AA with zero
+failures; worth re-running after any palette work.
