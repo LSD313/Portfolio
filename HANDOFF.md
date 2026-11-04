@@ -8,12 +8,17 @@ that would otherwise look arbitrary later.
 ## Status
 
 Live at <https://donahue.us> — GitHub Pages from `LSD313/Portfolio`, `main`,
-served from the repo root, so **merging to `main` is publishing**. Seven
-projects in four sections, in the order the home page renders them:
+served from the repo root, so **merging to `main` is publishing**. Eleven
+cards in six sections, in the order the home page renders them: seven projects
+hosted here, and four cards that link out to sites that live elsewhere.
 
 | Section | Project | Kind | Size | Preview |
 |---|---|---|---|---|
+| Analytics | BInbox | external link, <https://binbox.ai> | — | yes |
 | Analytics | `datamat` | export, patched | 632 KB | yes |
+| Kindred | Kindred | external link, <https://kindredcontact.com> | — | yes |
+| Kindred | Kindred on the App Store | external link, App Store listing | — | yes |
+| Kin & Heirs | Kin & Heirs | external link, <https://kinandheirs.com> | — | yes |
 | HunnyDone | `hunnydone-app` | hand-written page + self-hosted MP4 | 13 MB | yes |
 | HunnyDone | `hunnydone-pitch-deck` | hand-written viewer + 14 JPEG slides | 1.5 MB | yes |
 | The Seeklore Universe | `seeklore-ereader` | export, patched, + book data | 3.9 MB | yes |
@@ -21,8 +26,8 @@ projects in four sections, in the order the home page renders them:
 | The Seeklore Universe | `seeklore-slots` | hand-ported, own art/fonts/runtime | 3.9 MB | yes |
 | Tools | `meeting-scheduler` | hand-written | 80 KB | yes |
 
-No longer "all self-contained single pages": four are one file (or one file plus
-data), and three — `meeting-scheduler` and the two HunnyDone pages — are
+The hosted projects are no longer "all self-contained single pages": four are one
+file (or one file plus data), and three — `meeting-scheduler` and the two HunnyDone pages — are
 hand-written and link the shared `tokens/` and `assets/fonts/`. What still holds
 for every one of them is the constraint that matters: zero external requests.
 
